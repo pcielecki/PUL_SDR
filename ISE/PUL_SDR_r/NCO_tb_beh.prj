@@ -1,0 +1,4 @@
+vhdl work "sin_LUT.vhd"
+vhdl work "Phase_accumulator.vhd"
+vhdl work "NCO.vhd"
+vhdl work "NCO_tb.vhd"

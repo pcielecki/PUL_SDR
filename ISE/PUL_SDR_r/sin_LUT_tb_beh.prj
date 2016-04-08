@@ -1,0 +1,2 @@
+vhdl work "sin_LUT.vhd"
+vhdl work "sin_LUT_tb.vhd"

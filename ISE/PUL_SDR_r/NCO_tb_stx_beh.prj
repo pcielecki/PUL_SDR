@@ -1,0 +1,4 @@
+vhdl isim_temp "sin_LUT.vhd"
+vhdl isim_temp "Phase_accumulator.vhd"
+vhdl isim_temp "NCO.vhd"
+vhdl isim_temp "NCO_tb.vhd"

@@ -1,0 +1,2 @@
+vhdl isim_temp "sin_LUT.vhd"
+vhdl isim_temp "sinLUT_tb.vhd"

@@ -1,0 +1,2 @@
+vhdl isim_temp "Phase_accumulator.vhd"
+vhdl isim_temp "pha_tb.vhd"

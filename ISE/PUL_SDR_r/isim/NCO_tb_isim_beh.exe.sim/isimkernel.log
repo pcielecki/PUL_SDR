@@ -1,0 +1,28 @@
+Command line:
+   NCO_tb_isim_beh.exe
+     -simmode  gui
+     -simrunnum  0
+     -socket  54797
+
+Fri Apr 08 22:55:27 2016
+
+
+ Elaboration Time: 0.390003 sec
+
+ Current Memory Usage: 672.354 Meg
+
+ Total Signals          : 18
+ Total Nets             : 14
+ Total Signal Drivers   : 6
+ Total Blocks           : 8
+ Total Primitive Blocks : 6
+ Total Processes        : 5
+ Total Traceable Variables  : 26
+ Total Scalar Nets and Variables : 549
+Total Line Count : 18
+
+** Failure:Assertion violation
+User(VHDL) Code Called Simulation Stop
+In process NCO_tb.vhd:stim_proc 
+ 
+
