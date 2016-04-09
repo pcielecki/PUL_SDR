@@ -1,5 +1,5 @@
 ISim log file
-Running: C:\Users\Piotr\workspace\PUL_SDR\ISE\PUL_SDR_r\decimator_tb_isim_beh.exe -intstyle ise -gui -tclbatch isim.cmd -wdb C:/Users/Piotr/workspace/PUL_SDR/ISE/PUL_SDR_r/decimator_tb_isim_beh.wdb 
+Running: C:\Users\Piotr\workspace\PUL_SDR\ISE\PUL_SDR_r\lpf_tb_isim_beh.exe -intstyle ise -gui -tclbatch isim.cmd -wdb C:/Users/Piotr/workspace/PUL_SDR/ISE/PUL_SDR_r/lpf_tb_isim_beh.wdb 
 ISim P.20131013 (signature 0x8ef4fb42)
 WARNING: A WEBPACK license was found.
 WARNING: Please use Xilinx License Configuration Manager to check out a full ISim license.
@@ -10,75 +10,44 @@ Time resolution is 1 ps
 # wave add /
 # run 1000 ns
 Simulator is doing circuit initialization process.
+at 0 ps, Instance /lpf_tb/uut/\mul_blocks(0)\/mul/ : Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
 Finished circuit initialization process.
-at 330 ns, Instance /decimator_tb/ : Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
-at 660 ns, Instance /decimator_tb/ : Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
-at 990 ns, Instance /decimator_tb/ : Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
-at 1 us, Instance /decimator_tb/ : Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
-ISim P.20131013 (signature 0x8ef4fb42)
-WARNING: A WEBPACK license was found.
-WARNING: Please use Xilinx License Configuration Manager to check out a full ISim license.
-WARNING: ISim will run in Lite mode. Please refer to the ISim documentation for more information on the differences between the Lite and the Full version.
-This is a Lite version of ISim.
-# run 1000 ns
-Simulator is doing circuit initialization process.
-Finished circuit initialization process.
-at 330 ns, Instance /decimator_tb/ : Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
-at 660 ns, Instance /decimator_tb/ : Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
-at 990 ns, Instance /decimator_tb/ : Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
-at 1 us, Instance /decimator_tb/ : Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
-ISim P.20131013 (signature 0x8ef4fb42)
-WARNING: A WEBPACK license was found.
-WARNING: Please use Xilinx License Configuration Manager to check out a full ISim license.
-WARNING: ISim will run in Lite mode. Please refer to the ISim documentation for more information on the differences between the Lite and the Full version.
-This is a Lite version of ISim.
-# run 1000 ns
-Simulator is doing circuit initialization process.
-Finished circuit initialization process.
-at 335 ns, Instance /decimator_tb/ : Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
-at 665 ns, Instance /decimator_tb/ : Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
-at 995 ns, Instance /decimator_tb/ : Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
-ISim P.20131013 (signature 0x8ef4fb42)
-WARNING: A WEBPACK license was found.
-WARNING: Please use Xilinx License Configuration Manager to check out a full ISim license.
-WARNING: ISim will run in Lite mode. Please refer to the ISim documentation for more information on the differences between the Lite and the Full version.
-This is a Lite version of ISim.
-# run 1000 ns
-Simulator is doing circuit initialization process.
-Finished circuit initialization process.
-at 335 ns, Instance /decimator_tb/ : Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
-at 665 ns, Instance /decimator_tb/ : Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
-at 995 ns, Instance /decimator_tb/ : Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
-ISim P.20131013 (signature 0x8ef4fb42)
-WARNING: A WEBPACK license was found.
-WARNING: Please use Xilinx License Configuration Manager to check out a full ISim license.
-WARNING: ISim will run in Lite mode. Please refer to the ISim documentation for more information on the differences between the Lite and the Full version.
-This is a Lite version of ISim.
-# run 1000 ns
-Simulator is doing circuit initialization process.
-Finished circuit initialization process.
-at 655 ns, Instance /decimator_tb/ : Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
-ISim P.20131013 (signature 0x8ef4fb42)
-WARNING: A WEBPACK license was found.
-WARNING: Please use Xilinx License Configuration Manager to check out a full ISim license.
-WARNING: ISim will run in Lite mode. Please refer to the ISim documentation for more information on the differences between the Lite and the Full version.
-This is a Lite version of ISim.
-# run 1000 ns
-Simulator is doing circuit initialization process.
-Finished circuit initialization process.
-at 95 ns, Instance /decimator_tb/ : Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
-at 185 ns, Instance /decimator_tb/ : Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
-at 275 ns, Instance /decimator_tb/ : Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
-at 365 ns, Instance /decimator_tb/ : Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
-at 455 ns, Instance /decimator_tb/ : Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
-at 545 ns, Instance /decimator_tb/ : Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
-at 635 ns, Instance /decimator_tb/ : Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
-at 645 ns, Instance /decimator_tb/ : Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
-at 725 ns, Instance /decimator_tb/ : Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
 
 ** Failure:Assertion violation
 User(VHDL) Code Called Simulation Stop
-In process decimator_tb.vhd:stim_proc 
+In process lpf_tb.vhd:stim_proc 
+ 
+INFO: Simulator is stopped.
+# show driver /lpf_tb/sig_out
+Driver for /lpf_tb/sig_out[0]
+	'X'	: /lpf_tb/uut/:95
+		  in File "C:/Users/Piotr/workspace/PUL_SDR/ISE/PUL_SDR_r/audio_LP_filter.vhd" Line 95
+
+Driver for /lpf_tb/sig_out[1]
+	'X'	: /lpf_tb/uut/:95
+		  in File "C:/Users/Piotr/workspace/PUL_SDR/ISE/PUL_SDR_r/audio_LP_filter.vhd" Line 95
+
+Driver for /lpf_tb/sig_out[2]
+	'X'	: /lpf_tb/uut/:95
+		  in File "C:/Users/Piotr/workspace/PUL_SDR/ISE/PUL_SDR_r/audio_LP_filter.vhd" Line 95
+
+Driver for /lpf_tb/sig_out[3]
+	'X'	: /lpf_tb/uut/:95
+		  in File "C:/Users/Piotr/workspace/PUL_SDR/ISE/PUL_SDR_r/audio_LP_filter.vhd" Line 95
+
+ISim P.20131013 (signature 0x8ef4fb42)
+WARNING: A WEBPACK license was found.
+WARNING: Please use Xilinx License Configuration Manager to check out a full ISim license.
+WARNING: ISim will run in Lite mode. Please refer to the ISim documentation for more information on the differences between the Lite and the Full version.
+This is a Lite version of ISim.
+# run 1000 ns
+Simulator is doing circuit initialization process.
+at 0 ps, Instance /lpf_tb/uut/\mul_blocks(0)\/mul/ : Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+Finished circuit initialization process.
+
+** Failure:Assertion violation
+User(VHDL) Code Called Simulation Stop
+In process lpf_tb.vhd:stim_proc 
  
 INFO: Simulator is stopped.
 ISim P.20131013 (signature 0x8ef4fb42)
@@ -88,20 +57,12 @@ WARNING: ISim will run in Lite mode. Please refer to the ISim documentation for 
 This is a Lite version of ISim.
 # run 1000 ns
 Simulator is doing circuit initialization process.
+at 0 ps, Instance /lpf_tb/uut/\mul_blocks(0)\/mul/ : Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
 Finished circuit initialization process.
-at 95 ns, Instance /decimator_tb/ : Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
-at 185 ns, Instance /decimator_tb/ : Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
-at 275 ns, Instance /decimator_tb/ : Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
-at 365 ns, Instance /decimator_tb/ : Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
-at 455 ns, Instance /decimator_tb/ : Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
-at 545 ns, Instance /decimator_tb/ : Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
-at 635 ns, Instance /decimator_tb/ : Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
-at 645 ns, Instance /decimator_tb/ : Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
-at 725 ns, Instance /decimator_tb/ : Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
 
 ** Failure:Assertion violation
 User(VHDL) Code Called Simulation Stop
-In process decimator_tb.vhd:stim_proc 
+In process lpf_tb.vhd:stim_proc 
  
 INFO: Simulator is stopped.
 ISim P.20131013 (signature 0x8ef4fb42)
@@ -111,20 +72,44 @@ WARNING: ISim will run in Lite mode. Please refer to the ISim documentation for 
 This is a Lite version of ISim.
 # run 1000 ns
 Simulator is doing circuit initialization process.
+at 0 ps, Instance /lpf_tb/uut/\mul_blocks(0)\/mul/ : Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
 Finished circuit initialization process.
-at 95 ns, Instance /decimator_tb/ : Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
-at 185 ns, Instance /decimator_tb/ : Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
-at 275 ns, Instance /decimator_tb/ : Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
-at 365 ns, Instance /decimator_tb/ : Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
-at 455 ns, Instance /decimator_tb/ : Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
-at 545 ns, Instance /decimator_tb/ : Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
-at 635 ns, Instance /decimator_tb/ : Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
-at 645 ns, Instance /decimator_tb/ : Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
-at 725 ns, Instance /decimator_tb/ : Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
 
 ** Failure:Assertion violation
 User(VHDL) Code Called Simulation Stop
-In process decimator_tb.vhd:stim_proc 
+In process lpf_tb.vhd:stim_proc 
+ 
+INFO: Simulator is stopped.
+# show driver /lpf_tb/sig_out
+Driver for /lpf_tb/sig_out[0]
+	'0'	: /lpf_tb/uut/:96
+		  in File "C:/Users/Piotr/workspace/PUL_SDR/ISE/PUL_SDR_r/audio_LP_filter.vhd" Line 96
+
+Driver for /lpf_tb/sig_out[1]
+	'0'	: /lpf_tb/uut/:96
+		  in File "C:/Users/Piotr/workspace/PUL_SDR/ISE/PUL_SDR_r/audio_LP_filter.vhd" Line 96
+
+Driver for /lpf_tb/sig_out[2]
+	'0'	: /lpf_tb/uut/:96
+		  in File "C:/Users/Piotr/workspace/PUL_SDR/ISE/PUL_SDR_r/audio_LP_filter.vhd" Line 96
+
+Driver for /lpf_tb/sig_out[3]
+	'0'	: /lpf_tb/uut/:96
+		  in File "C:/Users/Piotr/workspace/PUL_SDR/ISE/PUL_SDR_r/audio_LP_filter.vhd" Line 96
+
+ISim P.20131013 (signature 0x8ef4fb42)
+WARNING: A WEBPACK license was found.
+WARNING: Please use Xilinx License Configuration Manager to check out a full ISim license.
+WARNING: ISim will run in Lite mode. Please refer to the ISim documentation for more information on the differences between the Lite and the Full version.
+This is a Lite version of ISim.
+# run 1000 ns
+Simulator is doing circuit initialization process.
+at 0 ps, Instance /lpf_tb/uut/\mul_blocks(0)\/mul/ : Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+Finished circuit initialization process.
+
+** Failure:Assertion violation
+User(VHDL) Code Called Simulation Stop
+In process lpf_tb.vhd:stim_proc 
  
 INFO: Simulator is stopped.
 ISim P.20131013 (signature 0x8ef4fb42)
@@ -134,19 +119,429 @@ WARNING: ISim will run in Lite mode. Please refer to the ISim documentation for 
 This is a Lite version of ISim.
 # run 1000 ns
 Simulator is doing circuit initialization process.
+at 0 ps, Instance /lpf_tb/uut/\mul_blocks(0)\/mul/ : Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
 Finished circuit initialization process.
-at 100500 ps, Instance /decimator_tb/ : Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
-at 199500 ps, Instance /decimator_tb/ : Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
-at 298500 ps, Instance /decimator_tb/ : Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
-at 397500 ps, Instance /decimator_tb/ : Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
-at 496500 ps, Instance /decimator_tb/ : Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
-at 595500 ps, Instance /decimator_tb/ : Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
-at 694500 ps, Instance /decimator_tb/ : Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
-at 697500 ps, Instance /decimator_tb/ : Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
-at 793500 ps, Instance /decimator_tb/ : Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
 
 ** Failure:Assertion violation
 User(VHDL) Code Called Simulation Stop
-In process decimator_tb.vhd:stim_proc 
+In process lpf_tb.vhd:stim_proc 
+ 
+INFO: Simulator is stopped.
+ISim P.20131013 (signature 0x8ef4fb42)
+WARNING: A WEBPACK license was found.
+WARNING: Please use Xilinx License Configuration Manager to check out a full ISim license.
+WARNING: ISim will run in Lite mode. Please refer to the ISim documentation for more information on the differences between the Lite and the Full version.
+This is a Lite version of ISim.
+# run 1000 ns
+Simulator is doing circuit initialization process.
+at 0 ps, Instance /lpf_tb/uut/\mul_blocks(0)\/mul/ : Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+Finished circuit initialization process.
+
+** Failure:Assertion violation
+User(VHDL) Code Called Simulation Stop
+In process lpf_tb.vhd:stim_proc 
+ 
+INFO: Simulator is stopped.
+ISim P.20131013 (signature 0x8ef4fb42)
+WARNING: A WEBPACK license was found.
+WARNING: Please use Xilinx License Configuration Manager to check out a full ISim license.
+WARNING: ISim will run in Lite mode. Please refer to the ISim documentation for more information on the differences between the Lite and the Full version.
+This is a Lite version of ISim.
+# run 1000 ns
+Simulator is doing circuit initialization process.
+at 0 ps, Instance /lpf_tb/uut/\mul_blocks(3)\/mul/ : Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+Finished circuit initialization process.
+
+** Failure:Assertion violation
+User(VHDL) Code Called Simulation Stop
+In process lpf_tb.vhd:stim_proc 
+ 
+INFO: Simulator is stopped.
+# run 70 ns
+INFO: Simulator is stopped.
+# restart
+# restart
+# run all
+Simulator is doing circuit initialization process.
+Finished circuit initialization process.
+
+** Failure:Assertion violation
+User(VHDL) Code Called Simulation Stop
+In process lpf_tb.vhd:stim_proc 
+ 
+INFO: Simulator is stopped.
+# run 70 ns
+INFO: Simulator is stopped.
+# restart
+# run all
+Simulator is doing circuit initialization process.
+Finished circuit initialization process.
+
+** Failure:Assertion violation
+User(VHDL) Code Called Simulation Stop
+In process lpf_tb.vhd:stim_proc 
+ 
+INFO: Simulator is stopped.
+# restart
+# run 70 ns
+Simulator is doing circuit initialization process.
+Finished circuit initialization process.
+# show driver /lpf_tb/uut/\sum_blocks(2)\/adder/b
+Driver for /lpf_tb/uut/\sum_blocks(2)\/adder/b[0]
+	'0'	: /lpf_tb/uut/:filter
+		  in File "C:/Users/Piotr/workspace/PUL_SDR/ISE/PUL_SDR_r/audio_LP_filter.vhd" Line 81
+
+	'1'	: /lpf_tb/uut/\sum_blocks(3)\/adder/:42
+		  in File "C:/Users/Piotr/workspace/PUL_SDR/ISE/PUL_SDR_r/nbit_full_adder.vhd" Line 42
+
+Driver for /lpf_tb/uut/\sum_blocks(2)\/adder/b[1]
+	'0'	: /lpf_tb/uut/:filter
+		  in File "C:/Users/Piotr/workspace/PUL_SDR/ISE/PUL_SDR_r/audio_LP_filter.vhd" Line 81
+
+	'0'	: /lpf_tb/uut/\sum_blocks(3)\/adder/:42
+		  in File "C:/Users/Piotr/workspace/PUL_SDR/ISE/PUL_SDR_r/nbit_full_adder.vhd" Line 42
+
+Driver for /lpf_tb/uut/\sum_blocks(2)\/adder/b[2]
+	'0'	: /lpf_tb/uut/:filter
+		  in File "C:/Users/Piotr/workspace/PUL_SDR/ISE/PUL_SDR_r/audio_LP_filter.vhd" Line 81
+
+	'0'	: /lpf_tb/uut/\sum_blocks(3)\/adder/:42
+		  in File "C:/Users/Piotr/workspace/PUL_SDR/ISE/PUL_SDR_r/nbit_full_adder.vhd" Line 42
+
+Driver for /lpf_tb/uut/\sum_blocks(2)\/adder/b[3]
+	'0'	: /lpf_tb/uut/:filter
+		  in File "C:/Users/Piotr/workspace/PUL_SDR/ISE/PUL_SDR_r/audio_LP_filter.vhd" Line 81
+
+	'0'	: /lpf_tb/uut/\sum_blocks(3)\/adder/:42
+		  in File "C:/Users/Piotr/workspace/PUL_SDR/ISE/PUL_SDR_r/nbit_full_adder.vhd" Line 42
+
+ISim P.20131013 (signature 0x8ef4fb42)
+WARNING: A WEBPACK license was found.
+WARNING: Please use Xilinx License Configuration Manager to check out a full ISim license.
+WARNING: ISim will run in Lite mode. Please refer to the ISim documentation for more information on the differences between the Lite and the Full version.
+This is a Lite version of ISim.
+# run 1000 ns
+Simulator is doing circuit initialization process.
+at 0 ps, Instance /lpf_tb/uut/\mul_blocks(3)\/mul/ : Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+Finished circuit initialization process.
+
+** Failure:Assertion violation
+User(VHDL) Code Called Simulation Stop
+In process lpf_tb.vhd:stim_proc 
+ 
+INFO: Simulator is stopped.
+# run 66 ns
+INFO: Simulator is stopped.
+# restart
+# run 66 ns
+Simulator is doing circuit initialization process.
+Finished circuit initialization process.
+# show driver /lpf_tb/uut/temp_added
+Driver for /lpf_tb/uut/temp_added[0][0]
+	'0'	: /lpf_tb/uut/:filter
+		  in File "C:/Users/Piotr/workspace/PUL_SDR/ISE/PUL_SDR_r/audio_LP_filter.vhd" Line 81
+
+	'X'	: /lpf_tb/uut/\sum_blocks(1)\/adder/:42
+		  in File "C:/Users/Piotr/workspace/PUL_SDR/ISE/PUL_SDR_r/nbit_full_adder.vhd" Line 42
+
+Driver for /lpf_tb/uut/temp_added[0][1]
+	'0'	: /lpf_tb/uut/:filter
+		  in File "C:/Users/Piotr/workspace/PUL_SDR/ISE/PUL_SDR_r/audio_LP_filter.vhd" Line 81
+
+	'X'	: /lpf_tb/uut/\sum_blocks(1)\/adder/:42
+		  in File "C:/Users/Piotr/workspace/PUL_SDR/ISE/PUL_SDR_r/nbit_full_adder.vhd" Line 42
+
+Driver for /lpf_tb/uut/temp_added[0][2]
+	'0'	: /lpf_tb/uut/:filter
+		  in File "C:/Users/Piotr/workspace/PUL_SDR/ISE/PUL_SDR_r/audio_LP_filter.vhd" Line 81
+
+	'X'	: /lpf_tb/uut/\sum_blocks(1)\/adder/:42
+		  in File "C:/Users/Piotr/workspace/PUL_SDR/ISE/PUL_SDR_r/nbit_full_adder.vhd" Line 42
+
+Driver for /lpf_tb/uut/temp_added[0][3]
+	'0'	: /lpf_tb/uut/:filter
+		  in File "C:/Users/Piotr/workspace/PUL_SDR/ISE/PUL_SDR_r/audio_LP_filter.vhd" Line 81
+
+	'X'	: /lpf_tb/uut/\sum_blocks(1)\/adder/:42
+		  in File "C:/Users/Piotr/workspace/PUL_SDR/ISE/PUL_SDR_r/nbit_full_adder.vhd" Line 42
+
+Driver for /lpf_tb/uut/temp_added[1][0]
+	'0'	: /lpf_tb/uut/:filter
+		  in File "C:/Users/Piotr/workspace/PUL_SDR/ISE/PUL_SDR_r/audio_LP_filter.vhd" Line 81
+
+	'X'	: /lpf_tb/uut/\sum_blocks(2)\/adder/:42
+		  in File "C:/Users/Piotr/workspace/PUL_SDR/ISE/PUL_SDR_r/nbit_full_adder.vhd" Line 42
+
+Driver for /lpf_tb/uut/temp_added[1][1]
+	'0'	: /lpf_tb/uut/:filter
+		  in File "C:/Users/Piotr/workspace/PUL_SDR/ISE/PUL_SDR_r/audio_LP_filter.vhd" Line 81
+
+	'X'	: /lpf_tb/uut/\sum_blocks(2)\/adder/:42
+		  in File "C:/Users/Piotr/workspace/PUL_SDR/ISE/PUL_SDR_r/nbit_full_adder.vhd" Line 42
+
+Driver for /lpf_tb/uut/temp_added[1][2]
+	'0'	: /lpf_tb/uut/:filter
+		  in File "C:/Users/Piotr/workspace/PUL_SDR/ISE/PUL_SDR_r/audio_LP_filter.vhd" Line 81
+
+	'X'	: /lpf_tb/uut/\sum_blocks(2)\/adder/:42
+		  in File "C:/Users/Piotr/workspace/PUL_SDR/ISE/PUL_SDR_r/nbit_full_adder.vhd" Line 42
+
+Driver for /lpf_tb/uut/temp_added[1][3]
+	'0'	: /lpf_tb/uut/:filter
+		  in File "C:/Users/Piotr/workspace/PUL_SDR/ISE/PUL_SDR_r/audio_LP_filter.vhd" Line 81
+
+	'X'	: /lpf_tb/uut/\sum_blocks(2)\/adder/:42
+		  in File "C:/Users/Piotr/workspace/PUL_SDR/ISE/PUL_SDR_r/nbit_full_adder.vhd" Line 42
+
+Driver for /lpf_tb/uut/temp_added[2][0]
+	'0'	: /lpf_tb/uut/:filter
+		  in File "C:/Users/Piotr/workspace/PUL_SDR/ISE/PUL_SDR_r/audio_LP_filter.vhd" Line 81
+
+	'1'	: /lpf_tb/uut/\sum_blocks(3)\/adder/:42
+		  in File "C:/Users/Piotr/workspace/PUL_SDR/ISE/PUL_SDR_r/nbit_full_adder.vhd" Line 42
+
+Driver for /lpf_tb/uut/temp_added[2][1]
+	'0'	: /lpf_tb/uut/:filter
+		  in File "C:/Users/Piotr/workspace/PUL_SDR/ISE/PUL_SDR_r/audio_LP_filter.vhd" Line 81
+
+	'0'	: /lpf_tb/uut/\sum_blocks(3)\/adder/:42
+		  in File "C:/Users/Piotr/workspace/PUL_SDR/ISE/PUL_SDR_r/nbit_full_adder.vhd" Line 42
+
+Driver for /lpf_tb/uut/temp_added[2][2]
+	'0'	: /lpf_tb/uut/:filter
+		  in File "C:/Users/Piotr/workspace/PUL_SDR/ISE/PUL_SDR_r/audio_LP_filter.vhd" Line 81
+
+	'0'	: /lpf_tb/uut/\sum_blocks(3)\/adder/:42
+		  in File "C:/Users/Piotr/workspace/PUL_SDR/ISE/PUL_SDR_r/nbit_full_adder.vhd" Line 42
+
+Driver for /lpf_tb/uut/temp_added[2][3]
+	'0'	: /lpf_tb/uut/:filter
+		  in File "C:/Users/Piotr/workspace/PUL_SDR/ISE/PUL_SDR_r/audio_LP_filter.vhd" Line 81
+
+	'0'	: /lpf_tb/uut/\sum_blocks(3)\/adder/:42
+		  in File "C:/Users/Piotr/workspace/PUL_SDR/ISE/PUL_SDR_r/nbit_full_adder.vhd" Line 42
+
+Driver for /lpf_tb/uut/temp_added[3][0]
+	'0'	: /lpf_tb/uut/:filter
+		  in File "C:/Users/Piotr/workspace/PUL_SDR/ISE/PUL_SDR_r/audio_LP_filter.vhd" Line 81
+
+Driver for /lpf_tb/uut/temp_added[3][1]
+	'0'	: /lpf_tb/uut/:filter
+		  in File "C:/Users/Piotr/workspace/PUL_SDR/ISE/PUL_SDR_r/audio_LP_filter.vhd" Line 81
+
+Driver for /lpf_tb/uut/temp_added[3][2]
+	'0'	: /lpf_tb/uut/:filter
+		  in File "C:/Users/Piotr/workspace/PUL_SDR/ISE/PUL_SDR_r/audio_LP_filter.vhd" Line 81
+
+Driver for /lpf_tb/uut/temp_added[3][3]
+	'0'	: /lpf_tb/uut/:filter
+		  in File "C:/Users/Piotr/workspace/PUL_SDR/ISE/PUL_SDR_r/audio_LP_filter.vhd" Line 81
+
+ISim P.20131013 (signature 0x8ef4fb42)
+WARNING: A WEBPACK license was found.
+WARNING: Please use Xilinx License Configuration Manager to check out a full ISim license.
+WARNING: ISim will run in Lite mode. Please refer to the ISim documentation for more information on the differences between the Lite and the Full version.
+This is a Lite version of ISim.
+# run 1000 ns
+Simulator is doing circuit initialization process.
+at 0 ps, Instance /lpf_tb/uut/\mul_blocks(3)\/mul/ : Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+Finished circuit initialization process.
+
+** Failure:Assertion violation
+User(VHDL) Code Called Simulation Stop
+In process lpf_tb.vhd:stim_proc 
+ 
+INFO: Simulator is stopped.
+ISim P.20131013 (signature 0x8ef4fb42)
+WARNING: A WEBPACK license was found.
+WARNING: Please use Xilinx License Configuration Manager to check out a full ISim license.
+WARNING: ISim will run in Lite mode. Please refer to the ISim documentation for more information on the differences between the Lite and the Full version.
+This is a Lite version of ISim.
+# run 1000 ns
+Simulator is doing circuit initialization process.
+at 0 ps, Instance /lpf_tb/uut/\mul_blocks(3)\/mul/ : Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+Finished circuit initialization process.
+
+** Failure:Assertion violation
+User(VHDL) Code Called Simulation Stop
+In process lpf_tb.vhd:stim_proc 
+ 
+INFO: Simulator is stopped.
+ISim P.20131013 (signature 0x8ef4fb42)
+WARNING: A WEBPACK license was found.
+WARNING: Please use Xilinx License Configuration Manager to check out a full ISim license.
+WARNING: ISim will run in Lite mode. Please refer to the ISim documentation for more information on the differences between the Lite and the Full version.
+This is a Lite version of ISim.
+# run 1000 ns
+Simulator is doing circuit initialization process.
+at 0 ps, Instance /lpf_tb/uut/\mul_blocks(3)\/mul/ : Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+Finished circuit initialization process.
+
+** Failure:Assertion violation
+User(VHDL) Code Called Simulation Stop
+In process lpf_tb.vhd:stim_proc 
+ 
+INFO: Simulator is stopped.
+ISim P.20131013 (signature 0x8ef4fb42)
+WARNING: A WEBPACK license was found.
+WARNING: Please use Xilinx License Configuration Manager to check out a full ISim license.
+WARNING: ISim will run in Lite mode. Please refer to the ISim documentation for more information on the differences between the Lite and the Full version.
+This is a Lite version of ISim.
+# run 1000 ns
+Simulator is doing circuit initialization process.
+at 0 ps, Instance /lpf_tb/uut/\mul_blocks(3)\/mul/ : Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+Finished circuit initialization process.
+
+** Failure:Assertion violation
+User(VHDL) Code Called Simulation Stop
+In process lpf_tb.vhd:stim_proc 
+ 
+INFO: Simulator is stopped.
+# run 70 ns
+INFO: Simulator is stopped.
+# restart
+# run 70 ns
+Simulator is doing circuit initialization process.
+Finished circuit initialization process.
+# show driver /lpf_tb/uut/\mul_blocks(3)\/mul/c
+Driver for /lpf_tb/uut/\mul_blocks(3)\/mul/c[0]
+	'0'	: /lpf_tb/uut/:filter
+		  in File "C:/Users/Piotr/workspace/PUL_SDR/ISE/PUL_SDR_r/audio_LP_filter.vhd" Line 81
+
+	'1'	: /lpf_tb/uut/\mul_blocks(3)\/mul/:44
+		  in File "C:/Users/Piotr/workspace/PUL_SDR/ISE/PUL_SDR_r/nbit_mul.vhd" Line 44
+
+Driver for /lpf_tb/uut/\mul_blocks(3)\/mul/c[1]
+	'0'	: /lpf_tb/uut/:filter
+		  in File "C:/Users/Piotr/workspace/PUL_SDR/ISE/PUL_SDR_r/audio_LP_filter.vhd" Line 81
+
+	'0'	: /lpf_tb/uut/\mul_blocks(3)\/mul/:44
+		  in File "C:/Users/Piotr/workspace/PUL_SDR/ISE/PUL_SDR_r/nbit_mul.vhd" Line 44
+
+Driver for /lpf_tb/uut/\mul_blocks(3)\/mul/c[2]
+	'0'	: /lpf_tb/uut/:filter
+		  in File "C:/Users/Piotr/workspace/PUL_SDR/ISE/PUL_SDR_r/audio_LP_filter.vhd" Line 81
+
+	'0'	: /lpf_tb/uut/\mul_blocks(3)\/mul/:44
+		  in File "C:/Users/Piotr/workspace/PUL_SDR/ISE/PUL_SDR_r/nbit_mul.vhd" Line 44
+
+Driver for /lpf_tb/uut/\mul_blocks(3)\/mul/c[3]
+	'0'	: /lpf_tb/uut/:filter
+		  in File "C:/Users/Piotr/workspace/PUL_SDR/ISE/PUL_SDR_r/audio_LP_filter.vhd" Line 81
+
+	'0'	: /lpf_tb/uut/\mul_blocks(3)\/mul/:44
+		  in File "C:/Users/Piotr/workspace/PUL_SDR/ISE/PUL_SDR_r/nbit_mul.vhd" Line 44
+
+# restart
+# run 70 ns
+Simulator is doing circuit initialization process.
+Finished circuit initialization process.
+ISim P.20131013 (signature 0x8ef4fb42)
+WARNING: A WEBPACK license was found.
+WARNING: Please use Xilinx License Configuration Manager to check out a full ISim license.
+WARNING: ISim will run in Lite mode. Please refer to the ISim documentation for more information on the differences between the Lite and the Full version.
+This is a Lite version of ISim.
+# run 1000 ns
+Simulator is doing circuit initialization process.
+at 0 ps, Instance /lpf_tb/uut/\mul_blocks(3)\/mul/ : Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+Finished circuit initialization process.
+
+** Failure:Assertion violation
+User(VHDL) Code Called Simulation Stop
+In process lpf_tb.vhd:stim_proc 
+ 
+INFO: Simulator is stopped.
+ISim P.20131013 (signature 0x8ef4fb42)
+WARNING: A WEBPACK license was found.
+WARNING: Please use Xilinx License Configuration Manager to check out a full ISim license.
+WARNING: ISim will run in Lite mode. Please refer to the ISim documentation for more information on the differences between the Lite and the Full version.
+This is a Lite version of ISim.
+# run 1000 ns
+Simulator is doing circuit initialization process.
+at 0 ps, Instance /lpf_tb/uut/\mul_blocks(3)\/mul/ : Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+Finished circuit initialization process.
+
+** Failure:Assertion violation
+User(VHDL) Code Called Simulation Stop
+In process lpf_tb.vhd:stim_proc 
+ 
+INFO: Simulator is stopped.
+ISim P.20131013 (signature 0x8ef4fb42)
+WARNING: A WEBPACK license was found.
+WARNING: Please use Xilinx License Configuration Manager to check out a full ISim license.
+WARNING: ISim will run in Lite mode. Please refer to the ISim documentation for more information on the differences between the Lite and the Full version.
+This is a Lite version of ISim.
+# run 1000 ns
+Simulator is doing circuit initialization process.
+at 0 ps, Instance /lpf_tb/uut/\mul_blocks(3)\/mul/ : Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+Finished circuit initialization process.
+
+** Failure:Assertion violation
+User(VHDL) Code Called Simulation Stop
+In process lpf_tb.vhd:stim_proc 
+ 
+INFO: Simulator is stopped.
+# show driver /lpf_tb/uut/temp_added
+Driver for /lpf_tb/uut/temp_added[0][0]
+	'X'	: /lpf_tb/uut/\sum_blocks(1)\/adder/:42
+		  in File "C:/Users/Piotr/workspace/PUL_SDR/ISE/PUL_SDR_r/nbit_full_adder.vhd" Line 42
+
+Driver for /lpf_tb/uut/temp_added[0][1]
+	'X'	: /lpf_tb/uut/\sum_blocks(1)\/adder/:42
+		  in File "C:/Users/Piotr/workspace/PUL_SDR/ISE/PUL_SDR_r/nbit_full_adder.vhd" Line 42
+
+Driver for /lpf_tb/uut/temp_added[0][2]
+	'X'	: /lpf_tb/uut/\sum_blocks(1)\/adder/:42
+		  in File "C:/Users/Piotr/workspace/PUL_SDR/ISE/PUL_SDR_r/nbit_full_adder.vhd" Line 42
+
+Driver for /lpf_tb/uut/temp_added[0][3]
+	'X'	: /lpf_tb/uut/\sum_blocks(1)\/adder/:42
+		  in File "C:/Users/Piotr/workspace/PUL_SDR/ISE/PUL_SDR_r/nbit_full_adder.vhd" Line 42
+
+Driver for /lpf_tb/uut/temp_added[1][0]
+	'X'	: /lpf_tb/uut/\sum_blocks(2)\/adder/:42
+		  in File "C:/Users/Piotr/workspace/PUL_SDR/ISE/PUL_SDR_r/nbit_full_adder.vhd" Line 42
+
+Driver for /lpf_tb/uut/temp_added[1][1]
+	'X'	: /lpf_tb/uut/\sum_blocks(2)\/adder/:42
+		  in File "C:/Users/Piotr/workspace/PUL_SDR/ISE/PUL_SDR_r/nbit_full_adder.vhd" Line 42
+
+Driver for /lpf_tb/uut/temp_added[1][2]
+	'X'	: /lpf_tb/uut/\sum_blocks(2)\/adder/:42
+		  in File "C:/Users/Piotr/workspace/PUL_SDR/ISE/PUL_SDR_r/nbit_full_adder.vhd" Line 42
+
+Driver for /lpf_tb/uut/temp_added[1][3]
+	'X'	: /lpf_tb/uut/\sum_blocks(2)\/adder/:42
+		  in File "C:/Users/Piotr/workspace/PUL_SDR/ISE/PUL_SDR_r/nbit_full_adder.vhd" Line 42
+
+Driver for /lpf_tb/uut/temp_added[2][0]
+	'X'	: /lpf_tb/uut/\sum_blocks(3)\/adder/:42
+		  in File "C:/Users/Piotr/workspace/PUL_SDR/ISE/PUL_SDR_r/nbit_full_adder.vhd" Line 42
+
+Driver for /lpf_tb/uut/temp_added[2][1]
+	'X'	: /lpf_tb/uut/\sum_blocks(3)\/adder/:42
+		  in File "C:/Users/Piotr/workspace/PUL_SDR/ISE/PUL_SDR_r/nbit_full_adder.vhd" Line 42
+
+Driver for /lpf_tb/uut/temp_added[2][2]
+	'X'	: /lpf_tb/uut/\sum_blocks(3)\/adder/:42
+		  in File "C:/Users/Piotr/workspace/PUL_SDR/ISE/PUL_SDR_r/nbit_full_adder.vhd" Line 42
+
+Driver for /lpf_tb/uut/temp_added[2][3]
+	'X'	: /lpf_tb/uut/\sum_blocks(3)\/adder/:42
+		  in File "C:/Users/Piotr/workspace/PUL_SDR/ISE/PUL_SDR_r/nbit_full_adder.vhd" Line 42
+
+ISim P.20131013 (signature 0x8ef4fb42)
+WARNING: A WEBPACK license was found.
+WARNING: Please use Xilinx License Configuration Manager to check out a full ISim license.
+WARNING: ISim will run in Lite mode. Please refer to the ISim documentation for more information on the differences between the Lite and the Full version.
+This is a Lite version of ISim.
+# run 1000 ns
+Simulator is doing circuit initialization process.
+at 0 ps, Instance /lpf_tb/uut/\mul_blocks(3)\/mul/ : Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+Finished circuit initialization process.
+
+** Failure:Assertion violation
+User(VHDL) Code Called Simulation Stop
+In process lpf_tb.vhd:stim_proc 
  
 INFO: Simulator is stopped.

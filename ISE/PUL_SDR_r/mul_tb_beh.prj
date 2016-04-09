@@ -1,0 +1,2 @@
+vhdl work "nbit_mul.vhd"
+vhdl work "mul_tb.vhd"

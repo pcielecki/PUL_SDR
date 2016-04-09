@@ -1,1 +1,2 @@
-work	"decimator.vhd"
+work	"audio_LP_filter.vhd"
+work	"nbit_mul.vhd"

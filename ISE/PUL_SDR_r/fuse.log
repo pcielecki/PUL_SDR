@@ -1,24 +1,28 @@
-Running: fuse.exe -relaunch -intstyle "ise" -incremental -o "C:/Users/Piotr/workspace/PUL_SDR/ISE/PUL_SDR_r/decimator_tb_isim_beh.exe" -prj "C:/Users/Piotr/workspace/PUL_SDR/ISE/PUL_SDR_r/decimator_tb_beh.prj" "work.decimator_tb" 
+Running: fuse.exe -relaunch -intstyle "ise" -incremental -o "C:/Users/Piotr/workspace/PUL_SDR/ISE/PUL_SDR_r/lpf_tb_isim_beh.exe" -prj "C:/Users/Piotr/workspace/PUL_SDR/ISE/PUL_SDR_r/lpf_tb_beh.prj" "work.lpf_tb" 
 ISim P.20131013 (signature 0x8ef4fb42)
 Number of CPUs detected in this system: 4
 Turning on mult-threading, number of parallel sub-compilation jobs: 8 
 Determining compilation order of HDL files
-Parsing VHDL file "C:/Users/Piotr/workspace/PUL_SDR/ISE/PUL_SDR_r/decimator.vhd" into library work
-Parsing VHDL file "C:/Users/Piotr/workspace/PUL_SDR/ISE/PUL_SDR_r/decimator_tb.vhd" into library work
+Parsing VHDL file "C:/Users/Piotr/workspace/PUL_SDR/ISE/PUL_SDR_r/nbit_mul.vhd" into library work
+Parsing VHDL file "C:/Users/Piotr/workspace/PUL_SDR/ISE/PUL_SDR_r/nbit_full_adder.vhd" into library work
+Parsing VHDL file "C:/Users/Piotr/workspace/PUL_SDR/ISE/PUL_SDR_r/audio_LP_filter.vhd" into library work
+Parsing VHDL file "C:/Users/Piotr/workspace/PUL_SDR/ISE/PUL_SDR_r/lpf_tb.vhd" into library work
 Starting static elaboration
 Completed static elaboration
-Fuse Memory Usage: 118220 KB
-Fuse CPU Usage: 623 ms
+Fuse Memory Usage: 118988 KB
+Fuse CPU Usage: 748 ms
 Compiling package standard
 Compiling package std_logic_1164
-Compiling package numeric_std
 Compiling package std_logic_arith
-Compiling package std_logic_unsigned
-Compiling architecture deci_a of entity decimator [\decimator(5,3)\]
-Compiling architecture behavior of entity decimator_tb
+Compiling package std_logic_signed
+Compiling package numeric_std
+Compiling architecture mul_a of entity nbit_mul [\nbit_mul(4)\]
+Compiling architecture fa_a of entity nbit_full_adder [\nbit_full_adder(4)\]
+Compiling architecture audio_lpf_a of entity audio_LP_filter [\audio_LP_filter(4,4)\]
+Compiling architecture behavior of entity lpf_tb
 Time Resolution for simulation is 1ps.
 Waiting for 1 sub-compilation(s) to finish...
-Compiled 8 VHDL Units
-Built simulation executable C:/Users/Piotr/workspace/PUL_SDR/ISE/PUL_SDR_r/decimator_tb_isim_beh.exe
-Fuse Memory Usage: 139132 KB
-Fuse CPU Usage: 1294 ms
+Compiled 12 VHDL Units
+Built simulation executable C:/Users/Piotr/workspace/PUL_SDR/ISE/PUL_SDR_r/lpf_tb_isim_beh.exe
+Fuse Memory Usage: 138876 KB
+Fuse CPU Usage: 1434 ms

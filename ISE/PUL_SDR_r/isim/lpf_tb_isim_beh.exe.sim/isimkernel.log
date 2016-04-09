@@ -1,0 +1,35 @@
+Command line:
+   lpf_tb_isim_beh.exe
+     -simmode  gui
+     -simrunnum  0
+     -socket  53078
+
+Sat Apr 09 18:41:32 2016
+
+
+ Elaboration Time: 0.124801 sec
+
+ Current Memory Usage: 671.703 Meg
+
+ Total Signals          : 40
+ Total Nets             : 106
+ Total Signal Drivers   : 17
+ Total Blocks           : 20
+ Total Primitive Blocks : 11
+ Total Processes        : 16
+ Total Traceable Variables  : 35
+ Total Scalar Nets and Variables : 642
+Total Line Count : 28
+
+** Failure:Assertion violation
+User(VHDL) Code Called Simulation Stop
+In process lpf_tb.vhd:stim_proc 
+ 
+
+
+ Total Simulation Time: 0.670804 sec
+
+ Current Memory Usage: 672.752 Meg
+
+Sat Apr 09 20:12:00 2016
+

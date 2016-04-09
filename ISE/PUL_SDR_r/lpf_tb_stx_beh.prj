@@ -1,0 +1,4 @@
+vhdl isim_temp "nbit_mul.vhd"
+vhdl isim_temp "nbit_full_adder.vhd"
+vhdl isim_temp "audio_LP_filter.vhd"
+vhdl isim_temp "lpf_tb.vhd"

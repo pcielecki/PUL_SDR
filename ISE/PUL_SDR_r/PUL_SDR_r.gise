@@ -35,6 +35,14 @@
     <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="isim"/>
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_CMD" xil_pn:name="isim.cmd"/>
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_LOG" xil_pn:name="isim.log"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="lpf_tb_beh.prj"/>
+    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="lpf_tb_isim_beh.exe"/>
+    <file xil_pn:fileType="FILE_ISIM_MISC" xil_pn:name="lpf_tb_isim_beh.wdb"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="lpf_tb_stx_beh.prj"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="mul_tb_beh.prj"/>
+    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="mul_tb_isim_beh.exe"/>
+    <file xil_pn:fileType="FILE_ISIM_MISC" xil_pn:name="mul_tb_isim_beh.wdb"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="mul_tb_stx_beh.prj"/>
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="pha_tb_isim_beh.exe"/>
     <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="pha_tb_stx_beh.prj"/>
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="sinLUT_tb_isim_beh.exe"/>
@@ -49,23 +57,29 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1460201457" xil_pn:in_ck="3075614690083090890" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1460201457">
+    <transform xil_pn:end_ts="1460218689" xil_pn:in_ck="4202095183196213250" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1460218689">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <outfile xil_pn:name="Convolution_machine.vhd"/>
       <outfile xil_pn:name="NCO.vhd"/>
       <outfile xil_pn:name="NCO_tb.vhd"/>
       <outfile xil_pn:name="Phase_accumulator.vhd"/>
+      <outfile xil_pn:name="audio_LP_filter.vhd"/>
       <outfile xil_pn:name="decimator.vhd"/>
       <outfile xil_pn:name="decimator_tb.vhd"/>
+      <outfile xil_pn:name="lpf_tb.vhd"/>
+      <outfile xil_pn:name="mul_tb.vhd"/>
+      <outfile xil_pn:name="nbit_full_adder.vhd"/>
+      <outfile xil_pn:name="nbit_mul.vhd"/>
       <outfile xil_pn:name="pha_tb.vhd"/>
       <outfile xil_pn:name="sinLUT_tb.vhd"/>
       <outfile xil_pn:name="sin_LUT.vhd"/>
     </transform>
-    <transform xil_pn:end_ts="1460198923" xil_pn:name="TRAN_xawsToSimhdl" xil_pn:prop_ck="6721296339085464067" xil_pn:start_ts="1460198923">
+    <transform xil_pn:end_ts="1460213829" xil_pn:name="TRAN_xawsToSimhdl" xil_pn:prop_ck="7224763864544833933" xil_pn:start_ts="1460213829">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1460198923" xil_pn:name="TRAN_schematicsToHdlSim" xil_pn:prop_ck="3170121921270215365" xil_pn:start_ts="1460198923">
+    <transform xil_pn:end_ts="1460213829" xil_pn:name="TRAN_schematicsToHdlSim" xil_pn:prop_ck="3465240806277624015" xil_pn:start_ts="1460213829">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
@@ -73,34 +87,40 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1460201457" xil_pn:in_ck="3075614690083090890" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1460201457">
+    <transform xil_pn:end_ts="1460218692" xil_pn:in_ck="4202095183196213250" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1460218692">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <outfile xil_pn:name="Convolution_machine.vhd"/>
       <outfile xil_pn:name="NCO.vhd"/>
       <outfile xil_pn:name="NCO_tb.vhd"/>
       <outfile xil_pn:name="Phase_accumulator.vhd"/>
+      <outfile xil_pn:name="audio_LP_filter.vhd"/>
       <outfile xil_pn:name="decimator.vhd"/>
       <outfile xil_pn:name="decimator_tb.vhd"/>
+      <outfile xil_pn:name="lpf_tb.vhd"/>
+      <outfile xil_pn:name="mul_tb.vhd"/>
+      <outfile xil_pn:name="nbit_full_adder.vhd"/>
+      <outfile xil_pn:name="nbit_mul.vhd"/>
       <outfile xil_pn:name="pha_tb.vhd"/>
       <outfile xil_pn:name="sinLUT_tb.vhd"/>
       <outfile xil_pn:name="sin_LUT.vhd"/>
     </transform>
-    <transform xil_pn:end_ts="1460201464" xil_pn:in_ck="3075614690083090890" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="-2871903609311345208" xil_pn:start_ts="1460201457">
+    <transform xil_pn:end_ts="1460218700" xil_pn:in_ck="4202095183196213250" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="-5110478555287860900" xil_pn:start_ts="1460218692">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
-      <outfile xil_pn:name="decimator_tb_beh.prj"/>
-      <outfile xil_pn:name="decimator_tb_isim_beh.exe"/>
       <outfile xil_pn:name="fuse.log"/>
       <outfile xil_pn:name="isim"/>
       <outfile xil_pn:name="isim.log"/>
+      <outfile xil_pn:name="lpf_tb_beh.prj"/>
+      <outfile xil_pn:name="lpf_tb_isim_beh.exe"/>
       <outfile xil_pn:name="xilinxsim.ini"/>
     </transform>
-    <transform xil_pn:end_ts="1460201464" xil_pn:in_ck="3176751394539095296" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="-3952928287215189643" xil_pn:start_ts="1460201464">
+    <transform xil_pn:end_ts="1460218701" xil_pn:in_ck="-155483805783312950" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="3282747744942721929" xil_pn:start_ts="1460218700">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
-      <outfile xil_pn:name="decimator_tb_isim_beh.wdb"/>
       <outfile xil_pn:name="isim.cmd"/>
       <outfile xil_pn:name="isim.log"/>
+      <outfile xil_pn:name="lpf_tb_isim_beh.wdb"/>
     </transform>
   </transforms>
 
