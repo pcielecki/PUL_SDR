@@ -23,11 +23,14 @@
 
   <files xmlns="http://www.xilinx.com/XMLSchema">
     <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="NCO_stx_beh.prj"/>
-    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="NCO_tb_beh.prj"/>
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="NCO_tb_isim_beh.exe"/>
-    <file xil_pn:fileType="FILE_ISIM_MISC" xil_pn:name="NCO_tb_isim_beh.wdb"/>
     <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="NCO_tb_stx_beh.prj"/>
     <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="Phase_accumulator_stx_beh.prj"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="decimator_stx_beh.prj"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="decimator_tb_beh.prj"/>
+    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="decimator_tb_isim_beh.exe"/>
+    <file xil_pn:fileType="FILE_ISIM_MISC" xil_pn:name="decimator_tb_isim_beh.wdb"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="decimator_tb_stx_beh.prj"/>
     <file xil_pn:fileType="FILE_LOG" xil_pn:name="fuse.log"/>
     <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="isim"/>
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_CMD" xil_pn:name="isim.cmd"/>
@@ -46,25 +49,23 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1460148689" xil_pn:in_ck="1673671998878906277" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1460148689">
+    <transform xil_pn:end_ts="1460201457" xil_pn:in_ck="3075614690083090890" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1460201457">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForInputs"/>
-      <status xil_pn:value="OutOfDateForOutputs"/>
-      <status xil_pn:value="InputChanged"/>
-      <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="NCO.vhd"/>
       <outfile xil_pn:name="NCO_tb.vhd"/>
       <outfile xil_pn:name="Phase_accumulator.vhd"/>
+      <outfile xil_pn:name="decimator.vhd"/>
+      <outfile xil_pn:name="decimator_tb.vhd"/>
       <outfile xil_pn:name="pha_tb.vhd"/>
       <outfile xil_pn:name="sinLUT_tb.vhd"/>
       <outfile xil_pn:name="sin_LUT.vhd"/>
     </transform>
-    <transform xil_pn:end_ts="1460148495" xil_pn:name="TRAN_xawsToSimhdl" xil_pn:prop_ck="5885295039756706507" xil_pn:start_ts="1460148495">
+    <transform xil_pn:end_ts="1460198923" xil_pn:name="TRAN_xawsToSimhdl" xil_pn:prop_ck="6721296339085464067" xil_pn:start_ts="1460198923">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1460148495" xil_pn:name="TRAN_schematicsToHdlSim" xil_pn:prop_ck="3375668999548298637" xil_pn:start_ts="1460148495">
+    <transform xil_pn:end_ts="1460198923" xil_pn:name="TRAN_schematicsToHdlSim" xil_pn:prop_ck="3170121921270215365" xil_pn:start_ts="1460198923">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
@@ -72,45 +73,32 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1460148692" xil_pn:in_ck="1673671998878906277" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1460148692">
+    <transform xil_pn:end_ts="1460201457" xil_pn:in_ck="3075614690083090890" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1460201457">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForInputs"/>
-      <status xil_pn:value="OutOfDateForPredecessor"/>
-      <status xil_pn:value="OutOfDateForOutputs"/>
-      <status xil_pn:value="InputChanged"/>
-      <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="NCO.vhd"/>
       <outfile xil_pn:name="NCO_tb.vhd"/>
       <outfile xil_pn:name="Phase_accumulator.vhd"/>
+      <outfile xil_pn:name="decimator.vhd"/>
+      <outfile xil_pn:name="decimator_tb.vhd"/>
       <outfile xil_pn:name="pha_tb.vhd"/>
       <outfile xil_pn:name="sinLUT_tb.vhd"/>
       <outfile xil_pn:name="sin_LUT.vhd"/>
     </transform>
-    <transform xil_pn:end_ts="1460148698" xil_pn:in_ck="1673671998878906277" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="3847670477967154712" xil_pn:start_ts="1460148692">
+    <transform xil_pn:end_ts="1460201464" xil_pn:in_ck="3075614690083090890" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="-2871903609311345208" xil_pn:start_ts="1460201457">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForInputs"/>
-      <status xil_pn:value="OutOfDateForProperties"/>
-      <status xil_pn:value="OutOfDateForPredecessor"/>
-      <status xil_pn:value="OutOfDateForOutputs"/>
-      <status xil_pn:value="InputChanged"/>
-      <status xil_pn:value="OutputChanged"/>
-      <outfile xil_pn:name="NCO_tb_beh.prj"/>
-      <outfile xil_pn:name="NCO_tb_isim_beh.exe"/>
+      <outfile xil_pn:name="decimator_tb_beh.prj"/>
+      <outfile xil_pn:name="decimator_tb_isim_beh.exe"/>
       <outfile xil_pn:name="fuse.log"/>
       <outfile xil_pn:name="isim"/>
       <outfile xil_pn:name="isim.log"/>
       <outfile xil_pn:name="xilinxsim.ini"/>
     </transform>
-    <transform xil_pn:end_ts="1460148699" xil_pn:in_ck="-1874860447851692636" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="2847160955729456517" xil_pn:start_ts="1460148698">
+    <transform xil_pn:end_ts="1460201464" xil_pn:in_ck="3176751394539095296" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="-3952928287215189643" xil_pn:start_ts="1460201464">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForProperties"/>
-      <status xil_pn:value="OutOfDateForPredecessor"/>
-      <status xil_pn:value="OutOfDateForOutputs"/>
-      <status xil_pn:value="OutputChanged"/>
-      <outfile xil_pn:name="NCO_tb_isim_beh.wdb"/>
+      <outfile xil_pn:name="decimator_tb_isim_beh.wdb"/>
       <outfile xil_pn:name="isim.cmd"/>
       <outfile xil_pn:name="isim.log"/>
     </transform>

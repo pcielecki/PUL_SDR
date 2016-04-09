@@ -1,0 +1,2 @@
+vhdl isim_temp "decimator.vhd"
+vhdl isim_temp "decimator_tb.vhd"

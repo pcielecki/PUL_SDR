@@ -1,0 +1,2 @@
+vhdl work "decimator.vhd"
+vhdl work "decimator_tb.vhd"

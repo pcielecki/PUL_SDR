@@ -1,5 +1,5 @@
 ISim log file
-Running: C:\Users\Piotr\workspace\PUL_SDR\ISE\PUL_SDR_r\NCO_tb_isim_beh.exe -intstyle ise -gui -tclbatch isim.cmd -wdb C:/Users/Piotr/workspace/PUL_SDR/ISE/PUL_SDR_r/NCO_tb_isim_beh.wdb 
+Running: C:\Users\Piotr\workspace\PUL_SDR\ISE\PUL_SDR_r\decimator_tb_isim_beh.exe -intstyle ise -gui -tclbatch isim.cmd -wdb C:/Users/Piotr/workspace/PUL_SDR/ISE/PUL_SDR_r/decimator_tb_isim_beh.wdb 
 ISim P.20131013 (signature 0x8ef4fb42)
 WARNING: A WEBPACK license was found.
 WARNING: Please use Xilinx License Configuration Manager to check out a full ISim license.
@@ -11,10 +11,74 @@ Time resolution is 1 ps
 # run 1000 ns
 Simulator is doing circuit initialization process.
 Finished circuit initialization process.
+at 330 ns, Instance /decimator_tb/ : Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+at 660 ns, Instance /decimator_tb/ : Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+at 990 ns, Instance /decimator_tb/ : Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+at 1 us, Instance /decimator_tb/ : Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+ISim P.20131013 (signature 0x8ef4fb42)
+WARNING: A WEBPACK license was found.
+WARNING: Please use Xilinx License Configuration Manager to check out a full ISim license.
+WARNING: ISim will run in Lite mode. Please refer to the ISim documentation for more information on the differences between the Lite and the Full version.
+This is a Lite version of ISim.
+# run 1000 ns
+Simulator is doing circuit initialization process.
+Finished circuit initialization process.
+at 330 ns, Instance /decimator_tb/ : Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+at 660 ns, Instance /decimator_tb/ : Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+at 990 ns, Instance /decimator_tb/ : Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+at 1 us, Instance /decimator_tb/ : Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+ISim P.20131013 (signature 0x8ef4fb42)
+WARNING: A WEBPACK license was found.
+WARNING: Please use Xilinx License Configuration Manager to check out a full ISim license.
+WARNING: ISim will run in Lite mode. Please refer to the ISim documentation for more information on the differences between the Lite and the Full version.
+This is a Lite version of ISim.
+# run 1000 ns
+Simulator is doing circuit initialization process.
+Finished circuit initialization process.
+at 335 ns, Instance /decimator_tb/ : Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+at 665 ns, Instance /decimator_tb/ : Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+at 995 ns, Instance /decimator_tb/ : Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+ISim P.20131013 (signature 0x8ef4fb42)
+WARNING: A WEBPACK license was found.
+WARNING: Please use Xilinx License Configuration Manager to check out a full ISim license.
+WARNING: ISim will run in Lite mode. Please refer to the ISim documentation for more information on the differences between the Lite and the Full version.
+This is a Lite version of ISim.
+# run 1000 ns
+Simulator is doing circuit initialization process.
+Finished circuit initialization process.
+at 335 ns, Instance /decimator_tb/ : Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+at 665 ns, Instance /decimator_tb/ : Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+at 995 ns, Instance /decimator_tb/ : Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+ISim P.20131013 (signature 0x8ef4fb42)
+WARNING: A WEBPACK license was found.
+WARNING: Please use Xilinx License Configuration Manager to check out a full ISim license.
+WARNING: ISim will run in Lite mode. Please refer to the ISim documentation for more information on the differences between the Lite and the Full version.
+This is a Lite version of ISim.
+# run 1000 ns
+Simulator is doing circuit initialization process.
+Finished circuit initialization process.
+at 655 ns, Instance /decimator_tb/ : Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+ISim P.20131013 (signature 0x8ef4fb42)
+WARNING: A WEBPACK license was found.
+WARNING: Please use Xilinx License Configuration Manager to check out a full ISim license.
+WARNING: ISim will run in Lite mode. Please refer to the ISim documentation for more information on the differences between the Lite and the Full version.
+This is a Lite version of ISim.
+# run 1000 ns
+Simulator is doing circuit initialization process.
+Finished circuit initialization process.
+at 95 ns, Instance /decimator_tb/ : Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+at 185 ns, Instance /decimator_tb/ : Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+at 275 ns, Instance /decimator_tb/ : Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+at 365 ns, Instance /decimator_tb/ : Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+at 455 ns, Instance /decimator_tb/ : Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+at 545 ns, Instance /decimator_tb/ : Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+at 635 ns, Instance /decimator_tb/ : Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+at 645 ns, Instance /decimator_tb/ : Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+at 725 ns, Instance /decimator_tb/ : Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
 
 ** Failure:Assertion violation
 User(VHDL) Code Called Simulation Stop
-In process NCO_tb.vhd:stim_proc 
+In process decimator_tb.vhd:stim_proc 
  
 INFO: Simulator is stopped.
 ISim P.20131013 (signature 0x8ef4fb42)
@@ -25,27 +89,19 @@ This is a Lite version of ISim.
 # run 1000 ns
 Simulator is doing circuit initialization process.
 Finished circuit initialization process.
-at 5 ns(1), Instance /nco_tb/uut/Lookup_table/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-at 5 ns(1), Instance /nco_tb/uut/pha/ : Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-at 15 ns(1), Instance /nco_tb/uut/Lookup_table/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-at 25 ns(1), Instance /nco_tb/uut/Lookup_table/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-at 35 ns(1), Instance /nco_tb/uut/Lookup_table/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-at 45 ns(1), Instance /nco_tb/uut/Lookup_table/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-at 55 ns(1), Instance /nco_tb/uut/Lookup_table/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-at 65 ns(1), Instance /nco_tb/uut/Lookup_table/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-at 75 ns(1), Instance /nco_tb/uut/Lookup_table/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-at 85 ns(1), Instance /nco_tb/uut/Lookup_table/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-at 95 ns(1), Instance /nco_tb/uut/Lookup_table/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-at 105 ns(1), Instance /nco_tb/uut/Lookup_table/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-at 115 ns(1), Instance /nco_tb/uut/Lookup_table/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-at 125 ns(1), Instance /nco_tb/uut/Lookup_table/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-at 135 ns(1), Instance /nco_tb/uut/Lookup_table/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-at 145 ns(1), Instance /nco_tb/uut/Lookup_table/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-at 155 ns(1), Instance /nco_tb/uut/Lookup_table/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 95 ns, Instance /decimator_tb/ : Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+at 185 ns, Instance /decimator_tb/ : Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+at 275 ns, Instance /decimator_tb/ : Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+at 365 ns, Instance /decimator_tb/ : Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+at 455 ns, Instance /decimator_tb/ : Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+at 545 ns, Instance /decimator_tb/ : Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+at 635 ns, Instance /decimator_tb/ : Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+at 645 ns, Instance /decimator_tb/ : Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+at 725 ns, Instance /decimator_tb/ : Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
 
 ** Failure:Assertion violation
 User(VHDL) Code Called Simulation Stop
-In process NCO_tb.vhd:stim_proc 
+In process decimator_tb.vhd:stim_proc 
  
 INFO: Simulator is stopped.
 ISim P.20131013 (signature 0x8ef4fb42)
@@ -56,28 +112,19 @@ This is a Lite version of ISim.
 # run 1000 ns
 Simulator is doing circuit initialization process.
 Finished circuit initialization process.
-at 5 ns(1), Instance /nco_tb/uut/Lookup_table/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-at 5 ns(1), Instance /nco_tb/uut/pha/ : Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-at 15 ns(1), Instance /nco_tb/uut/Lookup_table/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-at 25 ns(1), Instance /nco_tb/uut/Lookup_table/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-at 35 ns(1), Instance /nco_tb/uut/Lookup_table/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-at 45 ns(1), Instance /nco_tb/uut/Lookup_table/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-at 55 ns(1), Instance /nco_tb/uut/Lookup_table/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-at 65 ns(1), Instance /nco_tb/uut/Lookup_table/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-at 75 ns(1), Instance /nco_tb/uut/Lookup_table/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-at 85 ns(1), Instance /nco_tb/uut/Lookup_table/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-at 95 ns(1), Instance /nco_tb/uut/Lookup_table/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-at 105 ns(1), Instance /nco_tb/uut/Lookup_table/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-at 115 ns(1), Instance /nco_tb/uut/Lookup_table/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-at 125 ns(1), Instance /nco_tb/uut/Lookup_table/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-at 135 ns(1), Instance /nco_tb/uut/Lookup_table/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-at 145 ns(1), Instance /nco_tb/uut/Lookup_table/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-at 155 ns(1), Instance /nco_tb/uut/Lookup_table/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-at 165 ns(1), Instance /nco_tb/uut/Lookup_table/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 95 ns, Instance /decimator_tb/ : Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+at 185 ns, Instance /decimator_tb/ : Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+at 275 ns, Instance /decimator_tb/ : Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+at 365 ns, Instance /decimator_tb/ : Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+at 455 ns, Instance /decimator_tb/ : Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+at 545 ns, Instance /decimator_tb/ : Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+at 635 ns, Instance /decimator_tb/ : Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+at 645 ns, Instance /decimator_tb/ : Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+at 725 ns, Instance /decimator_tb/ : Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
 
 ** Failure:Assertion violation
 User(VHDL) Code Called Simulation Stop
-In process NCO_tb.vhd:stim_proc 
+In process decimator_tb.vhd:stim_proc 
  
 INFO: Simulator is stopped.
 ISim P.20131013 (signature 0x8ef4fb42)
@@ -88,9 +135,18 @@ This is a Lite version of ISim.
 # run 1000 ns
 Simulator is doing circuit initialization process.
 Finished circuit initialization process.
+at 100500 ps, Instance /decimator_tb/ : Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+at 199500 ps, Instance /decimator_tb/ : Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+at 298500 ps, Instance /decimator_tb/ : Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+at 397500 ps, Instance /decimator_tb/ : Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+at 496500 ps, Instance /decimator_tb/ : Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+at 595500 ps, Instance /decimator_tb/ : Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+at 694500 ps, Instance /decimator_tb/ : Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+at 697500 ps, Instance /decimator_tb/ : Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+at 793500 ps, Instance /decimator_tb/ : Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
 
 ** Failure:Assertion violation
 User(VHDL) Code Called Simulation Stop
-In process NCO_tb.vhd:stim_proc 
+In process decimator_tb.vhd:stim_proc 
  
 INFO: Simulator is stopped.
