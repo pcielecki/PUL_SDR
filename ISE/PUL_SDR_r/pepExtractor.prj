@@ -1,2 +1,4 @@
-work	"audio_LP_filter.vhd"
-work	"nbit_mul.vhd"
+work	"NCO.vhd"
+work	"Phase_accumulator.vhd"
+work	"sin_LUT.vhd"
+work	"sin_lut_pkg.vhd"

@@ -21,6 +21,7 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.NUMERIC_STD.ALL;
 use IEEE.STD_LOGIC_SIGNED.ALL;
+use work.sin_lut_pkg.all;
 -- Uncomment the following library declaration if using
 -- arithmetic functions with Signed or Unsigned values
 --use IEEE.NUMERIC_STD.ALL;
@@ -31,29 +32,29 @@ use IEEE.STD_LOGIC_SIGNED.ALL;
 --use UNISIM.VComponents.all;
 
 entity sin_LUT is
-	Generic(	Nbit_phase : integer	:= 10;
+	Generic(	Nbit_phase : integer	:= 9;
 			Nbit_sine : integer 	:= 16);
 				
     Port ( rst : in  STD_LOGIC;
            clk : in  STD_LOGIC;
-           phase : in  STD_LOGIC_VECTOR (Nbit_phase-1 downto 0);
-           sine : out  STD_LOGIC_VECTOR (Nbit_sine-1 downto 0));
+           phase : in  integer range 0 to 2**9-1;
+           sine : out  integer range 0 to 2**16-1);
 end sin_LUT;
 
 architecture sin_LUT_a of sin_LUT is
-	type LUT_ARRAY_t is array (2**Nbit_phase-1 downto 0) of std_logic_vector(Nbit_sine-1 downto 0) ;
-	constant lut_array : LUT_ARRAY_t 
-		:= ("000", "001", "010", "011", "100", "101", "110", "111");
+	--type LUT_ARRAY_t is array (2**Nbit_phase-1 downto 0) of std_logic_vector(Nbit_sine-1 downto 0) ;
+	--constant lut_array : LUT_ARRAY_t 
+	--	:= ("000", "001", "010", "011", "100", "101", "110", "111");
 	
 begin
 
 	mem: process(rst, clk) is
 	begin
 		if(rst = '0') then
-			sine <= (others => '0');
+			sine <= 0;
 		
 		elsif(clk'event and clk = '1') then
-				sine <= lut_array(to_integer(unsigned(phase)));
+				sine <= lut_array(phase);
 		end if;
 	end process mem;
 

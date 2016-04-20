@@ -1,0 +1,8 @@
+vhdl work "sin_LUT.vhd"
+vhdl work "Phase_accumulator.vhd"
+vhdl work "nbit_mul.vhd"
+vhdl work "nbit_full_adder.vhd"
+vhdl work "NCO.vhd"
+vhdl work "decimator.vhd"
+vhdl work "audio_LP_filter.vhd"
+vhdl work "SW_defined_radio.vhd"

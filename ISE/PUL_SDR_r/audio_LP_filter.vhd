@@ -30,19 +30,19 @@ entity audio_LP_filter is
 end audio_LP_filter;
 
 architecture audio_lpf_a of audio_LP_filter is
-	type reg is array(N_coeffs-1 downto 0) of std_logic_vector(2*Nbit-1 downto 0);
-	
+	type reg is array(N_coeffs-1 downto 0) of std_logic_vector(Nbit-1 downto 0);
 	signal samples_array : reg;
 	constant filter_coefficients_array : reg :=("0001", "0001", "0001", "0001");
 	
-	signal temp_multiplied : reg;
-	signal temp_added : reg;
+	type reg2 is array(N_coeffs-1 downto 0) of std_logic_vector(2*Nbit-1 downto 0);
+	signal temp_multiplied : reg2;
+	signal temp_added : reg2;
 		
 	component nbit_full_adder is
 		Generic( Nbit : integer := 8);
-		 Port ( A : in  STD_LOGIC_vector(2*Nbit-1 downto 0);
-				  B : in  STD_LOGIC_vector(2*Nbit-1 downto 0);
-				  C : out  STD_LOGIC_vector(2*Nbit-1 downto 0));
+		 Port ( A : in  STD_LOGIC_vector(Nbit-1 downto 0);
+				  B : in  STD_LOGIC_vector(Nbit-1 downto 0);
+				  C : out  STD_LOGIC_vector(Nbit-1 downto 0));
 	end component nbit_full_adder;
 		
 
@@ -72,7 +72,7 @@ begin
 	
 	sum_blocks : for I in N_coeffs-1 downto 1 generate
 		adder : nbit_full_adder
-			generic map(Nbit => Nbit) 
+			generic map(Nbit => 2*Nbit) 
 			port map(A => temp_multiplied(I), 
 						B => temp_added(I),
 						C => temp_added(I-1)
@@ -97,7 +97,7 @@ begin
 		
 	end process filter;
 	
-	sig_out <= temp_added(0)(2*Nbit-1 downto Nbit);
+	sig_out <= temp_added(0)(Nbit-1 downto 0	);
 	
 	temp_added(Nbit-1) <= (others => '0');
 end audio_lpf_a;

@@ -22,7 +22,7 @@ use IEEE.STD_LOGIC_1164.ALL;
 use ieee.std_logic_unsigned.all;
 -- Uncomment the following library declaration if using
 -- arithmetic functions with Signed or Unsigned values
---use IEEE.NUMERIC_STD.ALL;
+use IEEE.NUMERIC_STD.ALL;
 
 -- Uncomment the following library declaration if instantiating
 -- any Xilinx primitives in this code.
@@ -30,11 +30,12 @@ use ieee.std_logic_unsigned.all;
 --use UNISIM.VComponents.all;
 
 entity Phase_accumulator is
-	Generic(Nbit_phase : integer := 10);
+	Generic(Nbit_phase : integer := 9);
     Port ( rst : in  STD_LOGIC;
            clk : in  STD_LOGIC;
-           phase_mul : in  STD_LOGIC_VECTOR (Nbit_phase-1 downto 0);
-           phase : out  STD_LOGIC_VECTOR (Nbit_phase-1 downto 0));
+           phase_mul : in integer range 0 to 2**(Nbit_phase-1)-1;
+           phase : out  integer range 0 to 2**Nbit_phase-1
+			  );
 end Phase_accumulator;
 
 architecture pha_a of Phase_accumulator is
@@ -47,12 +48,12 @@ begin
 		if(rst = '0') then 
 			accumulated_phase <= (others => '0');
 		elsif(clk'event and clk = '1') then
-			accumulated_phase <= accumulated_phase + phase_mul;
+			accumulated_phase <= accumulated_phase + std_logic_vector(to_unsigned(phase_mul, Nbit_phase));
 		end if;
 
 	end process pha;
 
-	phase <= accumulated_phase;
+	phase <= to_integer(unsigned(accumulated_phase));
 
 end pha_a;
 

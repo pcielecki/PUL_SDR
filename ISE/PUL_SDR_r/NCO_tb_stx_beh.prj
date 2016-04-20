@@ -1,4 +1,5 @@
+vhdl isim_temp "sin_lut_pkg.vhd"
 vhdl isim_temp "sin_LUT.vhd"
 vhdl isim_temp "Phase_accumulator.vhd"
 vhdl isim_temp "NCO.vhd"
-vhdl isim_temp "NCO_tb.vhd"
+vhdl isim_temp "nco_tb.vhd"

@@ -42,8 +42,9 @@ architecture mul_a of nbit_mul is
 	signal temp_C : std_logic_vector(2*Nbit-1 downto 0);
 begin
 	temp_C <= (A*B);
-	C_MSHW <= temp_C(2Nbit-1 downto Nbit);
 	C_LSHW <= temp_C(Nbit-1 downto 0);
+	C_MSHW <= temp_C(2*Nbit-1 downto Nbit);
+
 
 end mul_a;
 

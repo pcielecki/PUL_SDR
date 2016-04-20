@@ -1,28 +1,32 @@
-Running: fuse.exe -relaunch -intstyle "ise" -incremental -o "C:/Users/Piotr/workspace/PUL_SDR/ISE/PUL_SDR_r/lpf_tb_isim_beh.exe" -prj "C:/Users/Piotr/workspace/PUL_SDR/ISE/PUL_SDR_r/lpf_tb_beh.prj" "work.lpf_tb" 
+Running: C:\Xilinx\14.7\ISE_DS\ISE\bin\nt\unwrapped\fuse.exe -intstyle ise -incremental -o C:/Users/Piotr/workspace/PUL_SDR/ISE/PUL_SDR_r/nco_tb_isim_beh.exe -prj C:/Users/Piotr/workspace/PUL_SDR/ISE/PUL_SDR_r/nco_tb_beh.prj work.nco_tb 
 ISim P.20131013 (signature 0x8ef4fb42)
 Number of CPUs detected in this system: 4
 Turning on mult-threading, number of parallel sub-compilation jobs: 8 
 Determining compilation order of HDL files
-Parsing VHDL file "C:/Users/Piotr/workspace/PUL_SDR/ISE/PUL_SDR_r/nbit_mul.vhd" into library work
-Parsing VHDL file "C:/Users/Piotr/workspace/PUL_SDR/ISE/PUL_SDR_r/nbit_full_adder.vhd" into library work
-Parsing VHDL file "C:/Users/Piotr/workspace/PUL_SDR/ISE/PUL_SDR_r/audio_LP_filter.vhd" into library work
-Parsing VHDL file "C:/Users/Piotr/workspace/PUL_SDR/ISE/PUL_SDR_r/lpf_tb.vhd" into library work
+Parsing VHDL file "C:/Users/Piotr/workspace/PUL_SDR/ISE/PUL_SDR_r/sin_lut_pkg.vhd" into library work
+Parsing VHDL file "C:/Users/Piotr/workspace/PUL_SDR/ISE/PUL_SDR_r/sin_LUT.vhd" into library work
+Parsing VHDL file "C:/Users/Piotr/workspace/PUL_SDR/ISE/PUL_SDR_r/Phase_accumulator.vhd" into library work
+Parsing VHDL file "C:/Users/Piotr/workspace/PUL_SDR/ISE/PUL_SDR_r/NCO.vhd" into library work
+Parsing VHDL file "C:/Users/Piotr/workspace/PUL_SDR/ISE/PUL_SDR_r/nco_tb.vhd" into library work
 Starting static elaboration
 Completed static elaboration
-Fuse Memory Usage: 118988 KB
-Fuse CPU Usage: 748 ms
+Fuse Memory Usage: 122204 KB
+Fuse CPU Usage: 561 ms
 Compiling package standard
 Compiling package std_logic_1164
+Compiling package textio
 Compiling package std_logic_arith
-Compiling package std_logic_signed
+Compiling package std_logic_unsigned
 Compiling package numeric_std
-Compiling architecture mul_a of entity nbit_mul [\nbit_mul(4)\]
-Compiling architecture fa_a of entity nbit_full_adder [\nbit_full_adder(4)\]
-Compiling architecture audio_lpf_a of entity audio_LP_filter [\audio_LP_filter(4,4)\]
-Compiling architecture behavior of entity lpf_tb
+Compiling package std_logic_signed
+Compiling package sin_lut_pkg
+Compiling architecture sin_lut_a of entity sin_LUT [\sin_LUT(9,16)\]
+Compiling architecture pha_a of entity Phase_accumulator [\Phase_accumulator(9)\]
+Compiling architecture nco_a of entity NCO [\NCO(9,16)\]
+Compiling architecture behavior of entity nco_tb
 Time Resolution for simulation is 1ps.
-Waiting for 1 sub-compilation(s) to finish...
-Compiled 12 VHDL Units
-Built simulation executable C:/Users/Piotr/workspace/PUL_SDR/ISE/PUL_SDR_r/lpf_tb_isim_beh.exe
-Fuse Memory Usage: 138876 KB
-Fuse CPU Usage: 1434 ms
+Waiting for 3 sub-compilation(s) to finish...
+Compiled 15 VHDL Units
+Built simulation executable C:/Users/Piotr/workspace/PUL_SDR/ISE/PUL_SDR_r/nco_tb_isim_beh.exe
+Fuse Memory Usage: 148620 KB
+Fuse CPU Usage: 1309 ms
