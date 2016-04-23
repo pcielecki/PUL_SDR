@@ -39,25 +39,25 @@ entity Phase_accumulator is
 end Phase_accumulator;
 
 architecture pha_a of Phase_accumulator is
-		signal accumulated_phase : std_logic_vector(Nbit_phase-1 downto 0);
+		signal accumulated_phase : integer range 0 to 2*MAX_phase;
 begin	
 	pha: process(clk, rst) is
 		
 	begin
 	
 		if(rst = '0') then 
-			accumulated_phase <= (others => '0');
+			accumulated_phase <= 0;
 		elsif(clk'event and clk = '1') then
-			accumulated_phase <= accumulated_phase + phase_mul;
-			
-			if(accumulated_phase >= MAX_phase) then
-				accumulated_phase <= accumulated_phase - MAX_phase;
+			if(accumulated_phase + phase_mul > MAX_phase) then
+				accumulated_phase <= accumulated_phase + phase_mul - MAX_phase;
+			else
+				accumulated_phase <= accumulated_phase + phase_mul;
 			end if;
 		end if;
 
 	end process pha;
 
-	phase <= to_integer(unsigned(accumulated_phase));
+	phase <= accumulated_phase;
 
 end pha_a;
 

@@ -1,0 +1,31 @@
+Command line:
+   nco_tb_isim_beh.exe
+     -simmode  gui
+     -simrunnum  0
+     -socket  47608
+
+Sat Apr 23 11:49:29 2016
+
+
+ Elaboration Time: 0.03 sec
+
+ Current Memory Usage: 195.92 Meg
+
+ Total Signals          : 19
+ Total Nets             : 22
+ Total Signal Drivers   : 7
+ Total Blocks           : 11
+ Total Primitive Blocks : 9
+ Total Processes        : 7
+ Total Traceable Variables  : 25
+ Total Scalar Nets and Variables : 1922
+Total Line Count : 24
+In process sin_LUT.vhd:mem 
+ 
+
+ Total Simulation Time: 0.19 sec
+
+ Current Memory Usage: 271.421 Meg
+
+Sat Apr 23 12:04:48 2016
+

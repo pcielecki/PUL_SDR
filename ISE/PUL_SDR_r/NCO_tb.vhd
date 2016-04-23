@@ -38,26 +38,25 @@ END nco_tb;
  
 ARCHITECTURE behavior OF nco_tb IS 
  
-    -- Component Declaration for the Unit Under Test (UUT)
+		 -- Component Declaration for the Unit Under Test (UUT)
 	component NCO is
 		generic (
-					Nbit_phase : integer := 9;
+					MAX_phase : integer := 1390;
 					Nbit_sine : integer := 16);
 		 Port ( rst : in  STD_LOGIC;
 				  clk : in  STD_LOGIC;
-				  mul : in  std_logic_Vector(Nbit_phase-1 downto 0);
-				sig : out  std_logic_vector(Nbit_sine-1 downto 0));
+				  mul : in  integer range 0 to MAX_phase-1;
+				  sig : out  std_logic_vector(Nbit_sine-1 downto 0) );
 	end component NCO;
     
-	constant Nbit_phase : integer := 9;
 	constant Nbit_sine : integer := 16;
-
+	constant MAX_phase : integer := 1390;
    --Inputs
    signal rst : std_logic := '0';
    signal clk : std_logic := '0';
 
-		signal		  mul :  std_logic_Vector(Nbit_phase-1 downto 0) := (others => '0');
-		signal		sig :   std_logic_vector(Nbit_sine-1 downto 0) := (others => '0');
+	signal mul : integer range 0 to MAX_phase-1 := 100;
+	signal		sig :   std_logic_vector(Nbit_sine-1 downto 0) := (others => '0');
 
 
    -- Clock period definitions
@@ -88,17 +87,17 @@ BEGIN
    begin		
 		wait for 1.5*clk_period;
 		rst <= '1';
-		mul <= mul + '1';
+		--mul <= 1;
 		
 		
-		for i in 1 to 8 loop
-			wait for 100*clk_period;
-			mul <= std_logic_vector(to_unsigned(16 * i, Nbit_phase));
-		end loop;
+		--for i in 1 to 8 loop
+		--	wait for 100*clk_period;
+		--	mul <= 32*i;
+		--end loop;
 		
 		
 		wait ;
-		--assert false severity failure;
+		assert false severity failure;
 		
 		
    end process;

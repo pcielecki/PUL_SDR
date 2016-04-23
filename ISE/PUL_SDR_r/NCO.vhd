@@ -32,27 +32,27 @@ use IEEE.NUMERIC_STD.ALL;
 
 entity NCO is
 	generic (
-				Nbit_phase : integer := 9;
+				MAX_phase : integer := 1390;
 				Nbit_sine : integer := 16);
     Port ( rst : in  STD_LOGIC;
            clk : in  STD_LOGIC;
-           mul : in  std_logic_vector(Nbit_phase-1 downto 0);
-			sig : out  std_logic_vector(Nbit_sine-1 downto 0) );
+           mul : in  integer range 0 to MAX_phase-1;
+			  sig : out  std_logic_vector(Nbit_sine-1 downto 0) );
 end NCO;
 
 architecture NCO_a of NCO is
 
-	COMPONENT sin_LUT is
-	Generic(	Nbit_phase : integer	:= 9;
-			Nbit_sine : integer 	:= 16);
-				
-    Port ( rst : in  STD_LOGIC;
-           clk : in  STD_LOGIC;
-           phase : in  integer range 0 to 2**Nbit_phase-1;
-           sine : out  integer range 0 to 2**16-1);
-	end COMPONENT sin_LUT;
+	component sin_LUT is
+		Generic(	MAX_phase : integer	:= 1390;
+				Nbit_sine : integer 	:= 16);
+					
+		 Port ( rst : in  STD_LOGIC;
+				  clk : in  STD_LOGIC;
+				  phase : in  integer range 0 to MAX_phase-1;
+				  sine : out  integer range 0 to (2**Nbit_sine)-1);
+	end component sin_LUT;
 
-	component  Phase_accumulator is
+	component Phase_accumulator is
 		Generic(MAX_phase : integer := 1390);
 		 Port ( rst : in  STD_LOGIC;
 				  clk : in  STD_LOGIC;
@@ -60,27 +60,24 @@ architecture NCO_a of NCO is
 				  phase : out  integer range 0 to 2*MAX_phase
 				  );
 	end component Phase_accumulator;
+			 
 		 
-		 
-		constant c_Nbit_phase : integer := 11;
+		--constant c_Nbit_phase : integer := 11;
 		constant c_Nbit_sine : integer := 16;
 		
-		signal phase : integer range 0 to 2**c_Nbit_phase-1;		
+		signal phase : integer range 0 to MAX_phase-1;		
 		signal wy_sig : integer range 0 to 2**c_Nbit_sine-1;
-		signal we_presc : integer range 0 to 2**(c_Nbit_sine-1)-1;
 		
 begin
 	Lookup_table : sin_LUT 
-		generic map(Nbit_phase => c_Nbit_phase, Nbit_sine => c_Nbit_sine)
+		generic map(MAX_phase => 1390, Nbit_sine => c_Nbit_sine)
 		port map(rst => rst, clk => clk, phase => phase, sine => wy_sig);
 		
 	pha : Phase_accumulator
 		generic map(MAX_phase => 1390)
-		port map(rst => rst, clk => clk, phase_mul => we_presc, phase => phase);
-		
+		port map(rst => rst, clk => clk, phase_mul => mul, phase => phase);
 		
 	sig <= std_logic_vector(to_unsigned(wy_sig, c_Nbit_sine));
-	we_presc <= to_integer(unsigned(mul));
 
 
 end NCO_a;

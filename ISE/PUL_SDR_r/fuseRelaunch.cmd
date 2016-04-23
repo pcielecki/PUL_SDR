@@ -1,1 +1,1 @@
--intstyle "ise" -incremental -o "C:/Users/Piotr/workspace/PUL_SDR/ISE/PUL_SDR_r/nco_tb_isim_beh.exe" -prj "C:/Users/Piotr/workspace/PUL_SDR/ISE/PUL_SDR_r/nco_tb_beh.prj" "work.nco_tb" 
+-intstyle "ise" -incremental -o "/home/piotr/workspace/PUL/PUL_SDR/ISE/PUL_SDR_r/presc_tb_isim_beh.exe" -prj "/home/piotr/workspace/PUL/PUL_SDR/ISE/PUL_SDR_r/presc_tb_beh.prj" "work.presc_tb" 

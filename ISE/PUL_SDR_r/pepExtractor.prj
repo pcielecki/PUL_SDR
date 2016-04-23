@@ -1,4 +1,1 @@
-work	"NCO.vhd"
-work	"Phase_accumulator.vhd"
-work	"sin_LUT.vhd"
-work	"sin_lut_pkg.vhd"
+work	"clk_prescaler.vhd"

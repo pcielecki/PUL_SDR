@@ -32,19 +32,16 @@ use work.sin_lut_pkg.all;
 --use UNISIM.VComponents.all;
 
 entity sin_LUT is
-	Generic(	Nbit_phase : integer	:= 9;
+	Generic(	MAX_phase : integer	:= 1390;
 			Nbit_sine : integer 	:= 16);
 				
     Port ( rst : in  STD_LOGIC;
            clk : in  STD_LOGIC;
-           phase : in  integer range 0 to 2**9-1;
-           sine : out  integer range 0 to 2**16-1);
+           phase : in  integer range 0 to MAX_phase-1;
+           sine : out  integer range 0 to (2**Nbit_sine)-1);
 end sin_LUT;
 
 architecture sin_LUT_a of sin_LUT is
-	--type LUT_ARRAY_t is array (2**Nbit_phase-1 downto 0) of std_logic_vector(Nbit_sine-1 downto 0) ;
-	--constant lut_array : LUT_ARRAY_t 
-	--	:= ("000", "001", "010", "011", "100", "101", "110", "111");
 	
 begin
 
