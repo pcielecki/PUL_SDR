@@ -87,13 +87,10 @@ begin
 	
 		if(rst = '0') then
 			samples_array <= (others => (others=>'0'));
-
 			
 		elsif(clk'event and clk = '1') then
 			samples_array <= sig_in & samples_array(Nbit-1 downto 1);			
 		end if;
-		
-		
 		
 	end process filter;
 	

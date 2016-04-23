@@ -52,17 +52,17 @@ architecture NCO_a of NCO is
            sine : out  integer range 0 to 2**16-1);
 	end COMPONENT sin_LUT;
 
-	COMPONENT Phase_accumulator is
-		Generic(Nbit_phase : integer := 9);
+	component  Phase_accumulator is
+		Generic(MAX_phase : integer := 1390);
 		 Port ( rst : in  STD_LOGIC;
 				  clk : in  STD_LOGIC;
-				  phase_mul : in integer range 0 to 2**(Nbit_phase-1)-1;
-				  phase : out  integer range 0 to 2**Nbit_phase-1
+				  phase_mul : in integer range 0 to 2*MAX_phase;
+				  phase : out  integer range 0 to 2*MAX_phase
 				  );
-	end COMPONENT;
+	end component Phase_accumulator;
 		 
 		 
-		constant c_Nbit_phase : integer := 9;
+		constant c_Nbit_phase : integer := 11;
 		constant c_Nbit_sine : integer := 16;
 		
 		signal phase : integer range 0 to 2**c_Nbit_phase-1;		
@@ -75,7 +75,7 @@ begin
 		port map(rst => rst, clk => clk, phase => phase, sine => wy_sig);
 		
 	pha : Phase_accumulator
-		generic map(Nbit_phase => c_Nbit_phase)
+		generic map(MAX_phase => 1390)
 		port map(rst => rst, clk => clk, phase_mul => we_presc, phase => phase);
 		
 		
