@@ -1,1 +1,6 @@
+work	"NCO.vhd"
+work	"Phase_accumulator.vhd"
+work	"SW_defined_radio.vhd"
 work	"clk_prescaler.vhd"
+work	"sin_LUT.vhd"
+work	"sin_lut_pkg.vhd"

@@ -32,7 +32,7 @@ use work.sin_lut_pkg.all;
 --use UNISIM.VComponents.all;
 
 entity sin_LUT is
-	Generic(	MAX_phase : integer	:= 1390;
+	Generic(	MAX_phase : integer	:= 125;
 			Nbit_sine : integer 	:= 16);
 				
     Port ( rst : in  STD_LOGIC;

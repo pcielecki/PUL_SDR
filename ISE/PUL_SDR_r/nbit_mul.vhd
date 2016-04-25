@@ -19,7 +19,7 @@
 ----------------------------------------------------------------------------------
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
-use ieee.std_logic_signed.all;
+use ieee.std_logic_unsigned.all;
 -- Uncomment the following library declaration if using
 -- arithmetic functions with Signed or Unsigned values
 use IEEE.NUMERIC_STD.ALL;
@@ -37,6 +37,9 @@ entity nbit_mul is
 			  C_LSHW : out  STD_LOGIC_VECTOR(Nbit-1 downto 0)
 			  );
 end nbit_mul;
+
+-- MSHW = Most significant halfword
+-- LSHW = Least significant HW
 
 architecture mul_a of nbit_mul is
 	signal temp_C : std_logic_vector(2*Nbit-1 downto 0);

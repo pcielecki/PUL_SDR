@@ -21,6 +21,7 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use ieee.std_logic_unsigned.all;
 use IEEE.NUMERIC_STD.ALL;
+use std.textio.all;
 -- Uncomment the following library declaration if using
 -- arithmetic functions with Signed or Unsigned values
 --use IEEE.NUMERIC_STD.ALL;
@@ -32,11 +33,12 @@ use IEEE.NUMERIC_STD.ALL;
 
 entity NCO is
 	generic (
-				MAX_phase : integer := 1390;
+				MAX_phase : integer := 125;
 				Nbit_sine : integer := 16);
     Port ( rst : in  STD_LOGIC;
            clk : in  STD_LOGIC;
            mul : in  integer range 0 to MAX_phase-1;
+			  phi0 : in integer range 0 to MAX_phase-1;
 			  sig : out  std_logic_vector(Nbit_sine-1 downto 0) );
 end NCO;
 
@@ -57,6 +59,7 @@ architecture NCO_a of NCO is
 		 Port ( rst : in  STD_LOGIC;
 				  clk : in  STD_LOGIC;
 				  phase_mul : in integer range 0 to 2*MAX_phase;
+				  phi0 : in integer range 0 to MAX_phase;
 				  phase : out  integer range 0 to 2*MAX_phase
 				  );
 	end component Phase_accumulator;
@@ -70,14 +73,16 @@ architecture NCO_a of NCO is
 		
 begin
 	Lookup_table : sin_LUT 
-		generic map(MAX_phase => 1390, Nbit_sine => c_Nbit_sine)
+		generic map(MAX_phase => MAX_phase, Nbit_sine => c_Nbit_sine)
 		port map(rst => rst, clk => clk, phase => phase, sine => wy_sig);
 		
 	pha : Phase_accumulator
-		generic map(MAX_phase => 1390)
-		port map(rst => rst, clk => clk, phase_mul => mul, phase => phase);
+		generic map(MAX_phase => MAX_phase)
+		port map(rst => rst, clk => clk, phase_mul => mul, phi0 => phi0, phase => phase);
 		
 	sig <= std_logic_vector(to_unsigned(wy_sig, c_Nbit_sine));
+
+
 
 
 end NCO_a;

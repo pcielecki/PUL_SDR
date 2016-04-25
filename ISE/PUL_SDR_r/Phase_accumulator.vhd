@@ -30,7 +30,7 @@ use IEEE.NUMERIC_STD.ALL;
 --use UNISIM.VComponents.all;
 
 entity Phase_accumulator is
-	Generic(MAX_phase : integer := 1390);
+	Generic(MAX_phase : integer := 125);
     Port ( rst : in  STD_LOGIC;
            clk : in  STD_LOGIC;
            phase_mul : in integer range 0 to 2*MAX_phase;
@@ -48,7 +48,7 @@ begin
 		if(rst = '0') then 
 			accumulated_phase <= 0;
 		elsif(clk'event and clk = '1') then
-			if(accumulated_phase + phase_mul > MAX_phase) then
+			if(accumulated_phase + phase_mul >= MAX_phase) then
 				accumulated_phase <= accumulated_phase + phase_mul - MAX_phase;
 			else
 				accumulated_phase <= accumulated_phase + phase_mul;

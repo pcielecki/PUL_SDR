@@ -1,24 +1,40 @@
-Running: /opt/Xilinx/14.7/ISE_DS/ISE/bin/lin64/unwrapped/fuse -relaunch -intstyle "ise" -incremental -o "/home/piotr/workspace/PUL/PUL_SDR/ISE/PUL_SDR_r/presc_tb_isim_beh.exe" -prj "/home/piotr/workspace/PUL/PUL_SDR/ISE/PUL_SDR_r/presc_tb_beh.prj" "work.presc_tb" 
+Running: /opt/Xilinx/14.7/ISE_DS/ISE/bin/lin64/unwrapped/fuse -relaunch -intstyle "ise" -incremental -o "/home/piotr/workspace/PUL/PUL_SDR/ISE/PUL_SDR_r/dem_tb_isim_beh.exe" -prj "/home/piotr/workspace/PUL/PUL_SDR/ISE/PUL_SDR_r/dem_tb_beh.prj" "work.dem_tb" 
 ISim P.20131013 (signature 0xfbc00daa)
 Number of CPUs detected in this system: 4
 Turning on mult-threading, number of parallel sub-compilation jobs: 8 
 Determining compilation order of HDL files
+Parsing VHDL file "/home/piotr/workspace/PUL/PUL_SDR/ISE/PUL_SDR_r/sin_lut_pkg.vhd" into library work
+Parsing VHDL file "/home/piotr/workspace/PUL/PUL_SDR/ISE/PUL_SDR_r/sin_LUT.vhd" into library work
+Parsing VHDL file "/home/piotr/workspace/PUL/PUL_SDR/ISE/PUL_SDR_r/Phase_accumulator.vhd" into library work
+Parsing VHDL file "/home/piotr/workspace/PUL/PUL_SDR/ISE/PUL_SDR_r/NCO.vhd" into library work
+Parsing VHDL file "/home/piotr/workspace/PUL/PUL_SDR/ISE/PUL_SDR_r/nbit_mul.vhd" into library work
 Parsing VHDL file "/home/piotr/workspace/PUL/PUL_SDR/ISE/PUL_SDR_r/clk_prescaler.vhd" into library work
-Parsing VHDL file "/home/piotr/workspace/PUL/PUL_SDR/ISE/PUL_SDR_r/presc_tb.vhd" into library work
+Parsing VHDL file "/home/piotr/workspace/PUL/PUL_SDR/ISE/PUL_SDR_r/SW_defined_radio.vhd" into library work
+Parsing VHDL file "/home/piotr/workspace/PUL/PUL_SDR/ISE/PUL_SDR_r/dem_tb.vhd" into library work
 Starting static elaboration
 Completed static elaboration
-Fuse Memory Usage: 96284 KB
-Fuse CPU Usage: 1480 ms
+Fuse Memory Usage: 98564 KB
+Fuse CPU Usage: 1360 ms
 Compiling package standard
 Compiling package std_logic_1164
+Compiling package textio
+Compiling package std_logic_textio
+Compiling package numeric_std
 Compiling package std_logic_arith
 Compiling package std_logic_unsigned
-Compiling architecture presc_a of entity clk_prescaler [\clk_prescaler(3)\]
-Compiling architecture behavior of entity presc_tb
+Compiling package std_logic_signed
+Compiling package sin_lut_pkg
+Compiling architecture sin_lut_a of entity sin_LUT [\sin_LUT(125,16)\]
+Compiling architecture pha_a of entity Phase_accumulator [\Phase_accumulator(125)\]
+Compiling architecture nco_a of entity NCO [\NCO(125,16)\]
+Compiling architecture presc_a of entity clk_prescaler [\clk_prescaler(4)\]
+Compiling architecture mul_a of entity nbit_mul [\nbit_mul(16)\]
+Compiling architecture dem_a of entity demodulator [\demodulator(16,16)\]
+Compiling architecture behavior of entity dem_tb
 Time Resolution for simulation is 1ps.
 Waiting for 1 sub-compilation(s) to finish...
-Compiled 7 VHDL Units
-Built simulation executable /home/piotr/workspace/PUL/PUL_SDR/ISE/PUL_SDR_r/presc_tb_isim_beh.exe
-Fuse Memory Usage: 668588 KB
-Fuse CPU Usage: 1570 ms
-GCC CPU Usage: 170 ms
+Compiled 22 VHDL Units
+Built simulation executable /home/piotr/workspace/PUL/PUL_SDR/ISE/PUL_SDR_r/dem_tb_isim_beh.exe
+Fuse Memory Usage: 682948 KB
+Fuse CPU Usage: 1560 ms
+GCC CPU Usage: 130 ms

@@ -1,0 +1,8 @@
+vhdl isim_temp "sin_lut_pkg.vhd"
+vhdl isim_temp "sin_LUT.vhd"
+vhdl isim_temp "Phase_accumulator.vhd"
+vhdl isim_temp "NCO.vhd"
+vhdl isim_temp "nbit_mul.vhd"
+vhdl isim_temp "clk_prescaler.vhd"
+vhdl isim_temp "SW_defined_radio.vhd"
+vhdl isim_temp "dem_tb.vhd"
