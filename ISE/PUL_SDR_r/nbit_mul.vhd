@@ -19,7 +19,7 @@
 ----------------------------------------------------------------------------------
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
-use ieee.std_logic_unsigned.all;
+use ieee.std_logic_signed.all;
 -- Uncomment the following library declaration if using
 -- arithmetic functions with Signed or Unsigned values
 use IEEE.NUMERIC_STD.ALL;
@@ -33,8 +33,7 @@ entity nbit_mul is
 	Generic(Nbit : integer := 8);
     Port ( A : in  STD_LOGIC_VECTOR(Nbit-1 downto 0);
            B : in  STD_LOGIC_VECTOR(Nbit-1 downto 0);
-           C_MSHW : out  STD_LOGIC_VECTOR(Nbit-1 downto 0);
-			  C_LSHW : out  STD_LOGIC_VECTOR(Nbit-1 downto 0)
+           C : out  STD_LOGIC_VECTOR(2*Nbit-1 downto 0)
 			  );
 end nbit_mul;
 
@@ -42,12 +41,7 @@ end nbit_mul;
 -- LSHW = Least significant HW
 
 architecture mul_a of nbit_mul is
-	signal temp_C : std_logic_vector(2*Nbit-1 downto 0);
 begin
-	temp_C <= (A*B);
-	C_LSHW <= temp_C(Nbit-1 downto 0);
-	C_MSHW <= temp_C(2*Nbit-1 downto Nbit);
-
-
+	C <= (A*B);
 end mul_a;
 

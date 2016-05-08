@@ -38,7 +38,8 @@ entity sin_LUT is
     Port ( rst : in  STD_LOGIC;
            clk : in  STD_LOGIC;
            phase : in  integer range 0 to MAX_phase-1;
-           sine : out  integer range 0 to (2**Nbit_sine)-1);
+           sine : out  integer range -(2**(Nbit_sine-1)) to (2**(Nbit_sine-1))-1
+			  );
 end sin_LUT;
 
 architecture sin_LUT_a of sin_LUT is

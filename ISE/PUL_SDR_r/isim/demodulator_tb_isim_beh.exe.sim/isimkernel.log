@@ -1,0 +1,10 @@
+Command line:
+   demodulator_tb_isim_beh.exe
+     -simmode  gui
+     -simrunnum  0
+     -socket  54561
+
+Sun May  8 11:20:43 2016
+
+
+ Elaboration Time: 0.02 sec

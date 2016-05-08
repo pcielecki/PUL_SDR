@@ -43,7 +43,7 @@ ARCHITECTURE behavior OF dem_tb IS
          rst : IN  std_logic;
          clk : IN  std_logic;
          hf_in : IN  std_logic_vector(15 downto 0);
-         audio_out : OUT  std_logic_vector(15 downto 0);
+         audio_out : OUT  unsigned(32 downto 0);
          clk_out : OUT  std_logic
         );
     END COMPONENT;
@@ -55,7 +55,7 @@ ARCHITECTURE behavior OF dem_tb IS
    signal hf_in : std_logic_vector(15 downto 0) := (others => '0');
 
  	--Outputs
-   signal audio_out : std_logic_vector(15 downto 0);
+   signal audio_out : unsigned(32 downto 0);
    signal clk_out : std_logic;
 
    -- Clock period definitions
@@ -91,25 +91,18 @@ BEGIN
       wait;
    end process;
 	
-	
-	
-	
-	
-	
 	io_proc: process(clk_out) is
 		variable VEC_LINE_w : line;
 		file VEC_FILE_w : text is out "audio_out";
 		
 		variable VEC_LINE_r : line;
 		variable VEC_VAR_r	: integer range 0 to 2**16-1;
-		file VEC_FILE_r : text is in "hf_in2";
+		file VEC_FILE_r : text is in "hf_in";
 		
-		variable VEC_LINE_w2 : line;
-		file VEC_FILE_w2 : text is out "I_local_out";
 
 	begin
 		if(clk_out'event and clk_out = '0' and rst = '1') then
-			write (VEC_LINE_w, to_integer(unsigned(audio_out)));
+			write (VEC_LINE_w, to_integer(signed('0' & audio_out)));
 			writeline (VEC_FILE_w, VEC_LINE_w);
 		
 		elsif	(clk_out'event and clk_out = '1' and (not endfile(VEC_FILE_r)) and rst = '1') then
@@ -117,16 +110,9 @@ BEGIN
 			read(VEC_LINE_r, VEC_VAR_r);
 			
 			hf_in <= std_logic_vector(to_unsigned(VEC_VAR_r, 16));
-			
-
-		elsif(clk'event and clk = '0' and rst = '1') then
-			write (VEC_LINE_w2, local);
-			writeline (VEC_FILE_w2, VEC_LINE_w2);
 		end if;
-	end process write_proc;
-		end if;	
-			
 	end process io_proc;
+
 	
 	
 

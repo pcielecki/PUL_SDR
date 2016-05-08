@@ -2,9 +2,9 @@
 -- Company: 
 -- Engineer:
 --
--- Create Date:   21:13:07 04/09/2016
+-- Create Date:   10:47:40 05/08/2016
 -- Design Name:   
--- Module Name:   C:/Users/Piotr/workspace/PUL_SDR/ISE/PUL_SDR_r/demodulator_tb.vhd
+-- Module Name:   /home/piotr/workspace/PUL/PUL_SDR/ISE/PUL_SDR_r/demodulator_tb.vhd
 -- Project Name:  PUL_SDR_r
 -- Target Device:  
 -- Tool versions:  
@@ -27,10 +27,9 @@
 --------------------------------------------------------------------------------
 LIBRARY ieee;
 USE ieee.std_logic_1164.ALL;
- 
--- Uncomment the following library declaration if using
--- arithmetic functions with Signed or Unsigned values
---USE ieee.numeric_std.ALL;
+use std.textio.all;
+use ieee.std_logic_textio.all;
+USE ieee.numeric_std.ALL;
  
 ENTITY demodulator_tb IS
 END demodulator_tb;
@@ -40,38 +39,29 @@ ARCHITECTURE behavior OF demodulator_tb IS
     -- Component Declaration for the Unit Under Test (UUT)
  
     COMPONENT demodulator
-	 	Generic(sample_in_Nbit : integer := 16;
-				sample_out_Nbit : integer := 16);
     PORT(
          rst : IN  std_logic;
          clk : IN  std_logic;
-         hf_in : IN  std_logic_vector(3 downto 0);
-         audio_out : OUT  std_logic_vector(3 downto 0)
+         hf_in : IN  std_logic_vector(15 downto 0);
+         audio_out : OUT  std_logic_vector(15 downto 0);
+         clk_out : OUT  std_logic
         );
     END COMPONENT;
     
+
    --Inputs
    signal rst : std_logic := '0';
    signal clk : std_logic := '0';
-   signal hf_in : std_logic_vector(3 downto 0) := (others => '0');
+   signal hf_in : std_logic_vector(15 downto 0) := (others => '0');
 
  	--Outputs
-   signal audio_out : std_logic_vector(3 downto 0);
+   signal audio_out : std_logic_vector(15 downto 0);
+   signal clk_out : std_logic;
 
    -- Clock period definitions
-   constant clk_period : time := 10 ns;
+   constant clk_period : time := 0.1 ns;
  
 BEGIN
- 
-	-- Instantiate the Unit Under Test (UUT)
-   uut: demodulator 
-		generic map(4, 4)
-		PORT MAP (
-          rst => rst,
-          clk => clk,
-          hf_in => hf_in,
-          audio_out => audio_out
-        );
 
    -- Clock process definitions
    clk_process :process
@@ -82,20 +72,43 @@ BEGIN
 		wait for clk_period/2;
    end process;
  
+	-- Instantiate the Unit Under Test (UUT)
+   uut: demodulator PORT MAP (
+          rst => rst,
+          clk => clk,
+          hf_in => hf_in,
+          audio_out => audio_out,
+          clk_out => clk_out
+        );
 
-   -- Stimulus process
-   stim_proc: process
+     stim_proc: process
    begin		
-		wait for 1.5 * clk_period;
+		wait for 5*clk_period;
 		rst <= '1';
-		
-		hf_in <= (others => '0');
-		hf_in(0) <= '1';
-		
-		wait for 100*clk_period;
+      wait;
+   end process;
 	
-		assert FALSE severity FAILURE;
+	io_proc: process(clk_out) is
+		variable VEC_LINE_w : line;
+		file VEC_FILE_w : text is out "audio_out";
+		
+		variable VEC_LINE_r : line;
+		variable VEC_VAR_r	: integer range 0 to 2**16-1;
+		file VEC_FILE_r : text is in "hf_in";
+		
 
-	end process;
+	begin
+		if(clk_out'event and clk_out = '0' and rst = '1') then
+			write (VEC_LINE_w, to_integer(unsigned(audio_out)));
+			writeline (VEC_FILE_w, VEC_LINE_w);
+		
+		elsif	(clk_out'event and clk_out = '1' and (not endfile(VEC_FILE_r)) and rst = '1') then
+			readline(VEC_FILE_r, VEC_LINE_r);
+			read(VEC_LINE_r, VEC_VAR_r);
+			
+			hf_in <= std_logic_vector(to_unsigned(VEC_VAR_r, 16));
+		end if;
+	end process io_proc;
+
 
 END;

@@ -19,7 +19,7 @@
 ----------------------------------------------------------------------------------
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
-use ieee.std_logic_unsigned.all;
+use ieee.std_logic_signed.all;
 -- Uncomment the following library declaration if using
 -- arithmetic functions with Signed or Unsigned values
 use IEEE.NUMERIC_STD.ALL;
@@ -34,6 +34,7 @@ entity Phase_accumulator is
     Port ( rst : in  STD_LOGIC;
            clk : in  STD_LOGIC;
            phase_mul : in integer range 0 to 2*MAX_phase;
+			  phi0 : in integer range 0 to MAX_phase;
            phase : out  integer range 0 to 2*MAX_phase
 			  );
 end Phase_accumulator;
@@ -46,7 +47,7 @@ begin
 	begin
 	
 		if(rst = '0') then 
-			accumulated_phase <= 0;
+			accumulated_phase <= phi0;
 		elsif(clk'event and clk = '1') then
 			if(accumulated_phase + phase_mul >= MAX_phase) then
 				accumulated_phase <= accumulated_phase + phase_mul - MAX_phase;
