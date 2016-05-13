@@ -22,6 +22,7 @@
   <sourceproject xmlns="http://www.xilinx.com/XMLSchema" xil_pn:fileType="FILE_XISE" xil_pn:name="PUL_SDR_r.xise"/>
 
   <files xmlns="http://www.xilinx.com/XMLSchema">
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="ADC_TOP_stx_beh.prj"/>
     <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="Phase_accumulator_stx_beh.prj"/>
     <file xil_pn:fileType="FILE_XMSGS" xil_pn:name="_xmsgs/xst.xmsgs"/>
     <file xil_pn:fileType="FILE_CMD_LOG" xil_pn:name="demodulator.cmd_log"/>
@@ -60,15 +61,18 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1463140925" xil_pn:in_ck="7432084688861935802" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1463140925">
+    <transform xil_pn:end_ts="1463144462" xil_pn:in_ck="-4728486036354337975" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1463144462">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <outfile xil_pn:name="../../../../../Downloads/CA/DAC_Control.vhd"/>
       <outfile xil_pn:name="../../../../../Downloads/CA/DAC_TOP.vhd"/>
+      <outfile xil_pn:name="ADC_TOP.vhd"/>
+      <outfile xil_pn:name="ADC_control.vhd"/>
       <outfile xil_pn:name="NCO.vhd"/>
       <outfile xil_pn:name="NCO_tb.vhd"/>
       <outfile xil_pn:name="Phase_accumulator.vhd"/>
       <outfile xil_pn:name="SW_defined_radio.vhd"/>
+      <outfile xil_pn:name="adc_tb.vhd"/>
       <outfile xil_pn:name="audio_LP_filter.vhd"/>
       <outfile xil_pn:name="audio_filter.vhd"/>
       <outfile xil_pn:name="clk_prescaler.vhd"/>
@@ -82,11 +86,11 @@
       <outfile xil_pn:name="sin_LUT.vhd"/>
       <outfile xil_pn:name="sin_lut_pkg.vhd"/>
     </transform>
-    <transform xil_pn:end_ts="1463137241" xil_pn:name="TRAN_xawsToSimhdl" xil_pn:prop_ck="-6622139382255720501" xil_pn:start_ts="1463137241">
+    <transform xil_pn:end_ts="1463144479" xil_pn:name="TRAN_xawsToSimhdl" xil_pn:prop_ck="-7779873722988442246" xil_pn:start_ts="1463144479">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1463137241" xil_pn:name="TRAN_schematicsToHdlSim" xil_pn:prop_ck="513754974480755341" xil_pn:start_ts="1463137241">
+    <transform xil_pn:end_ts="1463144479" xil_pn:name="TRAN_schematicsToHdlSim" xil_pn:prop_ck="-2382214370204453380" xil_pn:start_ts="1463144479">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
@@ -101,6 +105,7 @@
       <status xil_pn:value="ReadyToRun"/>
       <status xil_pn:value="OutOfDateForInputs"/>
       <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="InputAdded"/>
       <status xil_pn:value="InputChanged"/>
       <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="../../../../../Downloads/CA/DAC_Control.vhd"/>
@@ -126,6 +131,7 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForProperties"/>
       <status xil_pn:value="OutOfDateForPredecessor"/>
       <status xil_pn:value="OutOfDateForOutputs"/>
       <status xil_pn:value="InputChanged"/>
@@ -140,6 +146,7 @@
     <transform xil_pn:end_ts="1463139131" xil_pn:in_ck="-8936925425084634678" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="121597269113473413" xil_pn:start_ts="1463139131">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForProperties"/>
       <status xil_pn:value="OutOfDateForPredecessor"/>
       <status xil_pn:value="OutOfDateForOutputs"/>
       <status xil_pn:value="OutputChanged"/>

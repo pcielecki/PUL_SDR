@@ -1583,3 +1583,4 @@ Simulator is doing circuit initialization process.
 at 0 ps, Instance /demodulator_tb/uut/Txlocal_I/Lookup_table/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
 at 0 ps, Instance /demodulator_tb/uut/Txlocal_Q/Lookup_table/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
 Finished circuit initialization process.
+# exit 0

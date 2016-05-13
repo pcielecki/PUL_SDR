@@ -1,1 +1,3 @@
-work	"audio_filter.vhd"
+work	"ADC_TOP.vhd"
+work	"ADC_control.vhd"
+work	"clk_prescaler.vhd"

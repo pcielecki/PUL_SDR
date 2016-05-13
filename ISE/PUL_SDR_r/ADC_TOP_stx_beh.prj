@@ -1,0 +1,3 @@
+vhdl isim_temp "clk_prescaler.vhd"
+vhdl isim_temp "ADC_control.vhd"
+vhdl isim_temp "ADC_TOP.vhd"
