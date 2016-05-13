@@ -1,0 +1,12 @@
+AR demodulator dem_a /home/piotr/workspace/PUL/PUL_SDR/ISE/PUL_SDR_r/SW_defined_radio.vhd sub00/vhpl11 1463136885
+EN phase_accumulator NULL /home/piotr/workspace/PUL/PUL_SDR/ISE/PUL_SDR_r/Phase_accumulator.vhd sub00/vhpl04 1463136878
+AR clk_prescaler presc_a /home/piotr/workspace/PUL/PUL_SDR/ISE/PUL_SDR_r/clk_prescaler.vhd sub00/vhpl09 1463136883
+AR phase_accumulator pha_a /home/piotr/workspace/PUL/PUL_SDR/ISE/PUL_SDR_r/Phase_accumulator.vhd sub00/vhpl05 1463136879
+EN nco NULL /home/piotr/workspace/PUL/PUL_SDR/ISE/PUL_SDR_r/NCO.vhd sub00/vhpl06 1463136880
+EN demodulator NULL /home/piotr/workspace/PUL/PUL_SDR/ISE/PUL_SDR_r/SW_defined_radio.vhd sub00/vhpl10 1463136884
+AR sin_lut sin_lut_a /home/piotr/workspace/PUL/PUL_SDR/ISE/PUL_SDR_r/sin_LUT.vhd sub00/vhpl03 1463136877
+AR nco nco_a /home/piotr/workspace/PUL/PUL_SDR/ISE/PUL_SDR_r/NCO.vhd sub00/vhpl07 1463136881
+PB sin_lut_pkg sin_lut_pkg /home/piotr/workspace/PUL/PUL_SDR/ISE/PUL_SDR_r/sin_lut_pkg.vhd sub00/vhpl01 1463136875
+EN sin_lut NULL /home/piotr/workspace/PUL/PUL_SDR/ISE/PUL_SDR_r/sin_LUT.vhd sub00/vhpl02 1463136876
+EN clk_prescaler NULL /home/piotr/workspace/PUL/PUL_SDR/ISE/PUL_SDR_r/clk_prescaler.vhd sub00/vhpl08 1463136882
+PH sin_lut_pkg NULL /home/piotr/workspace/PUL/PUL_SDR/ISE/PUL_SDR_r/sin_lut_pkg.vhd sub00/vhpl00 1463136874

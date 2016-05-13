@@ -43,18 +43,21 @@ entity sin_LUT is
 end sin_LUT;
 
 architecture sin_LUT_a of sin_LUT is
-	
+	constant Nbit_LUT : integer := 16; -- W tablicy LUT zapisane są 16-bitowe wartosci --
+	signal sine_internal : signed(Nbit_LUT-1 downto 0);
 begin
 
 	mem: process(rst, clk) is
 	begin
 		if(rst = '0') then
-			sine <= 0;
+			sine_internal <= (others => '0');
 		
 		elsif(clk'event and clk = '1') then
-				sine <= lut_array(phase);
+				sine_internal <= to_signed(lut_array(phase), Nbit_LUT) ;	-- skalowanie do pozadanej szerokosci --
 		end if;
 	end process mem;
+
+	sine <= to_integer(sine_internal(Nbit_LUT-1 downto Nbit_LUT-Nbit_sine));
 
 end sin_LUT_a;
 

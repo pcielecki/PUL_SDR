@@ -8,18 +8,22 @@
       <ClosedNodes>
          <ClosedNodesVersion>2</ClosedNodesVersion>
          <ClosedNode>/NCO - NCO_a |home|piotr|workspace|PUL|PUL_SDR|ISE|PUL_SDR_r|NCO.vhd</ClosedNode>
+         <ClosedNode>/audio_LP_filter - audio_lpf_a |home|piotr|workspace|PUL|PUL_SDR|ISE|PUL_SDR_r|audio_LP_filter.vhd</ClosedNode>
          <ClosedNode>/demodulator - dem_a C:|Users|Piotr|workspace|PUL_SDR|ISE|PUL_SDR_r|SW_defined_radio.vhd/LPF - audio_LP_filter - audio_lpf_a</ClosedNode>
          <ClosedNode>/demodulator - dem_a C:|Users|Piotr|workspace|PUL_SDR|ISE|PUL_SDR_r|SW_defined_radio.vhd/sdr_nco - NCO - NCO_a</ClosedNode>
          <ClosedNode>/demodulator - dem_a C:|Users|Piotr|workspace|PUL_SDR|ISE|PUL_SDR_r|SW_defined_radio.vhd/sin_lut_pkg</ClosedNode>
+         <ClosedNode>/demodulator - dem_a |home|piotr|workspace|PUL|PUL_SDR|ISE|PUL_SDR_r|SW_defined_radio.vhd</ClosedNode>
+         <ClosedNode>/demodulator - dem_a |home|piotr|workspace|PUL|PUL_SDR|ISE|PUL_SDR_r|SW_defined_radio.vhd/Txlocal_I - NCO - NCO_a</ClosedNode>
+         <ClosedNode>/demodulator - dem_a |home|piotr|workspace|PUL|PUL_SDR|ISE|PUL_SDR_r|SW_defined_radio.vhd/Txlocal_Q - NCO - NCO_a</ClosedNode>
       </ClosedNodes>
       <SelectedItems>
-         <SelectedItem>demodulator - dem_a (/home/piotr/workspace/PUL/PUL_SDR/ISE/PUL_SDR_r/SW_defined_radio.vhd)</SelectedItem>
+         <SelectedItem>audio_filter - af_a (/home/piotr/workspace/PUL/PUL_SDR/ISE/PUL_SDR_r/audio_filter.vhd)</SelectedItem>
       </SelectedItems>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
-      <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000001000000000000000000000000000000000202000000010000000100000064000001ec000000020000000000000000000000000200000064ffffffff000000810000000300000002000001ec0000000100000003000000000000000100000003</ViewHeaderState>
+      <ViewHeaderState orientation="horizontal" >000000ff0000000000000001000000010000000000000000000000000000000002020000000100000001000000640000017e000000020000000000000000000000000200000064ffffffff0000008100000003000000020000017e0000000100000003000000000000000100000003</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >true</UserChangedColumnWidths>
-      <CurrentItem>demodulator - dem_a (/home/piotr/workspace/PUL/PUL_SDR/ISE/PUL_SDR_r/SW_defined_radio.vhd)</CurrentItem>
+      <CurrentItem>audio_filter - af_a (/home/piotr/workspace/PUL/PUL_SDR/ISE/PUL_SDR_r/audio_filter.vhd)</CurrentItem>
    </ItemView>
    <ItemView engineview="SynthesisOnly" sourcetype="" guiview="Process" >
       <ClosedNodes>
@@ -88,48 +92,51 @@
          <ClosedNode>/demodulator - dem_a C:|Users|Piotr|workspace|PUL_SDR|ISE|PUL_SDR_r|SW_defined_radio.vhd</ClosedNode>
          <ClosedNode>/demodulator - dem_a |home|piotr|workspace|PUL|PUL_SDR|ISE|PUL_SDR_r|SW_defined_radio.vhd/heterodyna - NCO - NCO_a</ClosedNode>
          <ClosedNode>/demodulator_tb - behavior C:|Users|Piotr|workspace|PUL_SDR|ISE|PUL_SDR_r|demodulator_tb.vhd/uut - demodulator - dem_a/LPF - audio_LP_filter - audio_lpf_a</ClosedNode>
+         <ClosedNode>/demodulator_tb - behavior |home|piotr|workspace|PUL|PUL_SDR|ISE|PUL_SDR_r|demodulator_tb.vhd</ClosedNode>
          <ClosedNode>/lpf_tb - behavior C:|Users|Piotr|workspace|PUL_SDR|ISE|PUL_SDR_r|lpf_tb.vhd/uut - audio_LP_filter - audio_lpf_a</ClosedNode>
          <ClosedNode>/lpf_tb - behavior |home|piotr|workspace|PUL|PUL_SDR|ISE|PUL_SDR_r|lpf_tb.vhd</ClosedNode>
+         <ClosedNode>/lpf_tb - behavior |home|piotr|workspace|PUL|PUL_SDR|ISE|PUL_SDR_r|lpf_tb.vhd/uut - audio_LP_filter - audio_lpf_a</ClosedNode>
+         <ClosedNode>/nco_tb - behavior |home|piotr|workspace|PUL|PUL_SDR|ISE|PUL_SDR_r|NCO_tb.vhd</ClosedNode>
          <ClosedNode>/pha_tb - behavior C:|Users|Piotr|workspace|PUL_SDR|ISE|PUL_SDR_r|pha_tb.vhd</ClosedNode>
          <ClosedNode>/pha_tb - behavior |home|piotr|workspace|PUL|PUL_SDR|ISE|PUL_SDR_r|pha_tb.vhd</ClosedNode>
          <ClosedNode>/presc_tb - behavior |home|piotr|workspace|PUL|PUL_SDR|ISE|PUL_SDR_r|presc_tb.vhd</ClosedNode>
          <ClosedNode>/sinLUT_tb - behavior C:|Users|Piotr|workspace|PUL_SDR|ISE|PUL_SDR_r|sinLUT_tb.vhd</ClosedNode>
+         <ClosedNode>/sinLUT_tb - behavior |home|piotr|workspace|PUL|PUL_SDR|ISE|PUL_SDR_r|sinLUT_tb.vhd</ClosedNode>
       </ClosedNodes>
       <SelectedItems>
-         <SelectedItem>demodulator_tb - behavior (/home/piotr/workspace/PUL/PUL_SDR/ISE/PUL_SDR_r/demodulator_tb.vhd)</SelectedItem>
+         <SelectedItem>audio_LP_filter - audio_lpf_a (/home/piotr/workspace/PUL/PUL_SDR/ISE/PUL_SDR_r/audio_LP_filter.vhd)</SelectedItem>
       </SelectedItems>
-      <ScrollbarPosition orientation="vertical" >3</ScrollbarPosition>
+      <ScrollbarPosition orientation="vertical" >1</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
-      <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000100000000000000000000000000000000020200000001000000010000006400000200000000020000000000000000000000000200000064ffffffff000000810000000300000002000002000000000100000003000000000000000100000003</ViewHeaderState>
+      <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000100000000000000000000000000000000020200000001000000010000006400000183000000020000000000000000000000000200000064ffffffff000000810000000300000002000001830000000100000003000000000000000100000003</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >true</UserChangedColumnWidths>
-      <CurrentItem>demodulator_tb - behavior (/home/piotr/workspace/PUL/PUL_SDR/ISE/PUL_SDR_r/demodulator_tb.vhd)</CurrentItem>
+      <CurrentItem>audio_LP_filter - audio_lpf_a (/home/piotr/workspace/PUL/PUL_SDR/ISE/PUL_SDR_r/audio_LP_filter.vhd)</CurrentItem>
    </ItemView>
    <ItemView engineview="BehavioralSim" sourcetype="" guiview="Process" >
       <ClosedNodes>
          <ClosedNodesVersion>1</ClosedNodesVersion>
-         <ClosedNode>Design Utilities/Compile HDL Simulation Libraries</ClosedNode>
       </ClosedNodes>
       <SelectedItems>
-         <SelectedItem/>
+         <SelectedItem></SelectedItem>
       </SelectedItems>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
       <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000001000000000000000000000000000000000000000000000000f4000000010000000100000000000000000000000064ffffffff000000810000000000000001000000f40000000100000000</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
-      <CurrentItem/>
+      <CurrentItem></CurrentItem>
    </ItemView>
    <ItemView engineview="BehavioralSim" sourcetype="DESUT_VHDL_ARCHITECTURE" guiview="Process" >
       <ClosedNodes>
          <ClosedNodesVersion>1</ClosedNodesVersion>
       </ClosedNodes>
       <SelectedItems>
-         <SelectedItem>Simulate Behavioral Model</SelectedItem>
+         <SelectedItem></SelectedItem>
       </SelectedItems>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
       <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000001000000000000000000000000000000000000000000000000f4000000010000000100000000000000000000000064ffffffff000000810000000000000001000000f40000000100000000</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
-      <CurrentItem>Simulate Behavioral Model</CurrentItem>
+      <CurrentItem></CurrentItem>
    </ItemView>
    <SourceProcessView>000000ff000000000000000200000107000000c201000000050100000002</SourceProcessView>
    <CurrentView>Behavioral Simulation</CurrentView>
@@ -184,5 +191,18 @@
       <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000100000000000000000000000000000000000000000000000112000000010000000100000000000000000000000064ffffffff000000810000000000000001000001120000000100000000</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
       <CurrentItem/>
+   </ItemView>
+   <ItemView engineview="BehavioralSim" sourcetype="DESUT_XCO" guiview="Process" >
+      <ClosedNodes>
+         <ClosedNodesVersion>1</ClosedNodesVersion>
+      </ClosedNodes>
+      <SelectedItems>
+         <SelectedItem></SelectedItem>
+      </SelectedItems>
+      <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
+      <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
+      <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000001000000000000000000000000000000000000000000000000f4000000010000000100000000000000000000000064ffffffff000000810000000000000001000000f40000000100000000</ViewHeaderState>
+      <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
+      <CurrentItem></CurrentItem>
    </ItemView>
 </Project>

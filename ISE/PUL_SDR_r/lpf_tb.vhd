@@ -2,15 +2,15 @@
 -- Company: 
 -- Engineer:
 --
--- Create Date:   16:50:12 04/09/2016
+-- Create Date:   11:38:55 05/08/2016
 -- Design Name:   
--- Module Name:   C:/Users/Piotr/workspace/PUL_SDR/ISE/PUL_SDR_r/lpf_tb.vhd
+-- Module Name:   /home/piotr/workspace/PUL/PUL_SDR/ISE/PUL_SDR_r/lpf_tb.vhd
 -- Project Name:  PUL_SDR_r
 -- Target Device:  
 -- Tool versions:  
 -- Description:   
 -- 
--- VHDL Test Bench Created by ISE for module: audio_LP_filter
+-- VHDL Test Bench Created by ISE for module: audio_filter
 -- 
 -- Dependencies:
 -- 
@@ -30,7 +30,7 @@ USE ieee.std_logic_1164.ALL;
  
 -- Uncomment the following library declaration if using
 -- arithmetic functions with Signed or Unsigned values
---USE ieee.numeric_std.ALL;
+USE ieee.numeric_std.ALL;
  
 ENTITY lpf_tb IS
 END lpf_tb;
@@ -39,42 +39,35 @@ ARCHITECTURE behavior OF lpf_tb IS
  
     -- Component Declaration for the Unit Under Test (UUT)
  
-    COMPONENT audio_LP_filter
-	 	Generic(Nbit : integer := 16;
-				N_coeffs : integer := 8);
+    COMPONENT audio_filter
     PORT(
          rst : IN  std_logic;
          clk : IN  std_logic;
-         sig_in : IN  std_logic_vector(Nbit-1 downto 0);
-         sig_out : OUT  std_logic_vector(Nbit-1 downto 0)
+         mf_in : IN  unsigned(15 downto 0);
+         audio_out : OUT  unsigned(15 downto 0)
         );
     END COMPONENT;
     
-	 constant c_Nbit : integer := 4;
-	 constant c_N_coeffs : integer := 4;
 
    --Inputs
    signal rst : std_logic := '0';
    signal clk : std_logic := '0';
-   signal sig_in : std_logic_vector(c_Nbit-1 downto 0) := (others => '0');
+   signal mf_in : unsigned(15 downto 0) := (others => '0');
 
  	--Outputs
-   signal sig_out : std_logic_vector(c_Nbit-1 downto 0);
+   signal audio_out : unsigned(15 downto 0);
 
    -- Clock period definitions
    constant clk_period : time := 10 ns;
-	--constant sig_pad : std_logic_vector(14 downto 0) := (others => '0');
  
 BEGIN
  
 	-- Instantiate the Unit Under Test (UUT)
-   uut: audio_LP_filter 
-		generic map(nbit => c_Nbit, n_coeffs => c_N_coeffs) 
-		PORT MAP (
+   uut: audio_filter PORT MAP (
           rst => rst,
           clk => clk,
-          sig_in => sig_in,
-          sig_out => sig_out
+          mf_in => mf_in,
+          audio_out => audio_out
         );
 
    -- Clock process definitions
@@ -90,17 +83,19 @@ BEGIN
    -- Stimulus process
    stim_proc: process
    begin		
-		wait for 1.5*clk_period;
+		wait for 2*clk_period;
 		rst <= '1';
 		
-		wait for 50 ns;
-		sig_in <="0001";
+		wait for 2*clk_period;
+		
+		mf_in <= "0000000000000001";
 		wait for 1*clk_period;
 		
-		sig_in <= "0000";
-		wait for 20*clk_period;
+		mf_in <= (others => '0');
 		
-		assert false severity Failure;
+		wait for 10*clk_period;
+
+      assert FALSE severity FAILURE;
    end process;
 
 END;

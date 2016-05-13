@@ -33,11 +33,12 @@ use std.textio.all;
 entity NCO is
 	generic (
 				MAX_phase : integer := 125;
-				Nbit_sine : integer := 16);
+				Nbit_sine : integer := 16;
+				ZERO_phase : integer := 0
+				);
     Port ( rst : in  STD_LOGIC;
            clk : in  STD_LOGIC;
            mul : in  integer range 0 to MAX_phase-1;
-			  phi0 : in integer range 0 to MAX_phase-1;
 			  sig : out  signed(Nbit_sine-1 downto 0) );
 end NCO;
 
@@ -55,35 +56,30 @@ architecture NCO_a of NCO is
 	end component sin_LUT;
 
 	component Phase_accumulator is
-		Generic(MAX_phase : integer := 1390);
+		Generic(MAX_phase : integer := 125;
+					ZERO_phase : integer := 0);
 		 Port ( rst : in  STD_LOGIC;
 				  clk : in  STD_LOGIC;
 				  phase_mul : in integer range 0 to 2*MAX_phase;
-				  phi0 : in integer range 0 to MAX_phase;
 				  phase : out  integer range 0 to 2*MAX_phase
 				  );
 	end component Phase_accumulator;
 			 
 		 
 		--constant c_Nbit_phase : integer := 11;
-		constant c_Nbit_sine : integer := 16;
 		
 		signal phase : integer range 0 to MAX_phase-1;		
-		signal wy_sig : integer range -(2**(c_Nbit_sine-1)) to 2**(c_Nbit_sine-1)-1;
+		signal wy_sig : integer range -(2**(Nbit_sine-1)) to 2**(Nbit_sine-1)-1;
 		
 begin
 	Lookup_table : sin_LUT 
-		generic map(MAX_phase => MAX_phase, Nbit_sine => c_Nbit_sine)
+		generic map(MAX_phase => MAX_phase, Nbit_sine => Nbit_sine)
 		port map(rst => rst, clk => clk, phase => phase, sine => wy_sig);
 		
 	pha : Phase_accumulator
-		generic map(MAX_phase => MAX_phase)
-		port map(rst => rst, clk => clk, phase_mul => mul, phi0 => phi0, phase => phase);
+		generic map(MAX_phase => MAX_phase, ZERO_phase => ZERO_phase)
+		port map(rst => rst, clk => clk, phase_mul => mul, phase => phase);
 		
-	sig <= to_signed(wy_sig, c_Nbit_sine);
-
-
-
-
+	sig <= to_signed(wy_sig, Nbit_sine);
 end NCO_a;
 

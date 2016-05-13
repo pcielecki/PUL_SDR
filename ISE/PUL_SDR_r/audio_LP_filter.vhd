@@ -37,51 +37,8 @@ architecture audio_lpf_a of audio_LP_filter is
 	type reg2 is array(N_coeffs-1 downto 0) of std_logic_vector(2*Nbit-1 downto 0);
 	signal temp_multiplied : reg2;
 	signal temp_added : reg2;
-		
-	component nbit_full_adder is
-		Generic( Nbit : integer := 8);
-		 Port ( A : in  STD_LOGIC_vector(Nbit-1 downto 0);
-				  B : in  STD_LOGIC_vector(Nbit-1 downto 0);
-				  C : out  STD_LOGIC_vector(Nbit-1 downto 0));
-	end component nbit_full_adder;
-		
 
-	component nbit_mul is
-		Generic(Nbit : integer := 8);
-		 Port ( A : in  STD_LOGIC_VECTOR(Nbit-1 downto 0);
-				  B : in  STD_LOGIC_VECTOR(Nbit-1 downto 0);
-				  C_MSHW : out  STD_LOGIC_VECTOR(Nbit-1 downto 0);
-				  C_LSHW : out  STD_LOGIC_VECTOR(Nbit-1 downto 0)
-				  );
-	end component	nbit_mul;
-
-	
 begin
-
-	mul_blocks : for I in N_coeffs-1 downto 0 generate
-		mul : nbit_mul
-			generic map(Nbit => Nbit) 
-			port map(A => samples_array(I), 
-						B => filter_coefficients_array(I),
-						C_MSHW =>  temp_multiplied(I)(2*Nbit-1 downto Nbit),
-						C_LSHW => temp_multiplied(I)(Nbit-1 downto 0)
-						);
-	
-	end generate mul_blocks;
-
-	
-	sum_blocks : for I in N_coeffs-1 downto 1 generate
-		adder : nbit_full_adder
-			generic map(Nbit => 2*Nbit) 
-			port map(A => temp_multiplied(I), 
-						B => temp_added(I),
-						C => temp_added(I-1)
-						);
-	
-	end generate sum_blocks;
-
-
-
 	filter: process(clk, rst) is
 	begin
 	

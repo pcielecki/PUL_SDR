@@ -1,0 +1,639 @@
+Release 14.7 - xst P.20131013 (lin64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> 
+Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.08 secs
+ 
+--> 
+Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.08 secs
+ 
+--> 
+Reading design: demodulator.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Compilation
+  3) Design Hierarchy Analysis
+  4) HDL Analysis
+  5) HDL Synthesis
+     5.1) HDL Synthesis Report
+  6) Advanced HDL Synthesis
+     6.1) Advanced HDL Synthesis Report
+  7) Low Level Synthesis
+  8) Partition Report
+  9) Final Report
+	9.1) Device utilization summary
+	9.2) Partition Resource Summary
+	9.3) TIMING REPORT
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "demodulator.prj"
+Input Format                       : mixed
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "demodulator"
+Output Format                      : NGC
+Target Device                      : xc3s500e-4-ft256
+
+---- Source Options
+Top Module Name                    : demodulator
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Mux Style                          : Auto
+Decoder Extraction                 : YES
+Priority Encoder Extraction        : Yes
+Shift Register Extraction          : YES
+Logical Shifter Extraction         : YES
+XOR Collapsing                     : YES
+ROM Style                          : Auto
+Mux Extraction                     : Yes
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Multiplier Style                   : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 24
+Register Duplication               : YES
+Slice Packing                      : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Yes
+Use Synchronous Set                : Yes
+Use Synchronous Reset              : Yes
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+Verilog 2001                       : YES
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+---- Other Options
+Cores Search Directories           : {"ipcore_dir"  }
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling vhdl file "/home/piotr/workspace/PUL/PUL_SDR/ISE/PUL_SDR_r/sin_lut_pkg.vhd" in Library work.
+Architecture sin_lut_pkg of Entity sin_lut_pkg is up to date.
+Compiling vhdl file "/home/piotr/workspace/PUL/PUL_SDR/ISE/PUL_SDR_r/sin_LUT.vhd" in Library work.
+Architecture sin_lut_a of Entity sin_lut is up to date.
+Compiling vhdl file "/home/piotr/workspace/PUL/PUL_SDR/ISE/PUL_SDR_r/Phase_accumulator.vhd" in Library work.
+Architecture pha_a of Entity phase_accumulator is up to date.
+Compiling vhdl file "/home/piotr/workspace/PUL/PUL_SDR/ISE/PUL_SDR_r/NCO.vhd" in Library work.
+Architecture nco_a of Entity nco is up to date.
+Compiling vhdl file "/home/piotr/workspace/PUL/PUL_SDR/ISE/PUL_SDR_r/clk_prescaler.vhd" in Library work.
+Architecture presc_a of Entity clk_prescaler is up to date.
+Compiling vhdl file "/home/piotr/workspace/PUL/PUL_SDR/ISE/PUL_SDR_r/SW_defined_radio.vhd" in Library work.
+Entity <demodulator> compiled.
+Entity <demodulator> (Architecture <dem_a>) compiled.
+
+=========================================================================
+*                     Design Hierarchy Analysis                         *
+=========================================================================
+Analyzing hierarchy for entity <demodulator> in library <work> (architecture <dem_a>) with generics.
+	sample_in_Nbit = 16
+	sample_out_Nbit = 16
+
+Analyzing hierarchy for entity <NCO> in library <work> (architecture <nco_a>) with generics.
+	MAX_phase = 1390
+	Nbit_sine = 16
+
+Analyzing hierarchy for entity <clk_prescaler> in library <work> (architecture <presc_a>) with generics.
+	Nbit = 4
+
+Analyzing hierarchy for entity <sin_LUT> in library <work> (architecture <sin_lut_a>) with generics.
+	MAX_phase = 1390
+	Nbit_sine = 16
+
+Analyzing hierarchy for entity <Phase_accumulator> in library <work> (architecture <pha_a>) with generics.
+	MAX_phase = 1390
+
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing generic Entity <demodulator> in library <work> (Architecture <dem_a>).
+	sample_in_Nbit = 16
+	sample_out_Nbit = 16
+Entity <demodulator> analyzed. Unit <demodulator> generated.
+
+Analyzing generic Entity <NCO> in library <work> (Architecture <nco_a>).
+	MAX_phase = 1390
+	Nbit_sine = 16
+WARNING:Xst:751 - "/home/piotr/workspace/PUL/PUL_SDR/ISE/PUL_SDR_r/NCO.vhd" line 79: Bad association for formal port 'phase' of component 'Phase_accumulator'.
+Entity <NCO> analyzed. Unit <NCO> generated.
+
+Analyzing generic Entity <sin_LUT> in library <work> (Architecture <sin_lut_a>).
+	MAX_phase = 1390
+	Nbit_sine = 16
+Entity <sin_LUT> analyzed. Unit <sin_LUT> generated.
+
+Analyzing generic Entity <Phase_accumulator> in library <work> (Architecture <pha_a>).
+	MAX_phase = 1390
+WARNING:Xst:819 - "/home/piotr/workspace/PUL/PUL_SDR/ISE/PUL_SDR_r/Phase_accumulator.vhd" line 45: One or more signals are missing in the process sensitivity list. To enable synthesis of FPGA/CPLD hardware, XST will assume that all necessary signals are present in the sensitivity list. Please note that the result of the synthesis may differ from the initial design specification. The missing signals are:
+   <phi0>
+Entity <Phase_accumulator> analyzed. Unit <Phase_accumulator> generated.
+
+Analyzing generic Entity <clk_prescaler> in library <work> (Architecture <presc_a>).
+	Nbit = 4
+Entity <clk_prescaler> analyzed. Unit <clk_prescaler> generated.
+
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Performing bidirectional port resolution...
+
+Synthesizing Unit <clk_prescaler>.
+    Related source file is "/home/piotr/workspace/PUL/PUL_SDR/ISE/PUL_SDR_r/clk_prescaler.vhd".
+    Found 1-bit register for signal <clk_internal>.
+    Found 4-bit up counter for signal <ctr>.
+    Summary:
+	inferred   1 Counter(s).
+	inferred   1 D-type flip-flop(s).
+Unit <clk_prescaler> synthesized.
+
+
+Synthesizing Unit <sin_LUT>.
+    Related source file is "/home/piotr/workspace/PUL/PUL_SDR/ISE/PUL_SDR_r/sin_LUT.vhd".
+    Found 1390x16-bit ROM for signal <sine$rom0000> created at line 55.
+    Found 16-bit register for signal <sine>.
+    Summary:
+	inferred   1 ROM(s).
+	inferred  16 D-type flip-flop(s).
+Unit <sin_LUT> synthesized.
+
+
+Synthesizing Unit <Phase_accumulator>.
+    Related source file is "/home/piotr/workspace/PUL/PUL_SDR/ISE/PUL_SDR_r/Phase_accumulator.vhd".
+    Found 12-bit up accumulator for signal <accumulated_phase>.
+    Found 12-bit subtractor for signal <accumulated_phase$addsub0001>.
+    Found 12-bit adder carry out for signal <accumulated_phase$addsub0002> created at line 52.
+    Found 13-bit comparator greatequal for signal <accumulated_phase$cmp_ge0000> created at line 52.
+    Summary:
+	inferred   1 Accumulator(s).
+	inferred   2 Adder/Subtractor(s).
+	inferred   1 Comparator(s).
+Unit <Phase_accumulator> synthesized.
+
+
+Synthesizing Unit <NCO>.
+    Related source file is "/home/piotr/workspace/PUL/PUL_SDR/ISE/PUL_SDR_r/NCO.vhd".
+Unit <NCO> synthesized.
+
+
+Synthesizing Unit <demodulator>.
+    Related source file is "/home/piotr/workspace/PUL/PUL_SDR/ISE/PUL_SDR_r/SW_defined_radio.vhd".
+WARNING:Xst:646 - Signal <u_audio_out<16:0>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+    Found 17x16-bit multiplier for signal <mixed_I>.
+    Found 17x16-bit multiplier for signal <mixed_Q>.
+    Found 33-bit adder for signal <u_audio_out>.
+    Found 33-bit adder for signal <u_audio_out$addsub0000>.
+    Found 33-bit adder for signal <u_audio_out$addsub0001>.
+    Summary:
+	inferred   3 Adder/Subtractor(s).
+	inferred   2 Multiplier(s).
+Unit <demodulator> synthesized.
+
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# ROMs                                                 : 2
+ 1390x16-bit ROM                                       : 2
+# Multipliers                                          : 2
+ 17x16-bit multiplier                                  : 2
+# Adders/Subtractors                                   : 7
+ 12-bit adder carry out                                : 2
+ 12-bit subtractor                                     : 2
+ 33-bit adder                                          : 3
+# Counters                                             : 1
+ 4-bit up counter                                      : 1
+# Accumulators                                         : 2
+ 12-bit up accumulator                                 : 2
+# Registers                                            : 3
+ 1-bit register                                        : 1
+ 16-bit register                                       : 2
+# Comparators                                          : 2
+ 13-bit comparator greatequal                          : 2
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# ROMs                                                 : 2
+ 1390x16-bit ROM                                       : 2
+# Multipliers                                          : 2
+ 17x16-bit multiplier                                  : 2
+# Adders/Subtractors                                   : 7
+ 12-bit adder carry out                                : 2
+ 12-bit subtractor                                     : 2
+ 33-bit adder                                          : 3
+# Counters                                             : 1
+ 4-bit up counter                                      : 1
+# Accumulators                                         : 2
+ 12-bit up accumulator                                 : 2
+# Registers                                            : 33
+ Flip-Flops                                            : 33
+# Comparators                                          : 2
+ 13-bit comparator greatequal                          : 2
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+
+Optimizing unit <demodulator> ...
+
+Optimizing unit <sin_LUT> ...
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block demodulator, actual ratio is 39.
+FlipFlop Txlocal_I/pha/accumulated_phase_1 has been replicated 1 time(s)
+FlipFlop Txlocal_I/pha/accumulated_phase_3 has been replicated 1 time(s)
+FlipFlop Txlocal_I/pha/accumulated_phase_7 has been replicated 1 time(s)
+FlipFlop Txlocal_Q/pha/accumulated_phase_1 has been replicated 1 time(s)
+FlipFlop Txlocal_Q/pha/accumulated_phase_3 has been replicated 1 time(s)
+FlipFlop Txlocal_Q/pha/accumulated_phase_7 has been replicated 1 time(s)
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 67
+ Flip-Flops                                            : 67
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+Final Results
+RTL Top Level Output File Name     : demodulator.ngr
+Top Level Output File Name         : demodulator
+Output Format                      : NGC
+Optimization Goal                  : Speed
+Keep Hierarchy                     : No
+
+Design Statistics
+# IOs                              : 35
+
+Cell Usage :
+# BELS                             : 3900
+#      GND                         : 1
+#      INV                         : 67
+#      LUT1                        : 14
+#      LUT2                        : 106
+#      LUT2_D                      : 1
+#      LUT3                        : 889
+#      LUT3_D                      : 14
+#      LUT3_L                      : 8
+#      LUT4                        : 1626
+#      LUT4_D                      : 17
+#      LUT4_L                      : 26
+#      MUXCY                       : 134
+#      MUXF5                       : 552
+#      MUXF6                       : 214
+#      MUXF7                       : 90
+#      MUXF8                       : 34
+#      VCC                         : 1
+#      XORCY                       : 106
+# FlipFlops/Latches                : 67
+#      FDC                         : 36
+#      FDCE                        : 1
+#      FDCP                        : 30
+# Clock Buffers                    : 2
+#      BUFG                        : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 34
+#      IBUF                        : 17
+#      OBUF                        : 17
+# MULTs                            : 2
+#      MULT18X18SIO                : 2
+=========================================================================
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 3s500eft256-4 
+
+ Number of Slices:                     1492  out of   4656    32%  
+ Number of Slice Flip Flops:             67  out of   9312     0%  
+ Number of 4 input LUTs:               2768  out of   9312    29%  
+ Number of IOs:                          35
+ Number of bonded IOBs:                  35  out of    190    18%  
+ Number of MULT18X18SIOs:                 2  out of     20    10%  
+ Number of GCLKs:                         2  out of     24     8%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+TIMING REPORT
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+clk                                | BUFGP                  | 5     |
+preskaler/clk_internal1            | BUFG                   | 62    |
+-----------------------------------+------------------------+-------+
+
+Asynchronous Control Signals Information:
+----------------------------------------
+-----------------------------------------------------------------------+----------------------------------------+-------+
+Control Signal                                                         | Buffer(FF name)                        | Load  |
+-----------------------------------------------------------------------+----------------------------------------+-------+
+Txlocal_I/Lookup_table/rst_inv(Txlocal_Q/Lookup_table/rst_inv1_INV_0:O)| NONE(Txlocal_I/Lookup_table/sine_0)    | 67    |
+N0(XST_GND:G)                                                          | NONE(Txlocal_I/pha/accumulated_phase_0)| 30    |
+-----------------------------------------------------------------------+----------------------------------------+-------+
+
+Timing Summary:
+---------------
+Speed Grade: -4
+
+   Minimum period: 9.921ns (Maximum Frequency: 100.796MHz)
+   Minimum input arrival time before clock: 3.665ns
+   Maximum output required time after clock: 16.678ns
+   Maximum combinational path delay: 17.284ns
+
+Timing Detail:
+--------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clk'
+  Clock period: 3.078ns (frequency: 324.886MHz)
+  Total number of paths / destination ports: 15 / 6
+-------------------------------------------------------------------------
+Delay:               3.078ns (Levels of Logic = 1)
+  Source:            preskaler/ctr_0 (FF)
+  Destination:       preskaler/clk_internal (FF)
+  Source Clock:      clk rising
+  Destination Clock: clk rising
+
+  Data Path: preskaler/ctr_0 to preskaler/clk_internal
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDC:C->Q              5   0.591   0.808  preskaler/ctr_0 (preskaler/ctr_0)
+     LUT4:I0->O            1   0.704   0.420  preskaler/ctr_cmp_eq00001 (preskaler/ctr_cmp_eq0000)
+     FDCE:CE                   0.555          preskaler/clk_internal
+    ----------------------------------------
+    Total                      3.078ns (1.850ns logic, 1.228ns route)
+                                       (60.1% logic, 39.9% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'preskaler/clk_internal1'
+  Clock period: 9.921ns (frequency: 100.796MHz)
+  Total number of paths / destination ports: 14022 / 62
+-------------------------------------------------------------------------
+Delay:               9.921ns (Levels of Logic = 19)
+  Source:            Txlocal_Q/pha/accumulated_phase_4 (FF)
+  Destination:       Txlocal_Q/pha/accumulated_phase_11 (FF)
+  Source Clock:      preskaler/clk_internal1 rising
+  Destination Clock: preskaler/clk_internal1 rising
+
+  Data Path: Txlocal_Q/pha/accumulated_phase_4 to Txlocal_Q/pha/accumulated_phase_11
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDCP:C->Q           541   0.591   1.414  Txlocal_Q/pha/accumulated_phase_4 (Txlocal_Q/pha/accumulated_phase_4)
+     LUT4:I3->O            4   0.704   0.666  Txlocal_Q/pha/Madd_accumulated_phase_index000021 (Txlocal_Q/pha/Madd_accumulated_phase_index0000_bdd2)
+     LUT2:I1->O            1   0.704   0.000  Txlocal_Q/pha/accumulated_phase_addsub0002<8>1 (Txlocal_Q/pha/accumulated_phase_addsub0002<8>)
+     MUXCY:S->O            1   0.464   0.000  Txlocal_Q/pha/Mcompar_accumulated_phase_cmp_ge0000_cy<4> (Txlocal_Q/pha/Mcompar_accumulated_phase_cmp_ge0000_cy<4>)
+     MUXCY:CI->O           1   0.059   0.000  Txlocal_Q/pha/Mcompar_accumulated_phase_cmp_ge0000_cy<5> (Txlocal_Q/pha/Mcompar_accumulated_phase_cmp_ge0000_cy<5>)
+     MUXCY:CI->O           1   0.059   0.000  Txlocal_Q/pha/Mcompar_accumulated_phase_cmp_ge0000_cy<6> (Txlocal_Q/pha/Mcompar_accumulated_phase_cmp_ge0000_cy<6>)
+     MUXCY:CI->O           7   0.459   0.787  Txlocal_Q/pha/Mcompar_accumulated_phase_cmp_ge0000_cy<7> (Txlocal_Q/pha/accumulated_phase_cmp_ge0000)
+     LUT2:I1->O            1   0.704   0.000  Txlocal_Q/pha/accumulated_phase_Madd__add0000_lut<1> (Txlocal_Q/pha/accumulated_phase_Madd__add0000_lut<1>)
+     MUXCY:S->O            1   0.464   0.000  Txlocal_Q/pha/accumulated_phase_Madd__add0000_cy<1> (Txlocal_Q/pha/accumulated_phase_Madd__add0000_cy<1>)
+     MUXCY:CI->O           1   0.059   0.000  Txlocal_Q/pha/accumulated_phase_Madd__add0000_cy<2> (Txlocal_Q/pha/accumulated_phase_Madd__add0000_cy<2>)
+     MUXCY:CI->O           1   0.059   0.000  Txlocal_Q/pha/accumulated_phase_Madd__add0000_cy<3> (Txlocal_Q/pha/accumulated_phase_Madd__add0000_cy<3>)
+     MUXCY:CI->O           1   0.059   0.000  Txlocal_Q/pha/accumulated_phase_Madd__add0000_cy<4> (Txlocal_Q/pha/accumulated_phase_Madd__add0000_cy<4>)
+     MUXCY:CI->O           1   0.059   0.000  Txlocal_Q/pha/accumulated_phase_Madd__add0000_cy<5> (Txlocal_Q/pha/accumulated_phase_Madd__add0000_cy<5>)
+     MUXCY:CI->O           1   0.059   0.000  Txlocal_Q/pha/accumulated_phase_Madd__add0000_cy<6> (Txlocal_Q/pha/accumulated_phase_Madd__add0000_cy<6>)
+     MUXCY:CI->O           1   0.059   0.000  Txlocal_Q/pha/accumulated_phase_Madd__add0000_cy<7> (Txlocal_Q/pha/accumulated_phase_Madd__add0000_cy<7>)
+     MUXCY:CI->O           1   0.059   0.000  Txlocal_Q/pha/accumulated_phase_Madd__add0000_cy<8> (Txlocal_Q/pha/accumulated_phase_Madd__add0000_cy<8>)
+     MUXCY:CI->O           1   0.059   0.000  Txlocal_Q/pha/accumulated_phase_Madd__add0000_cy<9> (Txlocal_Q/pha/accumulated_phase_Madd__add0000_cy<9>)
+     MUXCY:CI->O           0   0.059   0.000  Txlocal_Q/pha/accumulated_phase_Madd__add0000_cy<10> (Txlocal_Q/pha/accumulated_phase_Madd__add0000_cy<10>)
+     XORCY:CI->O           1   0.804   0.499  Txlocal_Q/pha/accumulated_phase_Madd__add0000_xor<11> (Txlocal_Q/pha/accumulated_phase__add0000<11>)
+     LUT2:I1->O            1   0.704   0.000  Txlocal_Q/pha/accumulated_phase_Q_mux0000<11>1 (Txlocal_Q/pha/accumulated_phase_Q_mux0000<11>)
+     FDCP:D                    0.308          Txlocal_Q/pha/accumulated_phase_11
+    ----------------------------------------
+    Total                      9.921ns (6.555ns logic, 3.366ns route)
+                                       (66.1% logic, 33.9% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'preskaler/clk_internal1'
+  Total number of paths / destination ports: 30 / 30
+-------------------------------------------------------------------------
+Offset:              3.665ns (Levels of Logic = 2)
+  Source:            rst (PAD)
+  Destination:       Txlocal_Q/pha/accumulated_phase_11 (FF)
+  Destination Clock: preskaler/clk_internal1 rising
+
+  Data Path: rst to Txlocal_Q/pha/accumulated_phase_11
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O            25   1.218   1.435  rst_IBUF (rst_IBUF)
+     LUT2:I0->O            1   0.704   0.000  Txlocal_Q/pha/accumulated_phase_Q_mux0000<0>1 (Txlocal_Q/pha/accumulated_phase_Q_mux0000<0>)
+     FDCP:D                    0.308          Txlocal_Q/pha/accumulated_phase_0
+    ----------------------------------------
+    Total                      3.665ns (2.230ns logic, 1.435ns route)
+                                       (60.8% logic, 39.2% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
+  Total number of paths / destination ports: 1 / 1
+-------------------------------------------------------------------------
+Offset:              4.394ns (Levels of Logic = 1)
+  Source:            preskaler/clk_internal (FF)
+  Destination:       clk_out (PAD)
+  Source Clock:      clk rising
+
+  Data Path: preskaler/clk_internal to clk_out
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDCE:C->Q             3   0.591   0.531  preskaler/clk_internal (preskaler/clk_internal1)
+     OBUF:I->O                 3.272          clk_out_OBUF (clk_out)
+    ----------------------------------------
+    Total                      4.394ns (3.863ns logic, 0.531ns route)
+                                       (87.9% logic, 12.1% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'preskaler/clk_internal1'
+  Total number of paths / destination ports: 184212 / 16
+-------------------------------------------------------------------------
+Offset:              16.678ns (Levels of Logic = 24)
+  Source:            Txlocal_I/Lookup_table/sine_15 (FF)
+  Destination:       audio_out<15> (PAD)
+  Source Clock:      preskaler/clk_internal1 rising
+
+  Data Path: Txlocal_I/Lookup_table/sine_15 to audio_out<15>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDC:C->Q              3   0.591   0.531  Txlocal_I/Lookup_table/sine_15 (Txlocal_I/Lookup_table/sine_15)
+     MULT18X18SIO:B15->P15    2   4.834   0.447  Mmult_mixed_I (mixed_I<15>)
+     INV:I->O              1   0.704   0.000  Madd_u_audio_out_not0000<15>1_INV_0 (Madd_u_audio_out_not0000<15>)
+     MUXCY:S->O            1   0.464   0.000  Madd_u_audio_out_addsub0000_cy<15> (Madd_u_audio_out_addsub0000_cy<15>)
+     MUXCY:CI->O           1   0.059   0.000  Madd_u_audio_out_addsub0000_cy<16> (Madd_u_audio_out_addsub0000_cy<16>)
+     MUXCY:CI->O           1   0.059   0.000  Madd_u_audio_out_addsub0000_cy<17> (Madd_u_audio_out_addsub0000_cy<17>)
+     MUXCY:CI->O           1   0.059   0.000  Madd_u_audio_out_addsub0000_cy<18> (Madd_u_audio_out_addsub0000_cy<18>)
+     MUXCY:CI->O           1   0.059   0.000  Madd_u_audio_out_addsub0000_cy<19> (Madd_u_audio_out_addsub0000_cy<19>)
+     MUXCY:CI->O           1   0.059   0.000  Madd_u_audio_out_addsub0000_cy<20> (Madd_u_audio_out_addsub0000_cy<20>)
+     MUXCY:CI->O           1   0.059   0.000  Madd_u_audio_out_addsub0000_cy<21> (Madd_u_audio_out_addsub0000_cy<21>)
+     MUXCY:CI->O           1   0.059   0.000  Madd_u_audio_out_addsub0000_cy<22> (Madd_u_audio_out_addsub0000_cy<22>)
+     MUXCY:CI->O           1   0.059   0.000  Madd_u_audio_out_addsub0000_cy<23> (Madd_u_audio_out_addsub0000_cy<23>)
+     MUXCY:CI->O           1   0.059   0.000  Madd_u_audio_out_addsub0000_cy<24> (Madd_u_audio_out_addsub0000_cy<24>)
+     MUXCY:CI->O           1   0.059   0.000  Madd_u_audio_out_addsub0000_cy<25> (Madd_u_audio_out_addsub0000_cy<25>)
+     MUXCY:CI->O           1   0.059   0.000  Madd_u_audio_out_addsub0000_cy<26> (Madd_u_audio_out_addsub0000_cy<26>)
+     MUXCY:CI->O           1   0.059   0.000  Madd_u_audio_out_addsub0000_cy<27> (Madd_u_audio_out_addsub0000_cy<27>)
+     MUXCY:CI->O           1   0.059   0.000  Madd_u_audio_out_addsub0000_cy<28> (Madd_u_audio_out_addsub0000_cy<28>)
+     MUXCY:CI->O           1   0.059   0.000  Madd_u_audio_out_addsub0000_cy<29> (Madd_u_audio_out_addsub0000_cy<29>)
+     MUXCY:CI->O           1   0.059   0.000  Madd_u_audio_out_addsub0000_cy<30> (Madd_u_audio_out_addsub0000_cy<30>)
+     XORCY:CI->O           1   0.804   0.455  Madd_u_audio_out_addsub0000_xor<31> (u_audio_out_addsub0000<31>)
+     LUT3:I2->O            1   0.704   0.595  u_audio_out_mux0000<31>1 (u_audio_out_mux0000<31>)
+     LUT4:I0->O            1   0.704   0.000  Madd_u_audio_out_lut<31> (Madd_u_audio_out_lut<31>)
+     MUXCY:S->O            0   0.464   0.000  Madd_u_audio_out_cy<31> (Madd_u_audio_out_cy<31>)
+     XORCY:CI->O           1   0.804   0.420  Madd_u_audio_out_xor<32> (audio_out_15_OBUF)
+     OBUF:I->O                 3.272          audio_out_15_OBUF (audio_out<15>)
+    ----------------------------------------
+    Total                     16.678ns (14.230ns logic, 2.448ns route)
+                                       (85.3% logic, 14.7% route)
+
+=========================================================================
+Timing constraint: Default path analysis
+  Total number of paths / destination ports: 175904 / 16
+-------------------------------------------------------------------------
+Delay:               17.284ns (Levels of Logic = 30)
+  Source:            hf_in<5> (PAD)
+  Destination:       audio_out<15> (PAD)
+
+  Data Path: hf_in<5> to audio_out<15>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             2   1.218   0.447  hf_in_5_IBUF (hf_in_5_IBUF)
+     MULT18X18SIO:A5->P10    2   4.602   0.447  Mmult_mixed_I (mixed_I<10>)
+     INV:I->O              1   0.704   0.000  Madd_u_audio_out_not0000<10>1_INV_0 (Madd_u_audio_out_not0000<10>)
+     MUXCY:S->O            1   0.464   0.000  Madd_u_audio_out_addsub0000_cy<10> (Madd_u_audio_out_addsub0000_cy<10>)
+     MUXCY:CI->O           1   0.059   0.000  Madd_u_audio_out_addsub0000_cy<11> (Madd_u_audio_out_addsub0000_cy<11>)
+     MUXCY:CI->O           1   0.059   0.000  Madd_u_audio_out_addsub0000_cy<12> (Madd_u_audio_out_addsub0000_cy<12>)
+     MUXCY:CI->O           1   0.059   0.000  Madd_u_audio_out_addsub0000_cy<13> (Madd_u_audio_out_addsub0000_cy<13>)
+     MUXCY:CI->O           1   0.059   0.000  Madd_u_audio_out_addsub0000_cy<14> (Madd_u_audio_out_addsub0000_cy<14>)
+     MUXCY:CI->O           1   0.059   0.000  Madd_u_audio_out_addsub0000_cy<15> (Madd_u_audio_out_addsub0000_cy<15>)
+     MUXCY:CI->O           1   0.059   0.000  Madd_u_audio_out_addsub0000_cy<16> (Madd_u_audio_out_addsub0000_cy<16>)
+     MUXCY:CI->O           1   0.059   0.000  Madd_u_audio_out_addsub0000_cy<17> (Madd_u_audio_out_addsub0000_cy<17>)
+     MUXCY:CI->O           1   0.059   0.000  Madd_u_audio_out_addsub0000_cy<18> (Madd_u_audio_out_addsub0000_cy<18>)
+     MUXCY:CI->O           1   0.059   0.000  Madd_u_audio_out_addsub0000_cy<19> (Madd_u_audio_out_addsub0000_cy<19>)
+     MUXCY:CI->O           1   0.059   0.000  Madd_u_audio_out_addsub0000_cy<20> (Madd_u_audio_out_addsub0000_cy<20>)
+     MUXCY:CI->O           1   0.059   0.000  Madd_u_audio_out_addsub0000_cy<21> (Madd_u_audio_out_addsub0000_cy<21>)
+     MUXCY:CI->O           1   0.059   0.000  Madd_u_audio_out_addsub0000_cy<22> (Madd_u_audio_out_addsub0000_cy<22>)
+     MUXCY:CI->O           1   0.059   0.000  Madd_u_audio_out_addsub0000_cy<23> (Madd_u_audio_out_addsub0000_cy<23>)
+     MUXCY:CI->O           1   0.059   0.000  Madd_u_audio_out_addsub0000_cy<24> (Madd_u_audio_out_addsub0000_cy<24>)
+     MUXCY:CI->O           1   0.059   0.000  Madd_u_audio_out_addsub0000_cy<25> (Madd_u_audio_out_addsub0000_cy<25>)
+     MUXCY:CI->O           1   0.059   0.000  Madd_u_audio_out_addsub0000_cy<26> (Madd_u_audio_out_addsub0000_cy<26>)
+     MUXCY:CI->O           1   0.059   0.000  Madd_u_audio_out_addsub0000_cy<27> (Madd_u_audio_out_addsub0000_cy<27>)
+     MUXCY:CI->O           1   0.059   0.000  Madd_u_audio_out_addsub0000_cy<28> (Madd_u_audio_out_addsub0000_cy<28>)
+     MUXCY:CI->O           1   0.059   0.000  Madd_u_audio_out_addsub0000_cy<29> (Madd_u_audio_out_addsub0000_cy<29>)
+     MUXCY:CI->O           1   0.059   0.000  Madd_u_audio_out_addsub0000_cy<30> (Madd_u_audio_out_addsub0000_cy<30>)
+     XORCY:CI->O           1   0.804   0.455  Madd_u_audio_out_addsub0000_xor<31> (u_audio_out_addsub0000<31>)
+     LUT3:I2->O            1   0.704   0.595  u_audio_out_mux0000<31>1 (u_audio_out_mux0000<31>)
+     LUT4:I0->O            1   0.704   0.000  Madd_u_audio_out_lut<31> (Madd_u_audio_out_lut<31>)
+     MUXCY:S->O            0   0.464   0.000  Madd_u_audio_out_cy<31> (Madd_u_audio_out_cy<31>)
+     XORCY:CI->O           1   0.804   0.420  Madd_u_audio_out_xor<32> (audio_out_15_OBUF)
+     OBUF:I->O                 3.272          audio_out_15_OBUF (audio_out<15>)
+    ----------------------------------------
+    Total                     17.284ns (14.920ns logic, 2.364ns route)
+                                       (86.3% logic, 13.7% route)
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 76.00 secs
+Total CPU time to Xst completion: 74.55 secs
+ 
+--> 
+
+
+Total memory usage is 558648 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :    3 (   0 filtered)
+Number of infos    :    0 (   0 filtered)
+
