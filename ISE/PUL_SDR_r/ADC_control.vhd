@@ -47,9 +47,9 @@ end ADC_control;
 architecture adcca of ADC_control is
 	constant Ncycles_wait : integer := 3;
 	constant Ncycles_break : integer := 2;
-	type stany is (IDLE, START_CONVERSION, WAIT_FOR_SAMPLE, CONV_CH1, CHANNEL_BRK, CONV_CH0);
+	type stany is (IDLE, START_CONVERSION, WAIT_FOR_SAMPLE, CONVERSION_IN_PROGRESS);
 	signal state : stany := IDLE;
-	shared variable data1, data0 : std_logic_vector(Nbit_data-1 downto 0);
+	shared variable temp_data: std_logic_vector(0 to 2*Nbit_data+1);
 begin
 	adc: process(sck_internal, rst) is
 	
@@ -78,32 +78,16 @@ begin
 			when WAIT_FOR_SAMPLE =>
 				sck_ctr := sck_ctr + 1;
 				if(sck_ctr >= Ncycles_wait-1) then
-					STATE <= CONV_CH1;
+					STATE <= CONVERSION_IN_PROGRESS;
 					sck_ctr := 0;
 				end if;
 				
-			when CONV_CH1 => 
-				data1(sck_ctr) := MISO;
+
+			when others =>				-- CONVERSION_IN_PROGRESS
+				temp_data(sck_ctr) := MISO;
 				sck_ctr := sck_ctr + 1;
 					
-				if(sck_ctr >= Nbit_data) then
-					state <= CHANNEL_BRK;
-					sck_ctr := 0;
-				end if;
-			
-			when CHANNEL_BRK =>
-				sck_ctr := sck_ctr + 1;
-					
-				if(sck_ctr >= Ncycles_break-1) then
-					state <= CONV_CH0;
-					sck_ctr := 0;
-				end if;
-			
-			when others =>				-- CONV_CH0
-				data0(sck_ctr) := MISO;
-				sck_ctr := sck_ctr + 1;
-					
-				if(sck_ctr >= Nbit_data) then
+				if(sck_ctr >= 2*Nbit_data+2) then
 					state <= IDLE;
 					sck_ctr := 0;
 				end if;
@@ -115,7 +99,9 @@ begin
 
 	SCK_Enable <= '0' when state = IDLE else '1';
 	AD_CONV <= '1' when state = START_CONVERSION else '0';
-	ADC_Dataout <= data1(Nbit_data-1 downto 0) & data0(Nbit_data-1 downto 0) when state = IDLE;
+	ADC_Dataout <= temp_data(0 to Nbit_data-1) &
+						temp_data(Nbit_data+2 to 2*Nbit_data+1) 					
+							when state = IDLE;
 
 end adcca;
 

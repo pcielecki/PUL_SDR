@@ -2,9 +2,9 @@ Command line:
    adc_tb_isim_beh.exe
      -simmode  gui
      -simrunnum  0
-     -socket  40674
+     -socket  41336
 
-Sun May 15 15:19:23 2016
+Sun May 15 22:03:53 2016
 
 
  Elaboration Time: 0.01 sec
@@ -17,13 +17,13 @@ Sun May 15 15:19:23 2016
  Total Blocks           : 7
  Total Primitive Blocks : 5
  Total Processes        : 10
- Total Traceable Variables  : 24
- Total Scalar Nets and Variables : 476
-Total Line Count : 59
+ Total Traceable Variables  : 23
+ Total Scalar Nets and Variables : 478
+Total Line Count : 50
 
  Total Simulation Time: 0.03 sec
 
  Current Memory Usage: 271.34 Meg
 
-Sun May 15 15:23:33 2016
+Sun May 15 22:04:06 2016
 

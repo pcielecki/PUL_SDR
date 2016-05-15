@@ -67,7 +67,7 @@ end component ADC_TOP;
    -- Clock period definitions
    constant clk_period : time := 1	 ns;
 	constant sample_data : std_logic_vector(0 to 2*Nbit - 1) := 
-		"011111111110110101010101";
+		"001111111110110101010101";
 		
 		signal ctr : integer := 0;
 BEGIN
@@ -119,7 +119,7 @@ BEGIN
 	
 		if(rst = '0' or AD_CONV = '1') then data_ctr := 0;ctr <= 0;
 		elsif(SPI_SCK'event and SPI_SCK = '0' and data_ctr < 2*Nbit) then
-			if(ctr > 1 and (ctr < Nbit + 2 or ctr >= Nbit + 3))	then
+			if(ctr > 1 and (ctr < Nbit + 2 or ctr > Nbit + 3))	then
 				SPI_MISO <= sample_data(data_ctr);
 				data_ctr := data_ctr + 1;	
 			else

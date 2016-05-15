@@ -25,12 +25,12 @@
     <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="ADC_TOP_stx_beh.prj"/>
     <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="Phase_accumulator_stx_beh.prj"/>
     <file xil_pn:fileType="FILE_XMSGS" xil_pn:name="_xmsgs/xst.xmsgs"/>
-    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="adc_tb_beh.prj"/>
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="adc_tb_isim_beh.exe"/>
-    <file xil_pn:fileType="FILE_ISIM_MISC" xil_pn:name="adc_tb_isim_beh.wdb"/>
     <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="adc_tb_stx_beh.prj"/>
     <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="bypass_stx_beh.prj"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="bypass_tb_beh.prj"/>
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="bypass_tb_isim_beh.exe"/>
+    <file xil_pn:fileType="FILE_ISIM_MISC" xil_pn:name="bypass_tb_isim_beh.wdb"/>
     <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="bypass_tb_stx_beh.prj"/>
     <file xil_pn:fileType="FILE_CMD_LOG" xil_pn:name="demodulator.cmd_log"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_LSO" xil_pn:name="demodulator.lso"/>
@@ -66,13 +66,9 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1463317925" xil_pn:in_ck="-5927816390905871166" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1463317925">
+    <transform xil_pn:end_ts="1463342664" xil_pn:in_ck="-5927816390905871166" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1463342664">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForInputs"/>
-      <status xil_pn:value="OutOfDateForOutputs"/>
-      <status xil_pn:value="InputChanged"/>
-      <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="../../../../../Downloads/CA/DAC_Control.vhd"/>
       <outfile xil_pn:name="../../../../../Downloads/CA/DAC_TOP.vhd"/>
       <outfile xil_pn:name="ADC_TOP.vhd"/>
@@ -97,11 +93,11 @@
       <outfile xil_pn:name="sin_LUT.vhd"/>
       <outfile xil_pn:name="sin_lut_pkg.vhd"/>
     </transform>
-    <transform xil_pn:end_ts="1463315928" xil_pn:name="TRAN_xawsToSimhdl" xil_pn:prop_ck="7823427244110090483" xil_pn:start_ts="1463315928">
+    <transform xil_pn:end_ts="1463342668" xil_pn:name="TRAN_xawsToSimhdl" xil_pn:prop_ck="-7261684058954325539" xil_pn:start_ts="1463342668">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1463315928" xil_pn:name="TRAN_schematicsToHdlSim" xil_pn:prop_ck="-936817823380288075" xil_pn:start_ts="1463315928">
+    <transform xil_pn:end_ts="1463342668" xil_pn:name="TRAN_schematicsToHdlSim" xil_pn:prop_ck="3918303362301089055" xil_pn:start_ts="1463342668">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
@@ -111,14 +107,9 @@
       <outfile xil_pn:name="ipcore_dir/fir_filter.ngc"/>
       <outfile xil_pn:name="ipcore_dir/fir_filter.vhd"/>
     </transform>
-    <transform xil_pn:end_ts="1463317926" xil_pn:in_ck="-5927816390905871166" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1463317925">
+    <transform xil_pn:end_ts="1463342668" xil_pn:in_ck="-5927816390905871166" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1463342668">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForInputs"/>
-      <status xil_pn:value="OutOfDateForPredecessor"/>
-      <status xil_pn:value="OutOfDateForOutputs"/>
-      <status xil_pn:value="InputChanged"/>
-      <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="../../../../../Downloads/CA/DAC_Control.vhd"/>
       <outfile xil_pn:name="../../../../../Downloads/CA/DAC_TOP.vhd"/>
       <outfile xil_pn:name="ADC_TOP.vhd"/>
@@ -143,28 +134,22 @@
       <outfile xil_pn:name="sin_LUT.vhd"/>
       <outfile xil_pn:name="sin_lut_pkg.vhd"/>
     </transform>
-    <transform xil_pn:end_ts="1463317928" xil_pn:in_ck="-354470200934182425" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="5113562146182163816" xil_pn:start_ts="1463317926">
+    <transform xil_pn:end_ts="1463342671" xil_pn:in_ck="-354470200934182425" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="4329926609205962716" xil_pn:start_ts="1463342668">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForInputs"/>
-      <status xil_pn:value="OutOfDateForPredecessor"/>
       <status xil_pn:value="OutOfDateForOutputs"/>
-      <status xil_pn:value="InputChanged"/>
       <status xil_pn:value="OutputChanged"/>
-      <outfile xil_pn:name="adc_tb_beh.prj"/>
-      <outfile xil_pn:name="adc_tb_isim_beh.exe"/>
+      <outfile xil_pn:name="bypass_tb_beh.prj"/>
+      <outfile xil_pn:name="bypass_tb_isim_beh.exe"/>
       <outfile xil_pn:name="fuse.log"/>
       <outfile xil_pn:name="isim"/>
       <outfile xil_pn:name="isim.log"/>
       <outfile xil_pn:name="xilinxsim.ini"/>
     </transform>
-    <transform xil_pn:end_ts="1463317928" xil_pn:in_ck="-5673423694329311124" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="-7632817711024876587" xil_pn:start_ts="1463317928">
+    <transform xil_pn:end_ts="1463342671" xil_pn:in_ck="-5673423694329311124" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="-8728424596281228887" xil_pn:start_ts="1463342671">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForPredecessor"/>
-      <status xil_pn:value="OutOfDateForOutputs"/>
-      <status xil_pn:value="OutputChanged"/>
-      <outfile xil_pn:name="adc_tb_isim_beh.wdb"/>
+      <outfile xil_pn:name="bypass_tb_isim_beh.wdb"/>
       <outfile xil_pn:name="isim.cmd"/>
       <outfile xil_pn:name="isim.log"/>
     </transform>

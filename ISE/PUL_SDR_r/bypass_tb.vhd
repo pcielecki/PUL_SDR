@@ -110,19 +110,19 @@ BEGIN
 
 	adc_process : process(rst, AD_CONV, SPI0_SCK) is
 	variable data_ctr : integer := 0;
-	begin	
+	begin
 		if(rst = '0' or AD_CONV = '1') then data_ctr := 0;ctr <= 0;
-		elsif(SPI0_SCK'event and SPI0_SCK = '0' and ctr < 2*Nbit + 2) then
-			if(ctr < Nbit or ctr > Nbit + 1)	then
+		elsif(SPI0_SCK'event and SPI0_SCK = '0' and data_ctr < 2*Nbit) then
+			if(ctr > 1 and (ctr < Nbit + 2 or ctr > Nbit + 3))	then
 				SPI0_MISO <= sample_data(data_ctr);
-				data_ctr := data_ctr + 1;		
+				data_ctr := data_ctr + 1;	
 			else
 				SPI0_MISO <= 'Z';
 			end if;
-			
 			ctr <= ctr + 1;	
 
 		end if;
+	
 	end process adc_process;
 	
 	dac_process : process(rst, SPI1_SCK) is

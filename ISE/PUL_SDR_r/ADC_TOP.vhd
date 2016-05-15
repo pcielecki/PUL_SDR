@@ -69,7 +69,7 @@ signal sck_enable, sck_internal : std_logic;
 	end component clk_prescaler;
 	
 begin
-	adc_ctrl : adc_control generic map(Ncycles_strobe => 5, Nbit_data => Nbit)
+	adc_ctrl : adc_control generic map(Ncycles_strobe => 1, Nbit_data => Nbit)
 									port map(rst => rst, sck_internal => sck_internal, 
 									start_conv => start_conv,
 									SCK_enable => sck_enable,
