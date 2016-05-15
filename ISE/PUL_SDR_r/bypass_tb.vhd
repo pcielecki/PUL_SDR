@@ -67,9 +67,9 @@ ARCHITECTURE behavior OF bypass_tb IS
    signal SPI1_SS : std_logic := '1';
 
    -- Clock period definitions
-   constant clk_period : time := 1 ns;
+   constant clk_period : time := 0.5 ns;
  	constant sample_data : std_logic_vector(0 to 2*Nbit - 1) := 
-		"011111111111010101010101";
+		"111111111110000000000000";
 		
 		signal ctr : integer := 0;
 		signal dac_out : std_logic_vector(11 downto 0) := (others => '1');

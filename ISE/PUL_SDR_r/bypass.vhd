@@ -73,7 +73,7 @@ begin
 
 	
 	
-	adc: adc_top generic map(Nbit => Nbit_data, ADC_Speed => 1)
+	adc: adc_top generic map(Nbit => Nbit_data, ADC_Speed => 2)
 					port map(rst => rst, clk => clk,
 					start_conv => '1',
 					SPI_SCK => SPI0_SCK,
