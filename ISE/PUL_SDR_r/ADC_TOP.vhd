@@ -38,7 +38,7 @@ entity ADC_TOP is
            SPI_SCK : out  STD_LOGIC;
            SPI_MISO : in  STD_LOGIC;
            AD_CONV : out  STD_LOGIC;
-           ADC_dataout : out  STD_LOGIC_VECTOR(Nbit-1 downto 0));
+           ADC_dataout : out  STD_LOGIC_VECTOR(2*Nbit-1 downto 0));
 end ADC_TOP;
 
 architecture adc_top_a of ADC_TOP is
@@ -52,12 +52,12 @@ signal sck_enable, sck_internal : std_logic;
 			Nbit_data : integer := 30
 			);
 		 Port ( rst : in  STD_LOGIC;
-				  clk : in  STD_LOGIC;
+				  sck_internal : in  STD_LOGIC;
 				  start_conv : in std_logic;
 				  SCK_enable : out  STD_LOGIC;
 				  MISO : in  STD_LOGIC;
 				  AD_CONV : out  STD_LOGIC;
-				  ADC_Dataout : out std_logic_vector(Nbit_data-1 downto 0)
+				  ADC_Dataout : out std_logic_vector(2*Nbit_data-1 downto 0)
 				  );
 	end component ADC_control;
 
@@ -69,8 +69,8 @@ signal sck_enable, sck_internal : std_logic;
 	end component clk_prescaler;
 	
 begin
-	adc_ctrl : adc_control generic map(Ncycles_strobe => 5, Nbit_data => 30)
-									port map(rst => rst, clk => clk, 
+	adc_ctrl : adc_control generic map(Ncycles_strobe => 5, Nbit_data => Nbit)
+									port map(rst => rst, sck_internal => sck_internal, 
 									start_conv => start_conv,
 									SCK_enable => sck_enable,
 									MISO => SPI_MISO,

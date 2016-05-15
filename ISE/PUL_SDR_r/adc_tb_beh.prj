@@ -1,0 +1,4 @@
+vhdl work "clk_prescaler.vhd"
+vhdl work "ADC_control.vhd"
+vhdl work "ADC_TOP.vhd"
+vhdl work "adc_tb.vhd"

@@ -37,39 +37,43 @@ END adc_tb;
  
 ARCHITECTURE behavior OF adc_tb IS 
  
+ constant Nbit : integer := 12;
     -- Component Declaration for the Unit Under Test (UUT)
  
-    COMPONENT ADC_TOP
-    PORT(
-         rst : IN  std_logic;
-         clk : IN  std_logic;
-         start_conv : IN  std_logic;
-         SPI_SCK : OUT  std_logic;
-         SPI_MISO : IN  std_logic;
-         AD_CONV : OUT  std_logic;
-         ADC_dataout : OUT  std_logic_vector(11 downto 0)
-        );
-    END COMPONENT;
+component ADC_TOP is
+	Generic(Nbit : integer := 12;
+				ADC_speed : integer range 0 to 2**4 - 1);
+    Port ( rst : in  STD_LOGIC;
+           clk : in  STD_LOGIC;
+			  start_conv : in std_logic;
+           SPI_SCK : out  STD_LOGIC;
+           SPI_MISO : in  STD_LOGIC;
+           AD_CONV : out  STD_LOGIC;
+           ADC_dataout : out  STD_LOGIC_VECTOR(2*Nbit-1 downto 0));
+end component ADC_TOP;
     
-
+	signal useless : std_logic := '0';
    --Inputs
    signal rst : std_logic := '0';
    signal clk : std_logic := '0';
    signal start_conv : std_logic := '0';
-   signal SPI_MISO : std_logic := '0';
+   signal SPI_MISO : std_logic := '1';
 
  	--Outputs
    signal SPI_SCK : std_logic;
    signal AD_CONV : std_logic;
-   signal ADC_dataout : std_logic_vector(4 downto 0);
+   signal ADC_dataout : std_logic_vector(2*Nbit-1 downto 0);
 
    -- Clock period definitions
-   constant clk_period : time := 10 ns;
-	constant sample_data : std_logic_vector(4 downto 0) := "11001";
+   constant clk_period : time := 1	 ns;
+	constant sample_data : std_logic_vector(0 to 2*Nbit - 1) := 
+		"011111111110110101010101";
+		
+		signal ctr : integer := 0;
 BEGIN
  
 	-- Instantiate the Unit Under Test (UUT)
-   uut: ADC_TOP generic map(2, 1)	PORT MAP (
+   uut: ADC_TOP generic map(Nbit, 1)	PORT MAP (
           rst => rst,
           clk => clk,
           start_conv => start_conv,
@@ -93,8 +97,38 @@ BEGIN
    stim_proc: process
    begin		
 		wait for 2*clk_period;
+		
 		rst <= '1';
 		wait for 10*clk_period;
+		
+		start_conv <= '1';
+		wait for 5*clk_period;
+		
+		start_conv <= '0';
+		wait for 500*clk_period;
+		
+		start_conv <= '1';
+		wait ;
+		
+		
    end process;
+
+	conv_process : process(rst, AD_CONV, SPI_SCK) is
+	variable data_ctr : integer := 0;
+	begin
+	
+		if(rst = '0' or AD_CONV = '1') then data_ctr := 0;ctr <= 0;
+		elsif(SPI_SCK'event and SPI_SCK = '0' and data_ctr < 2*Nbit) then
+			if(ctr > 1 and (ctr < Nbit + 2 or ctr >= Nbit + 3))	then
+				SPI_MISO <= sample_data(data_ctr);
+				data_ctr := data_ctr + 1;	
+			else
+				SPI_MISO <= 'Z';
+			end if;
+			ctr <= ctr + 1;	
+
+		end if;
+	
+	end process conv_process;
 
 END;

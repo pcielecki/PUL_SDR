@@ -1,1 +1,1 @@
--intstyle "ise" -incremental -o "/home/piotr/workspace/PUL/PUL_SDR/ISE/PUL_SDR_r/demodulator_tb_isim_beh.exe" -prj "/home/piotr/workspace/PUL/PUL_SDR/ISE/PUL_SDR_r/demodulator_tb_beh.prj" "work.demodulator_tb" 
+-intstyle "ise" -incremental -o "/home/piotr/workspace/PUL/PUL_SDR/ISE/PUL_SDR_r/adc_tb_isim_beh.exe" -prj "/home/piotr/workspace/PUL/PUL_SDR/ISE/PUL_SDR_r/adc_tb_beh.prj" "work.adc_tb" 
