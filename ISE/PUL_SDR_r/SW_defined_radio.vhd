@@ -117,36 +117,7 @@ begin
 	u_audio_out <= abs(mixed_I) + abs(mixed_Q);
 	audio_out <= std_logic_vector(u_audio_out(2*sample_in_nbit downto sample_in_nbit+1));
 	
-	-- PROCESY POMOCNICZE I/O -- 
-	IQwriteproc: process(clk_prescalled) is
-		variable VEC_LINE_I : line;
-		file VEC_FILE_I : text is out "local_I";
-		
-		variable VEC_LINE_mI : line;
-		file VEC_FILE_mI : text is out "mixed_I";
-		
-		variable VEC_LINE_mQ : line;
-		file VEC_FILE_mQ : text is out "mixed_Q";
-		
-		variable VEC_LINE_Q : line;
-		file VEC_FILE_Q : text is out "local_Q";
-		
-	begin
-		if(clk_prescalled'event and clk_prescalled = '0' and rst = '1') then
-			write (VEC_LINE_I, to_integer(signed(local_I)));
-			writeline (VEC_FILE_I, VEC_LINE_I);
-	
-			write (VEC_LINE_Q, to_integer(signed(local_Q)));
-			writeline (VEC_FILE_Q, VEC_LINE_Q);
-			
-			write (VEC_LINE_mI, to_integer(signed(mixed_I)));
-			writeline (VEC_FILE_mI, VEC_LINE_mI);
-			
-			write (VEC_LINE_mQ, to_integer(signed(mixed_Q)));
-			writeline (VEC_FILE_mQ, VEC_LINE_mQ);
-		end if;
-	end process IQwriteproc;
-	
+
 	
 end dem_a;
 

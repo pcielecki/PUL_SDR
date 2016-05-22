@@ -8,11 +8,49 @@
 <msg type="warning" file="Xst" num="751" delta="new" >&quot;<arg fmt="%s" index="1">/home/piotr/workspace/PUL/PUL_SDR/ISE/PUL_SDR_r/NCO.vhd</arg>&quot; line <arg fmt="%d" index="2">79</arg>: Bad association for formal port &apos;<arg fmt="%s" index="3">phase</arg>&apos; of component &apos;<arg fmt="%s" index="4">Phase_accumulator</arg>&apos;.
 </msg>
 
-<msg type="warning" file="Xst" num="819" delta="new" >&quot;<arg fmt="%s" index="1">/home/piotr/workspace/PUL/PUL_SDR/ISE/PUL_SDR_r/Phase_accumulator.vhd</arg>&quot; line <arg fmt="%d" index="2">45</arg>: One or more signals are missing in the process sensitivity list. To enable synthesis of FPGA/CPLD hardware, XST will assume that all necessary signals are present in the sensitivity list. Please note that the result of the synthesis may differ from the initial design specification. The missing signals are:
-<arg fmt="%s" index="3">&lt;phi0&gt;</arg>
+<msg type="warning" file="Xst" num="751" delta="new" >&quot;<arg fmt="%s" index="1">/home/piotr/workspace/PUL/PUL_SDR/ISE/PUL_SDR_r/NCO.vhd</arg>&quot; line <arg fmt="%d" index="2">79</arg>: Bad association for formal port &apos;<arg fmt="%s" index="3">phase</arg>&apos; of component &apos;<arg fmt="%s" index="4">Phase_accumulator</arg>&apos;.
 </msg>
 
-<msg type="warning" file="Xst" num="646" delta="new" >Signal &lt;<arg fmt="%s" index="1">u_audio_out&lt;16:0&gt;</arg>&gt; is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+<msg type="warning" file="Xst" num="646" delta="new" >Signal &lt;<arg fmt="%s" index="1">sine_internal&lt;3:0&gt;</arg>&gt; is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="646" delta="new" >Signal &lt;<arg fmt="%s" index="1">u_audio_out&lt;12:0&gt;</arg>&gt; is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">sine_internal_0</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">Lookup_table</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">sine_internal_1</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">Lookup_table</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">sine_internal_2</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">Lookup_table</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">sine_internal_3</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">Lookup_table</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">sine_internal_0</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">Lookup_table</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">sine_internal_1</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">Lookup_table</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">sine_internal_2</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">Lookup_table</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">sine_internal_3</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">Lookup_table</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">sine_internal_0</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">sin_LUT</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">sine_internal_1</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">sin_LUT</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">sine_internal_2</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">sin_LUT</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">sine_internal_3</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">sin_LUT</arg>&gt;.
 </msg>
 
 </messages>

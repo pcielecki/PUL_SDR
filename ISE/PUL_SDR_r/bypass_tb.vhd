@@ -41,35 +41,31 @@ ARCHITECTURE behavior OF bypass_tb IS
     -- Component Declaration for the Unit Under Test (UUT)
  
     COMPONENT bypass
-    PORT(
-         rst : IN  std_logic;
-         clk : IN  std_logic;
-         SPI0_SCK : OUT  std_logic;
-         AD_CONV : OUT  std_logic;
-         SPI0_MISO : IN  std_logic;
-         SPI1_SCK : OUT  std_logic;
-         SPI1_MOSI : OUT  std_logic;
-         SPI1_SS : OUT  std_logic
-        );
+    Port ( rst : in  STD_LOGIC;
+           clk : in  STD_LOGIC;
+           SPI0_SCK : out std_logic;
+			  AD_CONV : out std_logic;
+			  SPI0_MISO : in  STD_LOGIC;
+			  SPI0_MOSI : out std_Logic;
+			  SPI0_SS : out std_logic
+			  );
     END COMPONENT;
     
 
    --Inputs
    signal rst : std_logic := '0';
    signal clk : std_logic := '0';
-   signal SPI0_MISO : std_logic := '1';
+
 
  	--Outputs
-   signal SPI0_SCK : std_logic;
+   signal SPI0_SCK, SPI0_MISO, SPI0_MOSI, SPI0_SS : std_logic;
    signal AD_CONV : std_logic := '0';
-   signal SPI1_SCK : std_logic := '1';
-   signal SPI1_MOSI : std_logic := '1';
-   signal SPI1_SS : std_logic := '1';
+
 
    -- Clock period definitions
-   constant clk_period : time := 0.5 ns;
+   constant clk_period : time := 0.1 	 ns;
  	constant sample_data : std_logic_vector(0 to 2*Nbit - 1) := 
-		"111111111110000000000000";
+		"011111111110100000000001";
 		
 		signal ctr : integer := 0;
 		signal dac_out : std_logic_vector(11 downto 0) := (others => '1');
@@ -82,9 +78,8 @@ BEGIN
           SPI0_SCK => SPI0_SCK,
           AD_CONV => AD_CONV,
           SPI0_MISO => SPI0_MISO,
-          SPI1_SCK => SPI1_SCK,
-          SPI1_MOSI => SPI1_MOSI,
-          SPI1_SS => SPI1_SS
+          SPI0_MOSI => SPI0_MOSI,
+          SPI0_SS => SPI0_SS
         );
 
    -- Clock process definitions
@@ -125,14 +120,14 @@ BEGIN
 	
 	end process adc_process;
 	
-	dac_process : process(rst, SPI1_SCK) is
+	dac_process : process(rst, SPI0_SCK) is
 	variable bit_ctr : integer := 0;
 	variable collected_data : std_logic_Vector(31 downto 0);
 	begin
 		if(rst = '0') then bit_ctr := 0; dac_out <= (others => '0');
-		elsif(SPI1_SCK'event and SPI1_SCK = '0' ) then
-			if(SPI1_SS = '0' and bit_ctr >= 0) then
-				collected_data(bit_ctr) := SPI1_MOSI;
+		elsif(SPI0_SCK'event and SPI0_SCK = '0' ) then
+			if(SPI0_SS = '0' and bit_ctr >= 0) then
+				collected_data(bit_ctr) := SPI0_MOSI;
 				bit_ctr := bit_ctr - 1;
 			else
 				bit_ctr := 31;

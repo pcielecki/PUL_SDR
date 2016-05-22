@@ -36,27 +36,27 @@ entity bypass is
            SPI0_SCK : out std_logic;
 			  AD_CONV : out std_logic;
 			  SPI0_MISO : in  STD_LOGIC;
-			 
-				SPI1_SCK : out std_logic;			  
-           SPI1_MOSI : out  STD_LOGIC;
-			  SPI1_SS : out std_logic
+			  SPI0_MOSI : out std_Logic;
+			  SPI0_SS : out std_logic
 			  );
 end bypass;
 
 architecture bypass_a of bypass is
+
 	component ADC_TOP is
 		Generic(Nbit : integer := 12;
 					ADC_speed : integer range 0 to 2**4 - 1);
 		 Port ( rst : in  STD_LOGIC;
 				  clk : in  STD_LOGIC;
 				  start_conv : in std_logic;
-				  SPI_SCK : out  STD_LOGIC;
+				  SPI_SCK : in  STD_LOGIC;
 				  SPI_MISO : in  STD_LOGIC;
 				  AD_CONV : out  STD_LOGIC;
 				  ADC_dataout : out  STD_LOGIC_VECTOR(2*Nbit-1 downto 0));
 	end component ADC_TOP;
 	
 	component DAC_TOP is
+		Generic(SPI_SPEED: integer := 4);
     Port ( CLK : in  STD_LOGIC;
            RST : in  STD_LOGIC;
            DAC_MOSI : out  STD_LOGIC;
@@ -67,29 +67,32 @@ architecture bypass_a of bypass is
 		   );
 	end component	DAC_TOP;
 	
+
+	signal dac_sck: std_logic;
 	signal concatenated_data : std_logic_vector(2*Nbit_data-1 downto 0);
 begin
-
-
-	
 	
 	adc: adc_top generic map(Nbit => Nbit_data, ADC_Speed => 2)
 					port map(rst => rst, clk => clk,
 					start_conv => '1',
-					SPI_SCK => SPI0_SCK,
+					SPI_SCK => dac_sck,
 					SPI_MISO => SPI0_MISO,
 					AD_CONV => AD_CONV,
 					ADC_Dataout => concatenated_data
 					);
-					
+							
 	dac: dac_top 
-					port map( rst => rst, clk=> clk,
-					DAC_MOSI => SPI1_MOSI,
+					generic map(SPI_SPEED => 4)
+					port map(clk=>clk ,rst => rst,
+					DAC_MOSI => SPI0_MOSI,
 					DAC_CLR => open,
-					DAC_SCK => SPI1_SCK,
-					DAC_CS => SPI1_SS,
+					DAC_SCK => dac_sck,
+					DAC_CS => SPI0_SS,
 					DAC_outval => concatenated_data(Nbit_data-1 downto 0)
 					);
+	
+	SPI0_SCK <= dac_sck;
+
 
 end bypass_a;
 

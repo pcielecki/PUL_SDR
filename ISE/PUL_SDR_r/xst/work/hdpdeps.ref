@@ -1,46 +1,81 @@
-V3 22
+V3 41
+FL /home/piotr/workspace/PUL/PUL_SDR/ISE/PUL_SDR_r/ADC_control.vhd 2016/05/15.22:01:40 P.20131013
+EN work/ADC_control 1463345108 \
+      FL /home/piotr/workspace/PUL/PUL_SDR/ISE/PUL_SDR_r/ADC_control.vhd \
+      PB ieee/std_logic_1164 1381692176
+AR work/ADC_control/adcca 1463345109 \
+      FL /home/piotr/workspace/PUL/PUL_SDR/ISE/PUL_SDR_r/ADC_control.vhd \
+      EN work/ADC_control 1463345108
+FL /home/piotr/workspace/PUL/PUL_SDR/ISE/PUL_SDR_r/ADC_TOP.vhd 2016/05/15.21:59:39 P.20131013
+EN work/ADC_TOP 1463345110 \
+      FL /home/piotr/workspace/PUL/PUL_SDR/ISE/PUL_SDR_r/ADC_TOP.vhd \
+      PB ieee/std_logic_1164 1381692176
+AR work/ADC_TOP/adc_top_a 1463345111 \
+      FL /home/piotr/workspace/PUL/PUL_SDR/ISE/PUL_SDR_r/ADC_TOP.vhd \
+      EN work/ADC_TOP 1463345110 CP adc_control CP clk_prescaler
+FL /home/piotr/workspace/PUL/PUL_SDR/ISE/PUL_SDR_r/bypass.vhd 2016/05/15.22:25:39 P.20131013
+EN work/bypass 1463345114 \
+      FL /home/piotr/workspace/PUL/PUL_SDR/ISE/PUL_SDR_r/bypass.vhd \
+      PB ieee/std_logic_1164 1381692176
+AR work/bypass/bypass_a 1463345115 \
+      FL /home/piotr/workspace/PUL/PUL_SDR/ISE/PUL_SDR_r/bypass.vhd \
+      EN work/bypass 1463345114 CP adc_top CP dac_top
 FL /home/piotr/workspace/PUL/PUL_SDR/ISE/PUL_SDR_r/clk_prescaler.vhd 2016/04/23.12:17:09 P.20131013
-EN work/clk_prescaler 1463136882 \
+EN work/clk_prescaler 1463660685 \
       FL /home/piotr/workspace/PUL/PUL_SDR/ISE/PUL_SDR_r/clk_prescaler.vhd \
       PB ieee/std_logic_1164 1381692176 PB ieee/STD_LOGIC_UNSIGNED 1381692179
-AR work/clk_prescaler/presc_a 1463136883 \
+AR work/clk_prescaler/presc_a 1463660686 \
       FL /home/piotr/workspace/PUL/PUL_SDR/ISE/PUL_SDR_r/clk_prescaler.vhd \
-      EN work/clk_prescaler 1463136882
-FL /home/piotr/workspace/PUL/PUL_SDR/ISE/PUL_SDR_r/NCO.vhd 2016/05/08.10:08:47 P.20131013
-EN work/NCO 1463136880 FL /home/piotr/workspace/PUL/PUL_SDR/ISE/PUL_SDR_r/NCO.vhd \
+      EN work/clk_prescaler 1463660685
+FL /home/piotr/workspace/PUL/PUL_SDR/ISE/PUL_SDR_r/DAC_Control.vhd 2016/05/15.14:06:44 P.20131013
+EN work/DAC_Control 1463345106 \
+      FL /home/piotr/workspace/PUL/PUL_SDR/ISE/PUL_SDR_r/DAC_Control.vhd \
+      PB ieee/std_logic_1164 1381692176 PB ieee/NUMERIC_STD 1381692181
+AR work/DAC_Control/DAC_Control 1463345107 \
+      FL /home/piotr/workspace/PUL/PUL_SDR/ISE/PUL_SDR_r/DAC_Control.vhd \
+      EN work/DAC_Control 1463345106
+FL /home/piotr/workspace/PUL/PUL_SDR/ISE/PUL_SDR_r/DAC_TOP.vhd 2016/05/15.22:23:33 P.20131013
+EN work/DAC_TOP 1463345112 \
+      FL /home/piotr/workspace/PUL/PUL_SDR/ISE/PUL_SDR_r/DAC_TOP.vhd \
+      PB ieee/std_logic_1164 1381692176 PB ieee/NUMERIC_STD 1381692181
+AR work/DAC_TOP/DAC 1463345113 \
+      FL /home/piotr/workspace/PUL/PUL_SDR/ISE/PUL_SDR_r/DAC_TOP.vhd \
+      EN work/DAC_TOP 1463345112 CP clk_prescaler CP DAC_Control
+FL /home/piotr/workspace/PUL/PUL_SDR/ISE/PUL_SDR_r/NCO.vhd 2016/05/13.13:30:57 P.20131013
+EN work/NCO 1463660683 FL /home/piotr/workspace/PUL/PUL_SDR/ISE/PUL_SDR_r/NCO.vhd \
       PB ieee/std_logic_1164 1381692176 PB ieee/NUMERIC_STD 1381692181 \
       PB std/TEXTIO 1381692176
-AR work/NCO/NCO_a 1463136881 \
-      FL /home/piotr/workspace/PUL/PUL_SDR/ISE/PUL_SDR_r/NCO.vhd EN work/NCO 1463136880 \
+AR work/NCO/NCO_a 1463660684 \
+      FL /home/piotr/workspace/PUL/PUL_SDR/ISE/PUL_SDR_r/NCO.vhd EN work/NCO 1463660683 \
       CP sin_LUT CP Phase_accumulator
-FL /home/piotr/workspace/PUL/PUL_SDR/ISE/PUL_SDR_r/Phase_accumulator.vhd 2016/04/29.21:25:16 P.20131013
-EN work/Phase_accumulator 1463136878 \
+FL /home/piotr/workspace/PUL/PUL_SDR/ISE/PUL_SDR_r/Phase_accumulator.vhd 2016/05/13.12:57:42 P.20131013
+EN work/Phase_accumulator 1463660681 \
       FL /home/piotr/workspace/PUL/PUL_SDR/ISE/PUL_SDR_r/Phase_accumulator.vhd \
       PB ieee/std_logic_1164 1381692176 PB ieee/STD_LOGIC_SIGNED 1381692178 \
       PB ieee/NUMERIC_STD 1381692181
-AR work/Phase_accumulator/pha_a 1463136879 \
+AR work/Phase_accumulator/pha_a 1463660682 \
       FL /home/piotr/workspace/PUL/PUL_SDR/ISE/PUL_SDR_r/Phase_accumulator.vhd \
-      EN work/Phase_accumulator 1463136878
-FL /home/piotr/workspace/PUL/PUL_SDR/ISE/PUL_SDR_r/sin_LUT.vhd 2016/05/08.08:42:19 P.20131013
-EN work/sin_LUT 1463136876 \
+      EN work/Phase_accumulator 1463660681
+FL /home/piotr/workspace/PUL/PUL_SDR/ISE/PUL_SDR_r/sin_LUT.vhd 2016/05/13.13:42:23 P.20131013
+EN work/sin_LUT 1463660679 \
       FL /home/piotr/workspace/PUL/PUL_SDR/ISE/PUL_SDR_r/sin_LUT.vhd \
       PB ieee/std_logic_1164 1381692176 PB ieee/NUMERIC_STD 1381692181 \
-      PB ieee/STD_LOGIC_SIGNED 1381692178 PB work/sin_lut_pkg 1463136875
-AR work/sin_LUT/sin_LUT_a 1463136877 \
+      PB ieee/STD_LOGIC_SIGNED 1381692178 PB work/sin_lut_pkg 1463660678
+AR work/sin_LUT/sin_LUT_a 1463660680 \
       FL /home/piotr/workspace/PUL/PUL_SDR/ISE/PUL_SDR_r/sin_LUT.vhd \
-      EN work/sin_LUT 1463136876
+      EN work/sin_LUT 1463660679
 FL /home/piotr/workspace/PUL/PUL_SDR/ISE/PUL_SDR_r/sin_lut_pkg.vhd 2016/05/06.17:30:51 P.20131013
-PH work/sin_lut_pkg 1463136874 \
+PH work/sin_lut_pkg 1463660677 \
       FL /home/piotr/workspace/PUL/PUL_SDR/ISE/PUL_SDR_r/sin_lut_pkg.vhd \
       PB ieee/std_logic_1164 1381692176
-PB work/sin_lut_pkg 1463136875 \
+PB work/sin_lut_pkg 1463660678 \
       FL /home/piotr/workspace/PUL/PUL_SDR/ISE/PUL_SDR_r/sin_lut_pkg.vhd \
-      PH work/sin_lut_pkg 1463136874
-FL /home/piotr/workspace/PUL/PUL_SDR/ISE/PUL_SDR_r/SW_defined_radio.vhd 2016/05/13.12:54:06 P.20131013
-EN work/demodulator 1463136884 \
+      PH work/sin_lut_pkg 1463660677
+FL /home/piotr/workspace/PUL/PUL_SDR/ISE/PUL_SDR_r/SW_defined_radio.vhd 2016/05/19.14:24:29 P.20131013
+EN work/demodulator 1463660687 \
       FL /home/piotr/workspace/PUL/PUL_SDR/ISE/PUL_SDR_r/SW_defined_radio.vhd \
       PB ieee/std_logic_1164 1381692176 PB std/TEXTIO 1381692176 \
       PB ieee/STD_LOGIC_TEXTIO 1381692180 PB ieee/NUMERIC_STD 1381692181
-AR work/demodulator/dem_a 1463136885 \
+AR work/demodulator/dem_a 1463660688 \
       FL /home/piotr/workspace/PUL/PUL_SDR/ISE/PUL_SDR_r/SW_defined_radio.vhd \
-      EN work/demodulator 1463136884 CP nco CP clk_prescaler
+      EN work/demodulator 1463660687 CP nco CP clk_prescaler

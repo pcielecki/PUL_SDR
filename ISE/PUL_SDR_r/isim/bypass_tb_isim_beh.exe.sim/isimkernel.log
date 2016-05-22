@@ -2,9 +2,32 @@ Command line:
    bypass_tb_isim_beh.exe
      -simmode  gui
      -simrunnum  0
-     -socket  55059
+     -socket  45160
 
-Sun May 15 22:28:45 2016
+Sun May 22 14:41:15 2016
 
 
  Elaboration Time: 0.02 sec
+
+ Current Memory Usage: 195.92 Meg
+
+ Total Signals          : 62
+ Total Nets             : 131
+ Total Signal Drivers   : 25
+ Total Blocks           : 11
+ Total Primitive Blocks : 7
+ Total Processes        : 13
+ Total Traceable Variables  : 29
+ Total Scalar Nets and Variables : 697
+Total Line Count : 89
+Total Line Count : 89
+Total Line Count : 89
+Total Line Count : 89
+Total Line Count : 89
+
+ Total Simulation Time: 0.75 sec
+
+ Current Memory Usage: 271.421 Meg
+
+Sun May 22 14:44:34 2016
+

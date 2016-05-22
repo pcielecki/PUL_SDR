@@ -11,6 +11,7 @@ use IEEE.NUMERIC_STD.ALL;
 
 
 entity DAC_TOP is
+	Generic(SPI_SPEED: integer := 4);
     Port ( CLK : in  STD_LOGIC;
            RST : in  STD_LOGIC;
            DAC_MOSI : out  STD_LOGIC;
@@ -28,35 +29,44 @@ signal address : std_logic_vector(3 downto 0);
 signal dacdata : std_logic_vector(31 downto 0);
 
 	component DAC_Control
-		 Port (	CLK 			: in  STD_LOGIC;
-					RST 			: in  STD_LOGIC;
-					DAC_DATA 	: in STD_LOGIC_VECTOR(31 downto 0);
-					DAC_MOSI 	: out  STD_LOGIC;
-					DAC_SCK 		: out  STD_LOGIC;
-					DAC_CS 		: out  STD_LOGIC;
-					RDY 			: out  STD_LOGIC);
+    Port (	CLK 		: in  STD_LOGIC;
+			RST 		: in  STD_LOGIC;
+			DAC_DATA 	: in STD_LOGIC_VECTOR(31 downto 0);
+			DAC_MOSI 	: out  STD_LOGIC;
+			DAC_SCK 	: out  STD_LOGIC;
+			DAC_CS 		: out  STD_LOGIC;
+			RDY 		: out  STD_LOGIC
+			);
 	end component;
-
+	
+		
 	component clk_prescaler is
 		Generic (Nbit : integer := 10);
 		 Port ( clk : in  STD_LOGIC;
 				  rst : in  STD_LOGIC;
 				  clk_out : out  STD_LOGIC);
 	end component clk_prescaler;
+	
+	signal dac_clk : std_logic;
 
-	signal sck_in : std_logic;
 begin
 
-	prescal : clk_prescaler generic map(Nbit => 1)
-									port map(clk => clk, rst => rst, clk_out => sck_in);
 	U1 : DAC_Control
-	Port map ( CLK => sck_in,
+	Port map ( CLK => dac_clk,
 				  RST => RST,
 				  DAC_MOSI => dacmosi,
 				  DAC_SCK => dacsck,
 				  DAC_CS => daccs,
 				  RDY => RDY,
-				  DAC_DATA => dacdata);
+				  DAC_DATA => dacdata
+);
+
+	presc: clk_prescaler generic map(Nbit => SPI_SPEED)
+								port map(clk=>clk,
+											rst => rst,
+											clk_out=>dac_clk
+											);
+											
 
 process(RST,CLK,daccs,dacsck,dacmosi)
 	begin

@@ -37,7 +37,6 @@ entity ADC_control is
     Port ( rst : in  STD_LOGIC;
            sck_internal : in  STD_LOGIC;
 			  start_conv : in std_logic;
-           SCK_enable : out  STD_LOGIC;
            MISO : in  STD_LOGIC;
            AD_CONV : out  STD_LOGIC;
 			  ADC_Dataout : out std_logic_vector(2*Nbit_data-1 downto 0)
@@ -97,7 +96,6 @@ begin
 		end if;
 	end process adc;
 
-	SCK_Enable <= '0' when state = IDLE else '1';
 	AD_CONV <= '1' when state = START_CONVERSION else '0';
 	ADC_Dataout <= temp_data(0 to Nbit_data-1) &
 						temp_data(Nbit_data+2 to 2*Nbit_data+1) 					

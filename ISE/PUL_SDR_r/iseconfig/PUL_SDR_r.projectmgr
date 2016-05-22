@@ -12,17 +12,18 @@
          <ClosedNode>/demodulator - dem_a C:|Users|Piotr|workspace|PUL_SDR|ISE|PUL_SDR_r|SW_defined_radio.vhd/LPF - audio_LP_filter - audio_lpf_a</ClosedNode>
          <ClosedNode>/demodulator - dem_a C:|Users|Piotr|workspace|PUL_SDR|ISE|PUL_SDR_r|SW_defined_radio.vhd/sdr_nco - NCO - NCO_a</ClosedNode>
          <ClosedNode>/demodulator - dem_a C:|Users|Piotr|workspace|PUL_SDR|ISE|PUL_SDR_r|SW_defined_radio.vhd/sin_lut_pkg</ClosedNode>
+         <ClosedNode>/demodulator - dem_a |home|piotr|workspace|PUL|PUL_SDR|ISE|PUL_SDR_r|SW_defined_radio.vhd</ClosedNode>
          <ClosedNode>/demodulator - dem_a |home|piotr|workspace|PUL|PUL_SDR|ISE|PUL_SDR_r|SW_defined_radio.vhd/Txlocal_I - NCO - NCO_a</ClosedNode>
          <ClosedNode>/demodulator - dem_a |home|piotr|workspace|PUL|PUL_SDR|ISE|PUL_SDR_r|SW_defined_radio.vhd/Txlocal_Q - NCO - NCO_a</ClosedNode>
       </ClosedNodes>
       <SelectedItems>
-         <SelectedItem>bypass - bypass_a (/home/piotr/workspace/PUL/PUL_SDR/ISE/PUL_SDR_r/bypass.vhd)</SelectedItem>
+         <SelectedItem>demodulator - dem_a (/home/piotr/workspace/PUL/PUL_SDR/ISE/PUL_SDR_r/SW_defined_radio.vhd)</SelectedItem>
       </SelectedItems>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
       <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000001000000000000000000000000000000000202000000010000000100000064000001e6000000020000000000000000000000000200000064ffffffff000000810000000300000002000001e60000000100000003000000000000000100000003</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >true</UserChangedColumnWidths>
-      <CurrentItem>bypass - bypass_a (/home/piotr/workspace/PUL/PUL_SDR/ISE/PUL_SDR_r/bypass.vhd)</CurrentItem>
+      <CurrentItem>demodulator - dem_a (/home/piotr/workspace/PUL/PUL_SDR/ISE/PUL_SDR_r/SW_defined_radio.vhd)</CurrentItem>
    </ItemView>
    <ItemView engineview="SynthesisOnly" sourcetype="" guiview="Process" >
       <ClosedNodes>
@@ -34,7 +35,7 @@
       </SelectedItems>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
-      <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000100000000000000000000000000000000000000000000000112000000010000000100000000000000000000000064ffffffff000000810000000000000001000001120000000100000000</ViewHeaderState>
+      <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000100000000000000000000000000000000000000000000000179000000010000000100000000000000000000000064ffffffff000000810000000000000001000001790000000100000000</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
       <CurrentItem/>
    </ItemView>
@@ -63,21 +64,21 @@
    <ItemView engineview="SynthesisOnly" sourcetype="DESUT_VHDL_ARCHITECTURE" guiview="Process" >
       <ClosedNodes>
          <ClosedNodesVersion>1</ClosedNodesVersion>
-         <ClosedNode>Configure Target Device</ClosedNode>
          <ClosedNode>Design Utilities</ClosedNode>
          <ClosedNode>Design Utilities/Compile HDL Simulation Libraries</ClosedNode>
-         <ClosedNode>Implement Design</ClosedNode>
-         <ClosedNode>Synthesize - XST</ClosedNode>
+         <ClosedNode>Implement Design/Map</ClosedNode>
+         <ClosedNode>Implement Design/Place &amp; Route</ClosedNode>
+         <ClosedNode>Implement Design/Translate</ClosedNode>
          <ClosedNode>User Constraints</ClosedNode>
       </ClosedNodes>
       <SelectedItems>
-         <SelectedItem></SelectedItem>
+         <SelectedItem>View RTL Schematic</SelectedItem>
       </SelectedItems>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
-      <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000001000000000000000000000000000000000000000000000000f4000000010000000100000000000000000000000064ffffffff000000810000000000000001000000f40000000100000000</ViewHeaderState>
+      <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000001000000000000000000000000000000000000000000000000ef000000010000000100000000000000000000000064ffffffff000000810000000000000001000000ef0000000100000000</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
-      <CurrentItem></CurrentItem>
+      <CurrentItem>View RTL Schematic</CurrentItem>
    </ItemView>
    <ItemView engineview="BehavioralSim" guiview="Source" compilemode="AutoCompile" >
       <ClosedNodes>
@@ -109,7 +110,7 @@
       <SelectedItems>
          <SelectedItem>bypass_tb - behavior (/home/piotr/workspace/PUL/PUL_SDR/ISE/PUL_SDR_r/bypass_tb.vhd)</SelectedItem>
       </SelectedItems>
-      <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
+      <ScrollbarPosition orientation="vertical" >3</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
       <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000001000000000000000000000000000000000202000000010000000100000064000001fa000000020000000000000000000000000200000064ffffffff000000810000000300000002000001fa0000000100000003000000000000000100000003</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >true</UserChangedColumnWidths>
@@ -133,13 +134,13 @@
          <ClosedNodesVersion>1</ClosedNodesVersion>
       </ClosedNodes>
       <SelectedItems>
-         <SelectedItem></SelectedItem>
+         <SelectedItem>Behavioral Check Syntax</SelectedItem>
       </SelectedItems>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
-      <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000001000000000000000000000000000000000000000000000000f4000000010000000100000000000000000000000064ffffffff000000810000000000000001000000f40000000100000000</ViewHeaderState>
+      <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000001000000000000000000000000000000000000000000000000fe000000010000000100000000000000000000000064ffffffff000000810000000000000001000000fe0000000100000000</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
-      <CurrentItem></CurrentItem>
+      <CurrentItem>Behavioral Check Syntax</CurrentItem>
    </ItemView>
    <SourceProcessView>000000ff000000000000000200000107000000c201000000050100000002</SourceProcessView>
    <CurrentView>Implementation</CurrentView>
@@ -200,12 +201,26 @@
          <ClosedNodesVersion>1</ClosedNodesVersion>
       </ClosedNodes>
       <SelectedItems>
-         <SelectedItem></SelectedItem>
+         <SelectedItem/>
       </SelectedItems>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
       <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000001000000000000000000000000000000000000000000000000f4000000010000000100000000000000000000000064ffffffff000000810000000000000001000000f40000000100000000</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
-      <CurrentItem></CurrentItem>
+      <CurrentItem/>
+   </ItemView>
+   <ItemView engineview="SynthesisOnly" sourcetype="DESUT_XCO" guiview="Process" >
+      <ClosedNodes>
+         <ClosedNodesVersion>1</ClosedNodesVersion>
+         <ClosedNode>CORE Generator</ClosedNode>
+      </ClosedNodes>
+      <SelectedItems>
+         <SelectedItem>CORE Generator</SelectedItem>
+      </SelectedItems>
+      <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
+      <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
+      <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000100000000000000000000000000000000000000000000000179000000010000000100000000000000000000000064ffffffff000000810000000000000001000001790000000100000000</ViewHeaderState>
+      <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
+      <CurrentItem>CORE Generator</CurrentItem>
    </ItemView>
 </Project>

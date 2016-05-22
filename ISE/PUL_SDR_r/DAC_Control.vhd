@@ -16,7 +16,8 @@ entity DAC_Control is
 			DAC_MOSI 	: out  STD_LOGIC;
 			DAC_SCK 	: out  STD_LOGIC;
 			DAC_CS 		: out  STD_LOGIC;
-			RDY 		: out  STD_LOGIC);
+			RDY 		: out  STD_LOGIC
+			);
 end DAC_Control;
 
 architecture DAC_Control of DAC_Control is
@@ -26,11 +27,11 @@ signal state : state_type;
 signal DAC_SEND : std_logic_vector(31 downto 0);
 
 begin
-	process(DAC_DATA)
+	process(DAC_DATA )
 	begin
-		for i in 31 downto 0 loop
-			DAC_SEND(i) <= DAC_DATA(31 - i);
-		end loop;
+			for i in 31 downto 0 loop
+				DAC_SEND(i) <= DAC_DATA(31 - i);
+			end loop;
 	end process;
 	
 	process(CLK,RST)	

@@ -1,36 +1,34 @@
-Running: /opt/Xilinx/14.7/ISE_DS/ISE/bin/lin64/unwrapped/fuse -relaunch -intstyle "ise" -incremental -o "/home/piotr/workspace/PUL/PUL_SDR/ISE/PUL_SDR_r/bypass_tb_isim_beh.exe" -prj "/home/piotr/workspace/PUL/PUL_SDR/ISE/PUL_SDR_r/bypass_tb_beh.prj" "work.bypass_tb" 
+Running: /opt/Xilinx/14.7/ISE_DS/ISE/bin/lin64/unwrapped/fuse -intstyle ise -incremental -o /home/piotr/workspace/PUL/PUL_SDR/ISE/PUL_SDR_r/bypass_tb_isim_beh.exe -prj /home/piotr/workspace/PUL/PUL_SDR/ISE/PUL_SDR_r/bypass_tb_beh.prj work.bypass_tb 
 ISim P.20131013 (signature 0xfbc00daa)
 Number of CPUs detected in this system: 4
 Turning on mult-threading, number of parallel sub-compilation jobs: 8 
 Determining compilation order of HDL files
+Parsing VHDL file "/home/piotr/workspace/PUL/PUL_SDR/ISE/PUL_SDR_r/DAC_Control.vhd" into library work
 Parsing VHDL file "/home/piotr/workspace/PUL/PUL_SDR/ISE/PUL_SDR_r/clk_prescaler.vhd" into library work
 Parsing VHDL file "/home/piotr/workspace/PUL/PUL_SDR/ISE/PUL_SDR_r/ADC_control.vhd" into library work
-Parsing VHDL file "/home/piotr/workspace/PUL/PUL_SDR/ISE/PUL_SDR_r/../../../../../Downloads/CA/DAC_Control.vhd" into library work
+Parsing VHDL file "/home/piotr/workspace/PUL/PUL_SDR/ISE/PUL_SDR_r/DAC_TOP.vhd" into library work
 Parsing VHDL file "/home/piotr/workspace/PUL/PUL_SDR/ISE/PUL_SDR_r/ADC_TOP.vhd" into library work
-Parsing VHDL file "/home/piotr/workspace/PUL/PUL_SDR/ISE/PUL_SDR_r/../../../../../Downloads/CA/DAC_TOP.vhd" into library work
 Parsing VHDL file "/home/piotr/workspace/PUL/PUL_SDR/ISE/PUL_SDR_r/bypass.vhd" into library work
 Parsing VHDL file "/home/piotr/workspace/PUL/PUL_SDR/ISE/PUL_SDR_r/bypass_tb.vhd" into library work
 Starting static elaboration
 Completed static elaboration
-Fuse Memory Usage: 98080 KB
-Fuse CPU Usage: 1390 ms
+Fuse Memory Usage: 98020 KB
+Fuse CPU Usage: 1490 ms
 Compiling package standard
 Compiling package std_logic_1164
 Compiling package numeric_std
+Compiling architecture adcca of entity ADC_control [\ADC_control(1,12)\]
+Compiling architecture adc_top_a of entity ADC_TOP [\ADC_TOP(12,2)\]
 Compiling package std_logic_arith
 Compiling package std_logic_unsigned
-Compiling architecture adcca of entity ADC_control [\ADC_control(1,12)\]
-Compiling architecture presc_a of entity clk_prescaler [\clk_prescaler(3)\]
-Compiling architecture adc_top_a of entity ADC_TOP [\ADC_TOP(12,2)\]
-Compiling architecture presc_a of entity clk_prescaler [\clk_prescaler(1)\]
 Compiling architecture dac_control of entity DAC_Control [dac_control_default]
-Compiling architecture dac of entity DAC_TOP [dac_top_default]
+Compiling architecture presc_a of entity clk_prescaler [\clk_prescaler(4)\]
+Compiling architecture dac of entity DAC_TOP [\DAC_TOP(4)\]
 Compiling architecture bypass_a of entity bypass [\bypass(12)\]
 Compiling architecture behavior of entity bypass_tb
 Time Resolution for simulation is 1ps.
-Waiting for 1 sub-compilation(s) to finish...
-Compiled 20 VHDL Units
+Compiled 18 VHDL Units
 Built simulation executable /home/piotr/workspace/PUL/PUL_SDR/ISE/PUL_SDR_r/bypass_tb_isim_beh.exe
-Fuse Memory Usage: 674068 KB
-Fuse CPU Usage: 1580 ms
-GCC CPU Usage: 140 ms
+Fuse Memory Usage: 674036 KB
+Fuse CPU Usage: 1710 ms
+GCC CPU Usage: 2200 ms

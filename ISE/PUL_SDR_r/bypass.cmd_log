@@ -1,0 +1,1 @@
+xst -intstyle ise -ifn "/home/piotr/workspace/PUL/PUL_SDR/ISE/PUL_SDR_r/bypass.xst" -ofn "/home/piotr/workspace/PUL/PUL_SDR/ISE/PUL_SDR_r/bypass.syr" 
