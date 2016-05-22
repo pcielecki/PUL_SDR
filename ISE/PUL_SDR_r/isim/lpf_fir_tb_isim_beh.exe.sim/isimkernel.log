@@ -1,0 +1,29 @@
+Command line:
+   lpf_fir_tb_isim_beh.exe
+     -simmode  gui
+     -simrunnum  0
+     -socket  58598
+
+Sun May 22 22:47:25 2016
+
+
+ Elaboration Time: 0.03 sec
+
+ Current Memory Usage: 202.17 Meg
+
+ Total Signals          : 270
+ Total Nets             : 2538
+ Total Signal Drivers   : 115
+ Total Blocks           : 26
+ Total Primitive Blocks : 17
+ Total Processes        : 54
+ Total Traceable Variables  : 309
+ Total Scalar Nets and Variables : 37441
+Total Line Count : 245
+
+ Total Simulation Time: 0.17 sec
+
+ Current Memory Usage: 277.672 Meg
+
+Sun May 22 22:50:31 2016
+

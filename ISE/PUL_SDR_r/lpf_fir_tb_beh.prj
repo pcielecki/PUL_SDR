@@ -1,0 +1,3 @@
+vhdl work "ipcore_dir/fir_filter.vhd"
+vhdl work "fir_filter.vhd"
+vhdl work "lpf_fir_tb.vhd"

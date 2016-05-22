@@ -1,4 +1,5 @@
 # Output products list for <fir_filter>
+_xmsgs/pn_parser.xmsgs
 fir_filter.asy
 fir_filter.gise
 fir_filter.mif

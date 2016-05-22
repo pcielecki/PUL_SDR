@@ -57,8 +57,8 @@ component fir_filter
 	clk: in std_logic;
 	rfd: out std_logic;
 	rdy: out std_logic;
-	din: in std_logic_vector(15 downto 0);
-	dout: out std_logic_vector(15 downto 0));
+	din: in std_logic_vector(11 downto 0);
+	dout: out std_logic_vector(11 downto 0));
 end component;
 
 -- COMP_TAG_END ------ End COMPONENT Declaration ------------

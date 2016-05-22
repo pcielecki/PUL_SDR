@@ -44,6 +44,7 @@ Generate ISE metadata:
 Generate ISE subproject:
    Create an ISE subproject for use when including this core in ISE designs
 
+   * _xmsgs/pn_parser.xmsgs
    * fir_filter.gise
    * fir_filter.xise
 

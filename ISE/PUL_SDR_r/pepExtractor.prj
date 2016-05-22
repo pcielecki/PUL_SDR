@@ -1,6 +1,2 @@
-work	"../../../../../Downloads/CA/DAC_Control.vhd"
-work	"../../../../../Downloads/CA/DAC_TOP.vhd"
-work	"ADC_TOP.vhd"
-work	"ADC_control.vhd"
-work	"bypass.vhd"
-work	"clk_prescaler.vhd"
+work	"fir_filter.vhd"
+work	"ipcore_dir/fir_filter.vhd"

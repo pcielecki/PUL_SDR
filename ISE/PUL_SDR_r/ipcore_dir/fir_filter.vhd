@@ -68,8 +68,8 @@ ENTITY fir_filter IS
 	clk: in std_logic;
 	rfd: out std_logic;
 	rdy: out std_logic;
-	din: in std_logic_vector(15 downto 0);
-	dout: out std_logic_vector(15 downto 0));
+	din: in std_logic_vector(11 downto 0);
+	dout: out std_logic_vector(11 downto 0));
 END fir_filter;
 
 ARCHITECTURE fir_filter_a OF fir_filter IS
@@ -79,40 +79,40 @@ component wrapped_fir_filter
 	clk: in std_logic;
 	rfd: out std_logic;
 	rdy: out std_logic;
-	din: in std_logic_vector(15 downto 0);
-	dout: out std_logic_vector(15 downto 0));
+	din: in std_logic_vector(11 downto 0);
+	dout: out std_logic_vector(11 downto 0));
 end component;
 
 -- Configuration specification 
 	for all : wrapped_fir_filter use entity XilinxCoreLib.fir_compiler_v5_0(behavioral)
 		generic map(
-			coef_width => 16,
+			coef_width => 12,
 			c_has_sclr => 0,
 			datapath_memtype => 0,
 			c_component_name => "fir_filter",
 			c_family => "spartan3",
-			round_mode => 1,
-			output_width => 16,
+			round_mode => 7,
+			output_width => 12,
 			sclr_deterministic => 0,
 			col_config => "1",
 			coef_memtype => 0,
-			clock_freq => 246000000,
-			symmetry => 1,
+			clock_freq => 50000000,
+			symmetry => 0,
 			col_pipe_len => 4,
-			c_latency => 19,
+			c_latency => 16,
 			chan_sel_width => 1,
 			c_xdevicefamily => "spartan3e",
 			c_has_nd => 0,
 			allow_approx => 0,
 			num_channels => 1,
-			data_width => 16,
+			data_width => 12,
 			filter_sel_width => 1,
-			sample_freq => 6000000,
+			sample_freq => 200000,
 			coef_reload => 0,
 			neg_symmetry => 0,
-			filter_type => 0,
-			data_type => 1,
-			accum_width => 38,
+			filter_type => 12,
+			data_type => 0,
+			accum_width => 28,
 			rate_change_type => 0,
 			ipbuff_memtype => 0,
 			c_optimization => 1,
@@ -120,10 +120,10 @@ end component;
 			data_memtype => 0,
 			c_has_data_valid => 0,
 			decim_rate => 1,
-			coef_type => 0,
-			filter_arch => 1,
+			coef_type => 1,
+			filter_arch => 4,
 			interp_rate => 1,
-			num_taps => 21,
+			num_taps => 10,
 			c_mem_init_file => "fir_filter.mif",
 			zero_packing_factor => 1,
 			num_paths => 1,
@@ -132,7 +132,7 @@ end component;
 			c_has_ce => 0,
 			chan_in_adv => 0,
 			opbuff_memtype => 0,
-			odd_symmetry => 1);
+			odd_symmetry => 0);
 -- synthesis translate_on
 BEGIN
 -- synthesis translate_off

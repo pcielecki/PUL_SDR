@@ -1,7 +1,7 @@
 ##############################################################
 #
 # Xilinx Core Generator version 14.7
-# Date: Sun May  8 09:58:32 2016
+# Date: Sun May 22 20:50:29 2016
 #
 ##############################################################
 #
@@ -28,7 +28,7 @@ SET flowvendor = Other
 SET formalverification = false
 SET foundationsym = false
 SET implementationfiletype = Ngc
-SET package = ft256
+SET package = fg320
 SET removerpms = false
 SET simulationfiles = Behavioral
 SET speedgrade = -4
@@ -40,28 +40,28 @@ SELECT FIR_Compiler family Xilinx,_Inc. 5.0
 # END Select
 # BEGIN Parameters
 CSET allow_rounding_approximation=false
-CSET bestprecision=false
+CSET bestprecision=true
 CSET chan_in_adv=0
-CSET clock_frequency=250.0
+CSET clock_frequency=50
 CSET coefficient_buffer_type=Automatic
 CSET coefficient_file=no_coe_file_loaded
-CSET coefficient_fractional_bits=0
+CSET coefficient_fractional_bits=14
 CSET coefficient_reload=false
 CSET coefficient_sets=1
-CSET coefficient_sign=Signed
-CSET coefficient_structure=Inferred
-CSET coefficient_width=16
+CSET coefficient_sign=Unsigned
+CSET coefficient_structure=Non_Symmetric
+CSET coefficient_width=12
 CSET coefficientsource=Vector
-CSET coefficientvector=6,0,-4,-3,5,6,-6,-13,7,44,64,44,7,-13,-6,6,5,-3,-4,0,6
+CSET coefficientvector=0.002,0.017,0.074,0.166,0.241,0.241,0.166,0.074,0.017,0.002
 CSET columnconfig=1
 CSET component_name=fir_filter
 CSET data_buffer_type=Automatic
-CSET data_fractional_bits=0
-CSET data_sign=Unsigned
-CSET data_width=16
+CSET data_fractional_bits=11
+CSET data_sign=Signed
+CSET data_width=12
 CSET decimation_rate=1
 CSET displayreloadorder=false
-CSET filter_architecture=Systolic_Multiply_Accumulate
+CSET filter_architecture=Transpose_Multiply_Accumulate
 CSET filter_selection=1
 CSET filter_type=Single_Rate
 CSET gui_behaviour=Coregen
@@ -78,16 +78,16 @@ CSET number_channels=1
 CSET number_paths=1
 CSET optimization_goal=Area
 CSET output_buffer_type=Automatic
-CSET output_rounding_mode=Truncate_LSBs
-CSET output_width=16
+CSET output_rounding_mode=Non_Symmetric_Rounding_Up
+CSET output_width=12
 CSET passband_max=0.2
 CSET passband_min=0.0
 CSET preference_for_other_storage=Automatic
-CSET quantization=Integer_Coefficients
+CSET quantization=Quantize_Only
 CSET rate_change_type=Integer
 CSET ratespecification=Frequency_Specification
 CSET registered_output=true
-CSET sample_frequency=6
+CSET sample_frequency=0.2
 CSET sampleperiod=1
 CSET sclr_deterministic=false
 CSET stopband_max=1.0
@@ -99,4 +99,4 @@ CSET zero_pack_factor=1
 MISC pkg_timestamp=2013-10-13T18:46:09Z
 # END Extra information
 GENERATE
-# CRC: d7fd82d2
+# CRC: fe48f588

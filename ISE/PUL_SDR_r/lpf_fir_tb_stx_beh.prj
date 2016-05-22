@@ -1,0 +1,3 @@
+vhdl isim_temp "ipcore_dir/fir_filter.vhd"
+vhdl isim_temp "fir_filter.vhd"
+vhdl isim_temp "lpf_fir_tb.vhd"

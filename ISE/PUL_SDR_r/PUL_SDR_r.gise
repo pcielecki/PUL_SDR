@@ -23,6 +23,7 @@
 
   <files xmlns="http://www.xilinx.com/XMLSchema">
     <file xil_pn:fileType="FILE_XMSGS" xil_pn:name="_xmsgs/xst.xmsgs"/>
+    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="adc_LPF_dac_isim_beh.exe"/>
     <file xil_pn:fileType="FILE_CMD_LOG" xil_pn:name="bypass.cmd_log"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_LSO" xil_pn:name="bypass.lso"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGC" xil_pn:name="bypass.ngc"/>
@@ -36,6 +37,7 @@
     <file xil_pn:fileType="FILE_ISIM_MISC" xil_pn:name="bypass_tb_isim_beh.wdb"/>
     <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="bypass_tb_stx_beh.prj"/>
     <file xil_pn:fileType="FILE_XRPT" xil_pn:name="bypass_xst.xrpt"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="clk_prescaler_stx_beh.prj"/>
     <file xil_pn:fileType="FILE_CMD_LOG" xil_pn:name="demodulator.cmd_log"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_LSO" xil_pn:name="demodulator.lso"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGC" xil_pn:name="demodulator.ngc"/>
@@ -48,9 +50,16 @@
     <file xil_pn:fileType="FILE_HTML" xil_pn:name="demodulator_summary.html"/>
     <file xil_pn:fileType="FILE_XRPT" xil_pn:name="demodulator_xst.xrpt"/>
     <file xil_pn:fileType="FILE_LOG" xil_pn:name="fuse.log"/>
+    <file xil_pn:fileType="FILE_LOG" xil_pn:name="ipcore_dir/coregen.log"/>
+    <file xil_pn:fileType="FILE_USERDOC" xil_pn:name="ipcore_dir/fir_filter_readme.txt"/>
     <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="isim"/>
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_CMD" xil_pn:name="isim.cmd"/>
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_LOG" xil_pn:name="isim.log"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="lpf_fir_tb_beh.prj"/>
+    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="lpf_fir_tb_isim_beh.exe"/>
+    <file xil_pn:fileType="FILE_ISIM_MISC" xil_pn:name="lpf_fir_tb_isim_beh.wdb"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="lpf_fir_tb_stx_beh.prj"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="lpf_ipcore_stx_beh.prj"/>
     <file xil_pn:fileType="FILE_FITTER_REPORT" xil_pn:name="webtalk_pn.xml"/>
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_INI" xil_pn:name="xilinxsim.ini"/>
     <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="xst"/>
@@ -61,7 +70,7 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1463920866" xil_pn:in_ck="5592837190931209722" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1463920866">
+    <transform xil_pn:end_ts="1463950683" xil_pn:in_ck="1423716916215371157" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1463950683">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <outfile xil_pn:name="ADC_TOP.vhd"/>
@@ -72,8 +81,8 @@
       <outfile xil_pn:name="NCO_tb.vhd"/>
       <outfile xil_pn:name="Phase_accumulator.vhd"/>
       <outfile xil_pn:name="SW_defined_radio.vhd"/>
+      <outfile xil_pn:name="adc_LPF_dac.vhd"/>
       <outfile xil_pn:name="adc_tb.vhd"/>
-      <outfile xil_pn:name="audio_LP_filter.vhd"/>
       <outfile xil_pn:name="audio_filter.vhd"/>
       <outfile xil_pn:name="bypass.vhd"/>
       <outfile xil_pn:name="bypass_tb.vhd"/>
@@ -81,6 +90,8 @@
       <outfile xil_pn:name="decimator.vhd"/>
       <outfile xil_pn:name="decimator_tb.vhd"/>
       <outfile xil_pn:name="demodulator_tb.vhd"/>
+      <outfile xil_pn:name="fir_filter.vhd"/>
+      <outfile xil_pn:name="lpf_fir_tb.vhd"/>
       <outfile xil_pn:name="lpf_tb.vhd"/>
       <outfile xil_pn:name="pha_tb.vhd"/>
       <outfile xil_pn:name="presc_tb.vhd"/>
@@ -88,25 +99,21 @@
       <outfile xil_pn:name="sin_LUT.vhd"/>
       <outfile xil_pn:name="sin_lut_pkg.vhd"/>
     </transform>
-    <transform xil_pn:end_ts="1463593909" xil_pn:name="TRAN_xawsToSimhdl" xil_pn:prop_ck="-7261684058954325539" xil_pn:start_ts="1463593909">
+    <transform xil_pn:end_ts="1463950685" xil_pn:name="TRAN_xawsToSimhdl" xil_pn:prop_ck="-7261684058954325539" xil_pn:start_ts="1463950685">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1463593909" xil_pn:name="TRAN_schematicsToHdlSim" xil_pn:prop_ck="3918303362301089055" xil_pn:start_ts="1463593909">
+    <transform xil_pn:end_ts="1463950685" xil_pn:name="TRAN_schematicsToHdlSim" xil_pn:prop_ck="3918303362301089055" xil_pn:start_ts="1463950685">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1463919383" xil_pn:in_ck="7807365679986250605" xil_pn:name="TRAN_regenerateCoresSim" xil_pn:prop_ck="8565671761483132516" xil_pn:start_ts="1463919383">
+    <transform xil_pn:end_ts="1463950685" xil_pn:in_ck="7807365679986250605" xil_pn:name="TRAN_regenerateCoresSim" xil_pn:prop_ck="8565671761483132516" xil_pn:start_ts="1463950685">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1463920443" xil_pn:in_ck="5592837190931209722" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1463920443">
+    <transform xil_pn:end_ts="1463950685" xil_pn:in_ck="1423716916215371157" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1463950685">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForInputs"/>
-      <status xil_pn:value="OutOfDateForOutputs"/>
-      <status xil_pn:value="InputChanged"/>
-      <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="ADC_TOP.vhd"/>
       <outfile xil_pn:name="ADC_control.vhd"/>
       <outfile xil_pn:name="DAC_Control.vhd"/>
@@ -115,8 +122,8 @@
       <outfile xil_pn:name="NCO_tb.vhd"/>
       <outfile xil_pn:name="Phase_accumulator.vhd"/>
       <outfile xil_pn:name="SW_defined_radio.vhd"/>
+      <outfile xil_pn:name="adc_LPF_dac.vhd"/>
       <outfile xil_pn:name="adc_tb.vhd"/>
-      <outfile xil_pn:name="audio_LP_filter.vhd"/>
       <outfile xil_pn:name="audio_filter.vhd"/>
       <outfile xil_pn:name="bypass.vhd"/>
       <outfile xil_pn:name="bypass_tb.vhd"/>
@@ -124,6 +131,8 @@
       <outfile xil_pn:name="decimator.vhd"/>
       <outfile xil_pn:name="decimator_tb.vhd"/>
       <outfile xil_pn:name="demodulator_tb.vhd"/>
+      <outfile xil_pn:name="fir_filter.vhd"/>
+      <outfile xil_pn:name="lpf_fir_tb.vhd"/>
       <outfile xil_pn:name="lpf_tb.vhd"/>
       <outfile xil_pn:name="pha_tb.vhd"/>
       <outfile xil_pn:name="presc_tb.vhd"/>
@@ -131,13 +140,10 @@
       <outfile xil_pn:name="sin_LUT.vhd"/>
       <outfile xil_pn:name="sin_lut_pkg.vhd"/>
     </transform>
-    <transform xil_pn:end_ts="1463920445" xil_pn:in_ck="-8501900488838759905" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="4329926609205962716" xil_pn:start_ts="1463920443">
+    <transform xil_pn:end_ts="1463950689" xil_pn:in_ck="8386333782552701178" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="4329926609205962716" xil_pn:start_ts="1463950685">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForInputs"/>
-      <status xil_pn:value="OutOfDateForPredecessor"/>
       <status xil_pn:value="OutOfDateForOutputs"/>
-      <status xil_pn:value="InputChanged"/>
       <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="bypass_tb_beh.prj"/>
       <outfile xil_pn:name="bypass_tb_isim_beh.exe"/>
@@ -146,10 +152,9 @@
       <outfile xil_pn:name="isim.log"/>
       <outfile xil_pn:name="xilinxsim.ini"/>
     </transform>
-    <transform xil_pn:end_ts="1463920446" xil_pn:in_ck="-7067889061912981866" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="-8728424596281228887" xil_pn:start_ts="1463920445">
+    <transform xil_pn:end_ts="1463950689" xil_pn:in_ck="-355691920841115531" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="-8728424596281228887" xil_pn:start_ts="1463950689">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForPredecessor"/>
       <status xil_pn:value="OutOfDateForOutputs"/>
       <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="bypass_tb_isim_beh.wdb"/>
@@ -167,6 +172,8 @@
     <transform xil_pn:end_ts="1463660639" xil_pn:in_ck="7807365679986250605" xil_pn:name="TRAN_regenerateCores" xil_pn:prop_ck="8565671761483132516" xil_pn:start_ts="1463660638">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="InputChanged"/>
     </transform>
     <transform xil_pn:end_ts="1463660639" xil_pn:in_ck="-611349592387445892" xil_pn:name="TRAN_SubProjectAbstractToPreProxy" xil_pn:start_ts="1463660639">
       <status xil_pn:value="SuccessfullyRun"/>
@@ -179,28 +186,24 @@
     <transform xil_pn:end_ts="1463660639" xil_pn:in_ck="-611349592387445892" xil_pn:name="TRAN_SubProjectPreToStructuralProxy" xil_pn:prop_ck="-3893270297158069842" xil_pn:start_ts="1463660639">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
     </transform>
     <transform xil_pn:end_ts="1463660639" xil_pn:name="TRAN_platgen" xil_pn:prop_ck="7319976235157154414" xil_pn:start_ts="1463660639">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
     </transform>
     <transform xil_pn:end_ts="1463660713" xil_pn:in_ck="7974434101806940041" xil_pn:name="TRANEXT_xstsynthesize_spartan3e" xil_pn:prop_ck="-5552703608768615487" xil_pn:start_ts="1463660673">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="WarningsGenerated"/>
       <status xil_pn:value="ReadyToRun"/>
       <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="InputAdded"/>
       <status xil_pn:value="InputChanged"/>
-      <outfile xil_pn:name="_xmsgs/xst.xmsgs"/>
-      <outfile xil_pn:name="demodulator.lso"/>
-      <outfile xil_pn:name="demodulator.ngc"/>
-      <outfile xil_pn:name="demodulator.ngr"/>
-      <outfile xil_pn:name="demodulator.prj"/>
-      <outfile xil_pn:name="demodulator.stx"/>
-      <outfile xil_pn:name="demodulator.syr"/>
-      <outfile xil_pn:name="demodulator.xst"/>
-      <outfile xil_pn:name="demodulator_xst.xrpt"/>
-      <outfile xil_pn:name="webtalk_pn.xml"/>
-      <outfile xil_pn:name="xst"/>
+      <status xil_pn:value="InputRemoved"/>
+      <status xil_pn:value="OutputRemoved"/>
     </transform>
   </transforms>
 
