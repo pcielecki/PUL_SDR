@@ -1,0 +1,25 @@
+#-----------------------------------------------------------
+# PlanAhead v14.7 (64-bit)
+# Build 321239 by xbuild on Fri Sep 27 19:24:36 MDT 2013
+# Start of session at: Mon May 23 16:02:08 2016
+# Process ID: 2789
+# Log file: /home/piotr/workspace/PUL/PUL_SDR/ISE/PUL_SDR_r/planAhead_run_2/planAhead.log
+# Journal file: /home/piotr/workspace/PUL/PUL_SDR/ISE/PUL_SDR_r/planAhead_run_2/planAhead.jou
+#-----------------------------------------------------------
+INFO: [Common 17-78] Attempting to get a license: PlanAhead
+WARNING: [Common 17-301] Failed to get a license: PlanAhead
+INFO: [Device 21-36] Loading parts and site information from /opt/Xilinx/14.7/ISE_DS/PlanAhead/data/parts/arch.xml
+Parsing RTL primitives file [/opt/Xilinx/14.7/ISE_DS/PlanAhead/data/parts/xilinx/rtl/prims/rtl_prims.xml]
+Finished parsing RTL primitives file [/opt/Xilinx/14.7/ISE_DS/PlanAhead/data/parts/xilinx/rtl/prims/rtl_prims.xml]
+start_gui
+INFO: [Common 17-78] Attempting to get a license: PlanAhead
+WARNING: [Common 17-301] Failed to get a license: PlanAhead
+source /home/piotr/workspace/PUL/PUL_SDR/ISE/PUL_SDR_r/pa.fromHdl.tcl
+# create_project -name PUL_SDR_r -dir "/home/piotr/workspace/PUL/PUL_SDR/ISE/PUL_SDR_r/planAhead_run_2" -part xc3s500efg320-4
+ERROR: [Common 17-53] User Exception: Project already exists on disk, please use '-force' option to overwrite: 
+     /home/piotr/workspace/PUL/PUL_SDR/ISE/PUL_SDR_r/planAhead_run_2/PUL_SDR_r.ppr
+     /home/piotr/workspace/PUL/PUL_SDR/ISE/PUL_SDR_r/planAhead_run_2/PUL_SDR_r.data
+
+    while executing
+"create_project -name PUL_SDR_r -dir "/home/piotr/workspace/PUL/PUL_SDR/ISE/PUL_SDR_r/planAhead_run_2" -part xc3s500efg320-4"
+    (file "/home/piotr/workspace/PUL/PUL_SDR/ISE/PUL_SDR_r/pa.fromHdl.tcl" line 4)

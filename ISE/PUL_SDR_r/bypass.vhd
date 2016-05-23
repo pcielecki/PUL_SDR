@@ -37,7 +37,8 @@ entity bypass is
 			  AD_CONV : out std_logic;
 			  SPI0_MISO : in  STD_LOGIC;
 			  SPI0_MOSI : out std_Logic;
-			  SPI0_SS : out std_logic
+			  DAC_CS : out std_logic;
+			  AMP_CS : out std_logic
 			  );
 end bypass;
 
@@ -67,10 +68,37 @@ architecture bypass_a of bypass is
 		   );
 	end component	DAC_TOP;
 	
-
-	signal dac_sck: std_logic;
+	signal cs : std_logic_vector;
 	signal concatenated_data : std_logic_vector(2*Nbit_data-1 downto 0);
+	shared variable init_done : std_logic := '0';
 begin
+
+	initialize_amp : process(rst, dac_sck) is
+	
+	constant amp_init_value : std_logic_vector(7 downto 0) := "00010001";
+	type stany is (rdy, send, done);
+	variable stan_amp : stany := rdy;
+	variable sck_ctr : interger range 0 to 7 := 7;
+	
+	
+	begin
+		if(dac_sck'event and dac_sck = '1' and init_done = '0') then
+			if(stan = rdy) then
+				stan := send;
+			elsif(stan = send) then
+				SPI0_MOSI <= amp_init_value(sck_ctr);
+				sck_ctr := sck_ctr - 1;
+				if(sck_ctr <= 0) then
+					stan := done;
+					init_done := '1';
+				end if;
+			end if;
+		end if;
+			
+		if(stan = send) then AMP_CS <= '0';
+		elsif(stan = done) then AMP_CS <= '1'; end if;
+		
+	end process initialize_amp;
 	
 	adc: adc_top generic map(Nbit => Nbit_data, ADC_Speed => 2)
 					port map(rst => rst, clk => clk,
@@ -86,13 +114,11 @@ begin
 					port map(clk=>clk ,rst => rst,
 					DAC_MOSI => SPI0_MOSI,
 					DAC_CLR => open,
-					DAC_SCK => dac_sck,
-					DAC_CS => SPI0_SS,
+					DAC_SCK => SPI0_SCK,
+					DAC_CS => cs,
 					DAC_outval => concatenated_data(Nbit_data-1 downto 0)
 					);
 	
-	SPI0_SCK <= dac_sck;
-
-
+	DAC_CS <= cs when init_done = '1' else '1';
 end bypass_a;
 
